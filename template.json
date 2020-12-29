@@ -1,6 +1,8 @@
 {
   "Actor": {
-    "types": ["character"],
+    "types": [
+      "character"
+    ],
     "templates": {
       "base": {
         "health": {
@@ -16,7 +18,9 @@
       }
     },
     "character": {
-      "templates": ["base"],
+      "templates": [
+        "base"
+      ],
       "biography": "",
       "attributes": {
         "level": {
@@ -24,44 +28,315 @@
         }
       },
       "abilities": {
-        "str": {
-          "value": 10
+        "agilidade": {
+          "value": 2,
+          "acrobacia": {
+            "value": "0"
+          },
+          "contorcao": {
+            "value": "0"
+          },
+          "equilibrio": {
+            "value": "0"
+          },
+          "evasao": {
+            "value": "0"
+          },
+          "montaria": {
+            "value": "0"
+          }
         },
-        "dex": {
-          "value": 10
+        "blefe": {
+          "value": 2,
+          "enganacao": {
+            "value": "0"
+          },
+          "charme": {
+            "value": "0"
+          },
+          "confundir": {
+            "value": "0"
+          },
+          "disfarce": {
+            "value": "0"
+          }
         },
-        "con": {
-          "value": 10
+        "conhecimento": {
+          "value": 2,
+          "avaliacao": {
+            "value": "0"
+          },
+          "apocrifo": {
+            "value": "0"
+          },
+          "estudo": {
+            "value": "0"
+          },
+          "mundoConhecido": {
+            "value": "0"
+          },
+          "nobreza": {
+            "value": "0"
+          },
+          "profissao": {
+            "value": "0"
+          },
+          "criadorismo": {
+            "value": "0"
+          }
         },
-        "int": {
-          "value": 10
+        "cura": {
+          "value": 2,
+          "diagnose": {
+            "value": "0"
+          },
+          "tratarMales": {
+            "value": "0"
+          },
+          "tratarFerimentos": {
+            "value": "0"
+          }
         },
-        "wis": {
-          "value": 10
+        "forca": {
+          "value": 2,
+          "correr": {
+            "value": "0"
+          },
+          "escalar": {
+            "value": "0"
+          },
+          "nadar": {
+            "value": "0"
+          },
+          "saltar": {
+            "value": "0"
+          },
+          "oficio": {
+            "value": "0"
+          }
         },
-        "cha": {
-          "value": 10
+        "furtividade": {
+          "value": 2,
+          "camuflagem": {
+            "value": "0"
+          },
+          "esconder": {
+            "value": "0"
+          },
+          "esgueirar": {
+            "value": "0"
+          },
+          "seguir": {
+            "value": "0"
+          }
+        },
+        "inteligencia": {
+          "value": 2,
+          "administracao": {
+            "value": "0"
+          },
+          "jogo": {
+            "value": "0"
+          },
+          "memoria": {
+            "value": "0"
+          },
+          "raciocinio": {
+            "value": "0"
+          }
+        },
+        "labia": {
+          "value": 2,
+          "persuasao": {
+            "value": "0"
+          },
+          "barganha": {
+            "value": "0"
+          },
+          "diplomacia": {
+            "value": "0"
+          },
+          "intimidacao": {
+            "value": "0"
+          },
+          "obterRumores": {
+            "value": "0"
+          }
+        },
+        "ladinagem": {
+          "value": 2,
+          "arrombamento": {
+            "value": "0"
+          },
+          "furtar": {
+            "value": "0"
+          },
+          "operarMecanismos": {
+            "value": "0"
+          }
+        },
+        "lideranca": {
+          "value": 2,
+          "carisma": {
+            "value": "0"
+          },
+          "comando": {
+            "value": "0"
+          },
+          "estrategia": {
+            "value": "0"
+          },
+          "imposicao": {
+            "value": "0"
+          }
+        },
+        "manejo": {
+          "value": 2,
+          "briga": {
+            "value": "0"
+          },
+          "umaMao": {
+            "value": "0"
+          },
+          "duasMaos": {
+            "value": "0"
+          },
+          "escudo": {
+            "value": "0"
+          }
+        },
+        "percepcao": {
+          "value": 2,
+          "atencao": {
+            "value": "0"
+          },
+          "empatia": {
+            "value": "0"
+          },
+          "observar": {
+            "value": "0"
+          },
+          "olfato": {
+            "value": "0"
+          },
+          "ouvir": {
+            "value": "0"
+          }
+        },
+        "performance": {
+          "value": 2,
+          "atuacao": {
+            "value": "0"
+          },
+          "canto": {
+            "value": "0"
+          },
+          "dança": {
+            "value": "0"
+          },
+          "malabarismo": {
+            "value": "0"
+          },
+          "oratoria": {
+            "value": "0"
+          },
+          "tocarInstrumento": {
+            "value": "0"
+          }
+        },
+        "pontaria": {
+          "value": 2,
+          "arco": {
+            "value": "0"
+          },
+          "armaDeGuerra": {
+            "value": "0"
+          },
+          "arremesso": {
+            "value": "0"
+          },
+          "besta": {
+            "value": "0"
+          }
+        },
+        "resistencia": {
+          "value": 2,
+          "recuperacao": {
+            "value": "0"
+          },
+          "fortitude": {
+            "value": "0"
+          }
+        },
+        "sobrevivencia": {
+          "value": 2,
+          "forragem": {
+            "value": "0"
+          },
+          "orientacao": {
+            "value": "0"
+          },
+          "rastrear": {
+            "value": "0"
+          }
+        },
+        "tratoComAnimais": {
+          "value": 2,
+          "cativar": {
+            "value": "0"
+          },
+          "conducao": {
+            "value": "0"
+          },
+          "montaria": {
+            "value": "0"
+          },
+          "treinamento": {
+            "value": "0"
+          }
+        },
+        "vontade": {
+          "value": 2,
+          "concentracao": {
+            "value": "0"
+          },
+          "coragem": {
+            "value": "0"
+          },
+          "determinacao": {
+            "value": "0"
+          }
         }
       }
     }
   },
   "Item": {
-    "types": ["item", "feature", "spell"],
+    "types": [
+      "item",
+      "feature",
+      "spell"
+    ],
     "templates": {
       "base": {
         "description": ""
       }
     },
     "item": {
-      "templates": ["base"],
+      "templates": [
+        "base"
+      ],
       "quantity": 1,
       "weight": 0
     },
     "feature": {
-      "templates": ["base"]
+      "templates": [
+        "base"
+      ]
     },
     "spell": {
-      "templates": ["base"],
+      "templates": [
+        "base"
+      ],
       "spellLevel": 1
     }
   }
