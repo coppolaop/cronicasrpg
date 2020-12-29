@@ -1,7 +1,7 @@
 {
-  "name": "boilerplate",
+  "name": "cronicasrpg",
   "version": "1.0.0",
-  "description": "CSS compiler for the Boilerplate system",
+  "description": "CSS compiler for the Crônicas RPG system",
   "scripts": {
     "build": "gulp",
     "compile": "gulp css",
