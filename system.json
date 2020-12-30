@@ -2,11 +2,11 @@
   "name": "cronicasrpg",
   "title": "Crônicas RPG",
   "description": "The Crônicas RPG system for FoundryVTT!",
-  "version": "1.0.4",
+  "version": "1.0.0",
   "minimumCoreVersion": "0.7.5",
   "compatibleCoreVersion": "0.7.9",
   "templateVersion": 2,
-  "author": "John Doe",
+  "author": "Coppolaop",
   "esmodules": [
     "module/cronicasrpg.js"
   ],

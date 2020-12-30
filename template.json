@@ -10,7 +10,7 @@
           "min": -6,
           "max": 3
         },
-        "actions": {
+        "acoes": {
           "valor": 2,
           "min": 0,
           "max": 2
