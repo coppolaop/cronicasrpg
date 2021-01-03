@@ -10,20 +10,28 @@ export class CronicasActor extends Actor {
   prepareData() {
     super.prepareData();
 
-    const actorData = this.data;
-    const data = actorData.data;
-    const flags = actorData.flags;
+    this._evaluateAttributes();
 
-    // Make separate methods for each Actor type (character, npc, etc.) to keep
-    // things organized.
-    // if (actorData.type === 'character') this._prepareCharacterData(actorData);
   }
 
   /**
-   * Prepare Character type specific data
+   * Calculate Character attributes according to his actual points and penalities
    */
-  // _prepareCharacterData(actorData) {
-  //   const data = actorData.data;
-  // }
+  _evaluateAttributes() {
+    const data = this.data.data;
+    for (let [key, atributo] of Object.entries(data.atributos)) {
+      atributo.total = atributo.valor - data.penalidades.ferimento - data.penalidades.hesitacao - data.penalidades.frustracao;
+      for (let [key, especializacao] of Object.entries(atributo.especializacoes)) {
+        especializacao.total = especializacao.valor + atributo.total;
+      }
+    }
+  }
+
+  /**
+   * Prepare Character combat status according to his actual points and penalities
+   */
+  _evaluateCombatStatus() {
+
+  }
 
 }

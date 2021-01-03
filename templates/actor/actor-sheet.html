@@ -14,11 +14,13 @@
         center all of its child elements content and text. --}}
         <div class="infos resource flex-group-center">
           <label>
-            <input type="text" name="data.info.povo" value="{{data.info.povo}}" data-dtype="String" />
-            Povo</label>
+            <input type="text" class="penalidade" name="data.penalidades.ferimento"
+              value="{{data.penalidades.ferimento}}" data-dtype="Number" />
+            ferimento</label>
           <label>
-            <input type="text" name="data.info.ocupacao" value="{{data.info.ocupacao}}" data-dtype="String" />
-            Ocupação</label>
+            <input type="text" name="data.pontos.experiencia.gasta" value="{{data.pontos.experiencia.gasta}}"
+              data-dtype="Number" />
+            EXP</label>
         </div>
         <div class="infos resource flex-group-center">
           <label>
@@ -26,7 +28,7 @@
             Posição</label>
 
           <label class="nivel">
-            <input type="text" name="data.info.aparencia" value="{{data.info.aparencia}}" data-dtype="Number" />
+            <input type="text" name="data.info.aparencia" value="{{data.info.aparencia}}" data-dtype="String" />
             Aparência</label>
         </div>
       </div>
@@ -34,24 +36,26 @@
 
   {{!-- Sheet Tab Navigation --}}
   <nav class="sheet-tabs tabs" data-group="primary">
-    <a class="item" data-tab="description">Atributos</a>
-    <a class="item" data-tab="items">Virtudes e Fraquezas</a>
-    <a class="item" data-tab="features">Biografia</a>
-    <a class="item" data-tab="spells">Posses</a>
+    <a class="item" data-tab="atributos">Atributos</a>
+    <a class="item" data-tab="combate">Combate</a>
+    <a class="item" data-tab="virtudes">Personalidade</a>
+    <a class="item" data-tab="biografia">Biografia</a>
+    <a class="item" data-tab="posses">Posses</a>
   </nav>
 
   {{!-- Sheet Body --}}
   <section class="sheet-body">
 
     {{!-- Biography Tab --}}
-    <div class="tab biography" data-group="primary" data-tab="description">
-      <div class="grid grid-2col">
-        <!-- {{editor content=data.biografia target="data.biografia" button=true owner=owner editable=editable}} -->
+    <div class="tab biography" data-group="primary" data-tab="atributos">
+      <div class="g--rid grid-2col">
         {{#each data.atributos as |atributo key|}}
         <div class="flex-group-center">
-          <button class="accordion">{{key}}</button>
+          <button class="accordion">{{key}} {{atributo.total}}</button>
           <div class="panel" style="display:none">
-            <p>Lorem ipsum...</p>
+            {{#each atributo.especializacoes as |especializacao ekey|}}
+            <p>{{ekey}} {{especializacao.total}}</p>
+            {{/each}}
           </div>
         </div>
         {{/each}}

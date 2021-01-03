@@ -12,6 +12,7 @@
         },
         "acoes": {
           "valor": 2,
+          "total": 2,
           "min": 0,
           "max": 2
         }
@@ -47,8 +48,8 @@
           "gasta": 0
         },
         "ela": {
-          "inicial": 250,
-          "valor": 250,
+          "inicial": 5,
+          "valor": 5,
           "gasta": 0
         },
         "recursos": 2,
@@ -74,284 +75,418 @@
           "vigor": 0
         }
       },
+      "penalidades": {
+        "ferimento": 0,
+        "hesitacao": 0,
+        "frustracao": 0
+      },
       "atributos": {
         "agilidade": {
           "valor": 2,
-          "acrobacia ": {
-            "valor": "0"
-          },
-          "contorcao": {
-            "valor": "0"
-          },
-          "equilibrio": {
-            "valor": "0"
-          },
-          "evasao": {
-            "valor": "0"
-          },
-          "montaria": {
-            "valor": "0"
+          "total": 2,
+          "especializacoes": {
+            "acrobacia ": {
+              "valor": 0,
+              "total": 2
+            },
+            "contorcao": {
+              "valor": 0,
+              "total": 2
+            },
+            "equilibrio": {
+              "valor": 0,
+              "total": 2
+            },
+            "evasao": {
+              "valor": 0,
+              "total": 2
+            },
+            "montaria": {
+              "valor": 0,
+              "total": 2
+            }
           }
         },
         "blefe": {
           "valor": 2,
-          "enganacao": {
-            "valor": "0"
-          },
-          "charme": {
-            "valor": "0"
-          },
-          "confundir": {
-            "valor": "0"
-          },
-          "disfarce": {
-            "valor": "0"
+          "total": 2,
+          "especializacoes": {
+            "enganacao": {
+              "valor": 0,
+              "total": 2
+            },
+            "charme": {
+              "valor": 0,
+              "total": 2
+            },
+            "confundir": {
+              "valor": 0,
+              "total": 2
+            },
+            "disfarce": {
+              "valor": 0,
+              "total": 2
+            }
           }
         },
         "conhecimento": {
           "valor": 2,
-          "avaliacao": {
-            "valor": "0"
-          },
-          "apocrifo": {
-            "valor": "0"
-          },
-          "estudo": {
-            "valor": "0"
-          },
-          "mundoConhecido": {
-            "valor": "0"
-          },
-          "nobreza": {
-            "valor": "0"
-          },
-          "profissao": {
-            "valor": "0"
-          },
-          "criadorismo": {
-            "valor": "0"
+          "total": 2,
+          "especializacoes": {
+            "avaliacao": {
+              "valor": 0,
+              "total": 2
+            },
+            "apocrifo": {
+              "valor": 0,
+              "total": 2
+            },
+            "estudo": {
+              "valor": 0,
+              "total": 2
+            },
+            "mundoConhecido": {
+              "valor": 0,
+              "total": 2
+            },
+            "nobreza": {
+              "valor": 0,
+              "total": 2
+            },
+            "profissao": {
+              "valor": 0,
+              "total": 2
+            },
+            "religiao": {
+              "valor": 0,
+              "total": 2
+            }
           }
         },
         "cura": {
           "valor": 2,
-          "diagnose": {
-            "valor": "0"
-          },
-          "tratarMales": {
-            "valor": "0"
-          },
-          "tratarFerimentos": {
-            "valor": "0"
+          "total": 2,
+          "especializacoes": {
+            "diagnose": {
+              "valor": 0,
+              "total": 2
+            },
+            "tratarMales": {
+              "valor": 0,
+              "total": 2
+            },
+            "tratarFerimentos": {
+              "valor": 0,
+              "total": 2
+            }
           }
         },
         "forca": {
           "valor": 2,
-          "correr": {
-            "valor": "0"
-          },
-          "escalar": {
-            "valor": "0"
-          },
-          "nadar": {
-            "valor": "0"
-          },
-          "saltar": {
-            "valor": "0"
-          },
-          "oficio": {
-            "valor": "0"
+          "total": 2,
+          "especializacoes": {
+            "correr": {
+              "valor": 0,
+              "total": 2
+            },
+            "escalar": {
+              "valor": 0,
+              "total": 2
+            },
+            "nadar": {
+              "valor": 0,
+              "total": 2
+            },
+            "saltar": {
+              "valor": 0,
+              "total": 2
+            },
+            "oficio": {
+              "valor": 0,
+              "total": 2
+            }
           }
         },
         "furtividade": {
           "valor": 2,
-          "camuflagem": {
-            "valor": "0"
-          },
-          "esconder": {
-            "valor": "0"
-          },
-          "esgueirar": {
-            "valor": "0"
-          },
-          "seguir": {
-            "valor": "0"
+          "total": 2,
+          "especializacoes": {
+            "camuflagem": {
+              "valor": 0,
+              "total": 2
+            },
+            "esconder": {
+              "valor": 0,
+              "total": 2
+            },
+            "esgueirar": {
+              "valor": 0,
+              "total": 2
+            },
+            "seguir": {
+              "valor": 0,
+              "total": 2
+            }
           }
         },
         "inteligencia": {
           "valor": 2,
-          "administracao": {
-            "valor": "0"
-          },
-          "jogo": {
-            "valor": "0"
-          },
-          "memoria": {
-            "valor": "0"
-          },
-          "raciocinio": {
-            "valor": "0"
+          "total": 2,
+          "especializacoes": {
+            "administracao": {
+              "valor": 0,
+              "total": 2
+            },
+            "jogo": {
+              "valor": 0,
+              "total": 2
+            },
+            "memoria": {
+              "valor": 0,
+              "total": 2
+            },
+            "raciocinio": {
+              "valor": 0,
+              "total": 2
+            }
           }
         },
         "labia": {
           "valor": 2,
-          "persuasao": {
-            "valor": "0"
-          },
-          "barganha": {
-            "valor": "0"
-          },
-          "diplomacia": {
-            "valor": "0"
-          },
-          "intimidacao": {
-            "valor": "0"
-          },
-          "obterRumores": {
-            "valor": "0"
+          "total": 2,
+          "especializacoes": {
+            "persuasao": {
+              "valor": 0,
+              "total": 2
+            },
+            "barganha": {
+              "valor": 0,
+              "total": 2
+            },
+            "diplomacia": {
+              "valor": 0,
+              "total": 2
+            },
+            "intimidacao": {
+              "valor": 0,
+              "total": 2
+            },
+            "obterRumores": {
+              "valor": 0,
+              "total": 2
+            }
           }
         },
         "ladinagem": {
           "valor": 2,
-          "arrombamento": {
-            "valor": "0"
-          },
-          "furtar": {
-            "valor": "0"
-          },
-          "operarMecanismos": {
-            "valor": "0"
+          "total": 2,
+          "especializacoes": {
+            "arrombamento": {
+              "valor": 0,
+              "total": 2
+            },
+            "furtar": {
+              "valor": 0,
+              "total": 2
+            },
+            "operarMecanismos": {
+              "valor": 0,
+              "total": 2
+            }
           }
         },
         "lideranca": {
           "valor": 2,
-          "carisma": {
-            "valor": "0"
-          },
-          "comando": {
-            "valor": "0"
-          },
-          "estrategia": {
-            "valor": "0"
-          },
-          "imposicao": {
-            "valor": "0"
+          "total": 2,
+          "especializacoes": {
+            "carisma": {
+              "valor": 0,
+              "total": 2
+            },
+            "comando": {
+              "valor": 0,
+              "total": 2
+            },
+            "estrategia": {
+              "valor": 0,
+              "total": 2
+            },
+            "imposicao": {
+              "valor": 0,
+              "total": 2
+            }
           }
         },
         "manejo": {
           "valor": 2,
-          "briga": {
-            "valor": "0"
-          },
-          "umaMao": {
-            "valor": "0"
-          },
-          "duasMaos": {
-            "valor": "0"
-          },
-          "escudo": {
-            "valor": "0"
+          "total": 2,
+          "especializacoes": {
+            "briga": {
+              "valor": 0,
+              "total": 2
+            },
+            "umaMao": {
+              "valor": 0,
+              "total": 2
+            },
+            "duasMaos": {
+              "valor": 0,
+              "total": 2
+            },
+            "escudo": {
+              "valor": 0,
+              "total": 2
+            }
           }
         },
         "percepcao": {
           "valor": 2,
-          "atencao": {
-            "valor": "0"
-          },
-          "empatia": {
-            "valor": "0"
-          },
-          "observar": {
-            "valor": "0"
-          },
-          "olfato": {
-            "valor": "0"
-          },
-          "ouvir": {
-            "valor": "0"
+          "total": 2,
+          "especializacoes": {
+            "atencao": {
+              "valor": 0,
+              "total": 2
+            },
+            "empatia": {
+              "valor": 0,
+              "total": 2
+            },
+            "observar": {
+              "valor": 0,
+              "total": 2
+            },
+            "olfato": {
+              "valor": 0,
+              "total": 2
+            },
+            "ouvir": {
+              "valor": 0,
+              "total": 2
+            }
           }
         },
         "performance": {
           "valor": 2,
-          "atuacao": {
-            "valor": "0"
-          },
-          "canto": {
-            "valor": "0"
-          },
-          "dança": {
-            "valor": "0"
-          },
-          "malabarismo": {
-            "valor": "0"
-          },
-          "oratoria": {
-            "valor": "0"
-          },
-          "tocarInstrumento": {
-            "valor": "0"
+          "total": 2,
+          "especializacoes": {
+            "atuacao": {
+              "valor": 0,
+              "total": 2
+            },
+            "canto": {
+              "valor": 0,
+              "total": 2
+            },
+            "dança": {
+              "valor": 0,
+              "total": 2
+            },
+            "malabarismo": {
+              "valor": 0,
+              "total": 2
+            },
+            "oratoria": {
+              "valor": 0,
+              "total": 2
+            },
+            "tocarInstrumento": {
+              "valor": 0,
+              "total": 2
+            }
           }
         },
         "pontaria": {
           "valor": 2,
-          "arco": {
-            "valor": "0"
-          },
-          "armaDeGuerra": {
-            "valor": "0"
-          },
-          "arremesso": {
-            "valor": "0"
-          },
-          "besta": {
-            "valor": "0"
+          "total": 2,
+          "especializacoes": {
+            "arco": {
+              "valor": 0,
+              "total": 2
+            },
+            "armaDeGuerra": {
+              "valor": 0,
+              "total": 2
+            },
+            "arremesso": {
+              "valor": 0,
+              "total": 2
+            },
+            "besta": {
+              "valor": 0,
+              "total": 2
+            }
           }
         },
         "resistencia": {
           "valor": 2,
-          "recuperacao": {
-            "valor": "0"
-          },
-          "fortitude": {
-            "valor": "0"
+          "total": 2,
+          "especializacoes": {
+            "recuperacao": {
+              "valor": 0,
+              "total": 2
+            },
+            "fortitude": {
+              "valor": 0,
+              "total": 2
+            }
           }
         },
         "sobrevivencia": {
           "valor": 2,
-          "forragem": {
-            "valor": "0"
-          },
-          "orientacao": {
-            "valor": "0"
-          },
-          "rastrear": {
-            "valor": "0"
+          "total": 2,
+          "especializacoes": {
+            "forragem": {
+              "valor": 0,
+              "total": 2
+            },
+            "orientacao": {
+              "valor": 0,
+              "total": 2
+            },
+            "rastrear": {
+              "valor": 0,
+              "total": 2
+            }
           }
         },
         "tratoComAnimais": {
           "valor": 2,
-          "cativar": {
-            "valor": "0"
-          },
-          "conducao": {
-            "valor": "0"
-          },
-          "montaria": {
-            "valor": "0"
-          },
-          "treinamento": {
-            "valor": "0"
+          "total": 2,
+          "especializacoes": {
+            "cativar": {
+              "valor": 0,
+              "total": 2
+            },
+            "conducao": {
+              "valor": 0,
+              "total": 2
+            },
+            "montaria": {
+              "valor": 0,
+              "total": 2
+            },
+            "treinamento": {
+              "valor": 0,
+              "total": 2
+            }
           }
         },
         "vontade": {
           "valor": 2,
-          "concentracao": {
-            "valor": "0"
-          },
-          "coragem": {
-            "valor": "0"
-          },
-          "determinacao": {
-            "valor": "0"
+          "total": 2,
+          "especializacoes": {
+            "concentracao": {
+              "valor": 0,
+              "total": 2
+            },
+            "coragem": {
+              "valor": 0,
+              "total": 2
+            },
+            "determinacao": {
+              "valor": 0,
+              "total": 2
+            }
           }
         }
       }
