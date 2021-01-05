@@ -46,11 +46,11 @@
 
   {{!-- Sheet Tab Navigation --}}
   <nav class="sheet-tabs tabs" data-group="primary">
-    <a class="item" data-tab="attributes">Atributos</a>
-    <a class="item" data-tab="combat">Combate</a>
-    <a class="item" data-tab="virtudes">Personalidade</a>
-    <a class="item" data-tab="biografia">Biografia</a>
-    <a class="item" data-tab="posses">Posses</a>
+    <a class="item" data-tab="attributes">{{localize 'cronicasrpg.atributos'}}</a>
+    <a class="item" data-tab="combat">{{localize 'cronicasrpg.combate'}}</a>
+    <a class="item" data-tab="virtudes">{{localize 'cronicasrpg.personalidade'}}</a>
+    <a class="item" data-tab="biografia">{{localize 'cronicasrpg.biografia'}}</a>
+    <a class="item" data-tab="posses">{{localize 'cronicasrpg.posses'}}</a>
   </nav>
 
   {{!-- Sheet Body --}}
@@ -61,10 +61,10 @@
       <div class="grid grid-2col">
         {{#each data.atributos as |atributo key|}}
         <div class="flex-group-center">
-          <button class="accordion">{{key}} {{atributo.total}}</button>
+          <button class="accordion">{{atributo.label}} {{atributo.total}}</button>
           <div class="panel" style="display:none">
             {{#each atributo.especializacoes as |especializacao ekey|}}
-            <p>{{ekey}} {{especializacao.total}}</p>
+            <p>{{especializacao.label}} {{especializacao.total}}</p>
             {{/each}}
           </div>
         </div>

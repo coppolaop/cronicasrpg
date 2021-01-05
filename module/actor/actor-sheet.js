@@ -1,3 +1,4 @@
+import { cronicasrpg } from '../config.js'
 /**
  * Extend the basic ActorSheet with some very simple modifications
  * @extends {ActorSheet}
@@ -23,6 +24,12 @@ export class CronicasActorSheet extends ActorSheet {
     data.dtypes = ["String", "Number", "Boolean"];
     for (let attr of Object.values(data.data.atributos)) {
       attr.isCheckbox = attr.dtype === "Boolean";
+    }
+    for (let [key, atributo] of Object.entries(data.data.atributos)) {
+      for (let [key, especializacao] of Object.entries(atributo.especializacoes)) {
+        especializacao.label = game.i18n.localize(cronicasrpg.attributes[key]);
+      }
+      atributo.label = game.i18n.localize(cronicasrpg.attributes[key]);
     }
 
     // Prepare items.
