@@ -56,15 +56,45 @@
   {{!-- Sheet Body --}}
   <section class="sheet-body">
 
-    {{!-- Biography Tab --}}
-    <div class="tab biography" data-group="primary" data-tab="attributes">
+    {{!-- Attributes Tab --}}
+    <div class="tab attributes" data-group="primary" data-tab="attributes">
+      <div class="grid grid-4col">
+        <label>
+          <input type="text" name="data.pontos.experiencia.inicial" value="{{data.pontos.experiencia.inicial}}"
+            data-dtype="Number" />
+          {{localize 'cronicasrpg.experiencia.inicial'}}
+        </label>
+        <label>
+          <input type="text" name="data.pontos.experiencia.valor" value="{{data.pontos.experiencia.valor}}"
+            data-dtype="Number" />
+          {{localize 'cronicasrpg.experiencia.atual'}}
+        </label>
+        <label>
+          <input type="text" name="data.pontos.experiencia.gasta" value="{{data.pontos.experiencia.gasta}}"
+            data-dtype="Number" />
+          {{localize 'cronicasrpg.experiencia.gasta'}}
+        </label>
+        <label>
+          <input type="text" name="data.pontos.experiencia.resto" value="{{data.pontos.experiencia.resto}}"
+            data-dtype="Number" />
+          {{localize 'cronicasrpg.experiencia.resto'}}
+        </label>
+      </div>
       <div class="grid grid-2col">
         {{#each data.atributos as |atributo key|}}
         <div class="flex-group-center">
-          <button class="accordion">{{atributo.label}} {{atributo.total}}</button>
-          <div class="panel" style="display:none">
+          <button class="accordion" id="accordion-{{key}}">{{atributo.label}} {{atributo.total}}</button>
+          <div class="panel" id="panel-{{key}}" style="display:none">
+            <div class="grid grid-2col">
+              <p class="rollable">{{atributo.label}} {{atributo.total}}</p>
+              <input type="text" name="data.atributos.{{key}}.valor" value="{{atributo.valor}}" data-dtype="Number" />
+            </div>
             {{#each atributo.especializacoes as |especializacao ekey|}}
-            <p>{{especializacao.label}} {{especializacao.total}}</p>
+            <div class="grid grid-2col">
+              <p class="rollable">{{especializacao.label}} {{especializacao.total}}</p>
+              <input type="text" name="data.atributos.{{key}}.especializacoes.{{ekey}}.valor"
+                value="{{especializacao.valor}}" data-dtype="Number" />
+            </div>
             {{/each}}
           </div>
         </div>
