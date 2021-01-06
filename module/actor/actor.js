@@ -12,6 +12,10 @@ export class CronicasActor extends Actor {
 
     this._evaluateAttributes();
 
+    if (game.settings.get("cronicasrpg", "autoCalcExp")) {
+      this._evaluateExperience();
+    }
+
   }
 
   /**
@@ -25,6 +29,21 @@ export class CronicasActor extends Actor {
         especializacao.total = especializacao.valor + atributo.total;
       }
     }
+  }
+
+  /**
+   * Calculate Character spent experience according to his actual attributes and specializations spent points
+   */
+  _evaluateExperience() {
+    const data = this.data.data;
+    data.pontos.experiencia.gasta = 0;
+    for (let [key, atributo] of Object.entries(data.atributos)) {
+      data.pontos.experiencia.gasta += ((atributo.valor - 2) * 30);
+      for (let [key, especializacao] of Object.entries(atributo.especializacoes)) {
+        data.pontos.experiencia.gasta += (especializacao.valor * 10);
+      }
+    }
+    data.pontos.experiencia.resto = data.pontos.experiencia.valor - data.pontos.experiencia.gasta;
   }
 
   /**

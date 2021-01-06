@@ -45,7 +45,8 @@
         "experiencia": {
           "inicial": 250,
           "valor": 250,
-          "gasta": 0
+          "gasta": 0,
+          "resto": 250
         },
         "ela": {
           "inicial": 5,

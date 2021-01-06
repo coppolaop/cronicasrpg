@@ -7,7 +7,10 @@
     "cronicasrpg.ela": "Elã",
     "cronicasrpg.recursos": "Recursos",
     "cronicasrpg.status": "Status",
-    "cronicasrpg.experiencia": "Experiência",
+    "cronicasrpg.experiencia.inicial": "Experiência inicial",
+    "cronicasrpg.experiencia.atual": "Experiência atual",
+    "cronicasrpg.experiencia.gasta": "Experiência gasta",
+    "cronicasrpg.experiencia.resto": "Experiência sobrando",
     "cronicasrpg.ferimento": "Ferimento",
     "cronicasrpg.hesitacao": "Hesitação",
     "cronicasrpg.frustracao": "Frustração",
@@ -102,5 +105,13 @@
     "cronicasrpg.vontade": "Vontade",
     "cronicasrpg.concentracao": "Concentração",
     "cronicasrpg.coragem": "Coragem",
-    "cronicasrpg.determinacao": "Determinação"
+    "cronicasrpg.determinacao": "Determinação",
+    "cronicasrpg.settings.diagonalMovement.name": "Movimento Diagonal",
+    "cronicasrpg.settings.diagonalMovement.hint": "Configura qual regra de movimento diagonal será usada no sistema.",
+    "cronicasrpg.settings.automaticActionSpend.name": "Gasto de Ações",
+    "cronicasrpg.settings.automaticActionSpend.hint": "Ao agir o personagem gasta ações do seu turno automaticamente.",
+    "cronicasrpg.settings.autoroll.name": "Rolagem automática de iniciativa",
+    "cronicasrpg.settings.autoroll.hint": "Ao invés de utilizar rolagem manual de iniciativa, o sistema rola automaticamente as iniciativas no inicio de cada turno.",
+    "cronicasrpg.settings.autoCalcExp.name": "Cálculo automático de Experiência",
+    "cronicasrpg.settings.autoCalcExp.hint": "Sistema realiza o cálculo automático de experiência gasta."
 }
