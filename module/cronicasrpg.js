@@ -4,6 +4,8 @@ import { CronicasActor } from "./actor/actor.js";
 import { CronicasActorSheet } from "./actor/actor-sheet.js";
 import { CronicasItem } from "./item/item.js";
 import { CronicasItemSheet } from "./item/item-sheet.js";
+import { measureDistances } from "./canvas.js";
+import * as dice from "./dice.js";
 
 Hooks.once('init', async function () {
 
@@ -92,13 +94,36 @@ Hooks.on("canvasInit", function () {
   // Extend Diagonal Measurement
   canvas.grid.diagonalRule = game.settings.get("cronicasrpg", "diagonalMovement");
   SquareGrid.prototype.measureDistances = measureDistances;
-
-  Token.prototype.getBarAttribute = getBarAttribute;
-  Token.prototype.toggleEffect = toggleEffect;
 });
 
 /* Add hook for the context menu over the rolled damage */
-Hooks.on("getChatLogEntryContext", chat.addChatMessageContextOptions);
+// Hooks.on("getChatLogEntryContext", chat.addChatMessageContextOptions);
+
+Hooks.on('renderChatMessage', (message, html, data) => {
+  if (!message.roll) return;
+
+  const dados = message.roll.results;
+  let sucessos = 0;
+  let critico = 0;
+  let sucessoMsg = game.i18n.localize("cronicasrpg.sucessoMsgPlural");
+
+  dados.forEach(function (result) {
+    if (result == 4 || result == 5) {
+      sucessos++;
+    } else if (result == 6) {
+      sucessos++;
+      critico++;
+    }
+  });
+
+  if (sucessos === 1) {
+    sucessoMsg = game.i18n.localize("cronicasrpg.sucessoMsgSingular");
+  }
+
+  var newTotal = sucessos + ' ' + sucessoMsg;
+  html.find('.dice-total').empty().append(newTotal);
+
+});
 
 /* -------------------------------------------- */
 /*  Hotbar Macros                               */
@@ -216,7 +241,6 @@ async function rollItemMacro(itemName, extra = null) {
     return ui.notifications.warn(
       `O personagem selecionado não possui um Item chamado ${itemName}`
     );
-  // console.log(item);
   // Trigger the item roll
   await dice.prepRoll(event, item, actor, extra);
 }

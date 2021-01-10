@@ -26,6 +26,7 @@ cronicasrpg.attributes = {
     "tratarFerimentos": "cronicasrpg.tratarFerimentos",
     "forca": "cronicasrpg.forca",
     "correr": "cronicasrpg.correr",
+    "escalar": "cronicasrpg.escalar",
     "nadar": "cronicasrpg.nadar",
     "saltar": "cronicasrpg.saltar",
     "oficio": "cronicasrpg.oficio",

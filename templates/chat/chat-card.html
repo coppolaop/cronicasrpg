@@ -1,0 +1,56 @@
+<section class="cronicas-chat-card">
+    <div class="cell cell--chat">
+        <div class="dice-roll">
+            <h2 class="cell__title">{{title}}
+                {{#if custo}}<span class="custo" style="float: right;">
+                    <div class="mana-cost" style="display: none;">{{custo}}</div> {{{custo}}} PM
+                </span>{{/if}}
+                {{#if truque}}<span class="custo" style="float: right;">
+                    <div class="mana-cost" style="display: none;">{{custo}}</div><i>Truque</i>
+                </span>{{/if}}</h2>
+
+            <div class="dice-tooltip" style="display: block;">
+                <section class="tooltip-part">
+                    {{#if details}}<div class="row">{{{details}}}</div>{{/if}}
+                    {{#if aprimoramentos}}
+                    <ul>
+                        {{#each aprimoramentos as |ap|}}
+                        <li>
+                            <div class="row">
+                                <b>
+                                    {{#ifEquals ap.tipo "Truque"}} Truque: {{else}} {{#ifGreater ap.custo
+                                    0}}+{{/ifGreater}}{{ap.custo}}PM: {{/ifEquals}}
+                                    {{#ifEquals ap.tipo "Aumenta"}} ({{ap.qtd}}x) {{/ifEquals}}
+                                </b>
+                                {{ap.description}}
+                            </div>
+                        </li>
+                        {{/each}}
+                    </ul>
+                    {{/if}}
+                </section>
+            </div>
+        </div>
+        {{#if flavor}}<div class="row"><em>{{flavor}}</em></div>{{/if}}
+
+        {{#if roll}}
+        {{#if spell}}
+        <div class="roll roll--dano">{{{roll}}}</div>
+        {{else}}
+        {{#if critico}}
+        <div class="roll critico">{{{roll}}}</div>
+        {{else}}
+        {{#if falha}}
+        <div class="roll falha">{{{roll}}}</div>
+        {{else}}
+        <div class="roll">{{{roll}}}</div>
+        {{/if}}
+        {{/if}}
+        {{/if}}
+        {{/if}}
+        {{#if rollDano}}
+        <hr>
+        {{#if danosDesc}}<div class="row"><em>{{danosDesc}}</em></div>{{/if}}
+        <div class="roll roll--dano">{{{rollDano}}}</div>{{/if}}
+    </div>
+</section>

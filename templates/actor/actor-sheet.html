@@ -86,12 +86,15 @@
           <button class="accordion" id="accordion-{{key}}">{{atributo.label}} {{atributo.total}}</button>
           <div class="panel" id="panel-{{key}}" style="display:none">
             <div class="grid grid-2col">
-              <p class="rollable">{{atributo.label}} {{atributo.total}}</p>
+              <p class="rollable" data-roll="{{atributo.total}}d6" data-label="{{atributo.label}}">{{atributo.label}}
+                {{atributo.total}}</p>
               <input type="text" name="data.atributos.{{key}}.valor" value="{{atributo.valor}}" data-dtype="Number" />
             </div>
             {{#each atributo.especializacoes as |especializacao ekey|}}
             <div class="grid grid-2col">
-              <p class="rollable">{{especializacao.label}} {{especializacao.total}}</p>
+              <p class="rollable" data-roll="{{especializacao.total}}d6" data-label="{{especializacao.label}}">
+                {{especializacao.label}}
+                {{especializacao.total}}</p>
               <input type="text" name="data.atributos.{{key}}.especializacoes.{{ekey}}.valor"
                 value="{{especializacao.valor}}" data-dtype="Number" />
             </div>
