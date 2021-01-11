@@ -103,7 +103,7 @@ Hooks.on('renderChatMessage', (message, html, data) => {
   if (!message.roll) return;
 
   const dados = message.roll.results;
-  let sucessos = 0;
+  let sucessos = Number(html.find('.valor-dificuldade').text());
   let critico = 0;
   let sucessoMsg = game.i18n.localize("cronicasrpg.sucessoMsgPlural");
 

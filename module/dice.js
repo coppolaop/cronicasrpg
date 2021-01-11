@@ -12,6 +12,7 @@ export async function prepRoll(event, item, actor = null, extra = {}) {
         title: flavorText,
         rollMode: rollMode,
         rollModes: CONFIG.Dice.rollModes,
+        dificuldade: 0
     };
     formula = formula
         .replace(/ /g, "")
@@ -90,7 +91,7 @@ function rollCronicas(roll, actor, templateData, criticoM = null) {
     let danoFormula = false;
     let critFormula = false;
     let tipo = "";
-    let sucessos = 0;
+    let dificuldade = 0;
 
     //Changing all empty dices to d6
     roll = roll.replace(/[Dd][\+]/g, "d6+").replace(/[Dd][\-]/g, "d6-").replace(/[Dd]$/g, "d6");
@@ -101,7 +102,7 @@ function rollCronicas(roll, actor, templateData, criticoM = null) {
     dados.forEach(function (dado) {
         if (dado.match(/.*[sS].*/g)) {
             dado = dado.replace(/([sS])/g, "");
-            sucessos += Number(dado);
+            dificuldade += Number(dado);
         }
         else {
             let quantidade = dado.split("d")[0];
@@ -110,6 +111,8 @@ function rollCronicas(roll, actor, templateData, criticoM = null) {
             }
         }
     })
+
+    templateData.dificuldade = dificuldade;
 
     if (roll.match(/(\d*)d\d+/g)) {
         formula = roll;
