@@ -13,11 +13,6 @@
         and it will add a small amount of padding, a border, and will
         center all of its child elements content and text. --}}
         <div class="infos resource flex-group-center">
-          <!-- <label>
-            <input type="text" class="penalidade" name="data.penalidades.ferimento"
-              value="{{data.penalidades.ferimento}}" data-dtype="Number" />
-            ferimento</label>
-          <label> -->
           <input type="text" name="data.pontos.ela.valor" value="{{data.pontos.ela.valor}}" data-dtype="Number" />
           {{localize 'cronicasrpg.ela'}}</label>
           <input type="text" name="data.pontos.recursos" value="{{data.pontos.recursos}}" data-dtype="Number" />
@@ -58,7 +53,8 @@
 
     {{!-- Attributes Tab --}}
     <div class="tab attributes" data-group="primary" data-tab="attributes">
-      <div class="grid grid-4col">
+      <div class="grid grid-5col">
+        <img class="die-icon rollable" data-roll="1d6" src="systems/cronicasrpg/assets/d6.ico" />
         <label>
           <input type="text" name="data.pontos.experiencia.inicial" value="{{data.pontos.experiencia.inicial}}"
             data-dtype="Number" />

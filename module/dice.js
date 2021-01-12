@@ -195,3 +195,30 @@ function rollCronicas(roll, actor, templateData, criticoM = null) {
         });
     }
 }
+
+/* Add hook to calculate number of success and change the total of the roll */
+Hooks.on('renderChatMessage', (message, html, data) => {
+    if (!message.roll) return;
+
+    const dados = message.roll.results;
+    let sucessos = Number(html.find('.valor-dificuldade').text());
+    let critico = 0;
+    let sucessoMsg = game.i18n.localize("cronicasrpg.sucessoMsgPlural");
+
+    dados.forEach(function (result) {
+        if (result == 4 || result == 5) {
+            sucessos++;
+        } else if (result == 6) {
+            sucessos++;
+            critico++;
+        }
+    });
+
+    if (sucessos === 1) {
+        sucessoMsg = game.i18n.localize("cronicasrpg.sucessoMsgSingular");
+    }
+
+    var newTotal = sucessos + ' ' + sucessoMsg;
+    html.find('.dice-total').empty().append(newTotal);
+
+});
