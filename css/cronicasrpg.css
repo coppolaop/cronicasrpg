@@ -247,7 +247,16 @@
   text-align: right;
 }
 
-.die-icon {
+.cronicasrpg .largeTextArea {
+  height: 10rem;
+  text-align: initial;
+}
+
+.cronicasrpg .smallTextArea {
+  height: 3.6rem;
+}
+
+.cronicasrpg .die-icon {
   box-sizing: unset;
   border: 0;
   border-radius: 0;
