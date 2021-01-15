@@ -9,7 +9,7 @@ export class CronicasItemSheet extends ItemSheet {
     return mergeObject(super.defaultOptions, {
       classes: ["cronicasrpg", "sheet", "item"],
       width: 520,
-      height: 480,
+      height: 350,
       tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "description" }]
     });
   }
@@ -17,12 +17,8 @@ export class CronicasItemSheet extends ItemSheet {
   /** @override */
   get template() {
     const path = "systems/cronicasrpg/templates/item";
-    // Return a single sheet for all item types.
-    // return `${path}/item-sheet.html`;
 
-    // Alternatively, you could use the following return statement to do a
-    // unique item sheet by type, like `weapon-sheet.html`.
-    return `${path}/item-${this.item.data.type}-sheet.html`;
+    return `${path}/${this.item.data.type}-sheet.html`;
   }
 
   /* -------------------------------------------- */

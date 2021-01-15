@@ -498,6 +498,7 @@
       "posse",
       "virtude",
       "fraqueza",
+      "poder",
       "ataque",
       "defesa"
     ],
@@ -509,10 +510,9 @@
         "quantidade": 1,
         "valor": 0
       },
-      "traco": {
-        "influencia": false,
-        "subAtributo": "",
-        "modificador": ""
+      "personalidade": {
+        "especializacao": "",
+        "incremento": ""
       }
     },
     "posse": {
@@ -524,16 +524,16 @@
     "virtude": {
       "templates": [
         "base",
-        "traco"
+        "personalidade"
       ]
     },
     "fraqueza": {
       "templates": [
         "base",
-        "traco"
+        "personalidade"
       ]
     },
-    "spell": {
+    "poder": {
       "templates": [
         "base"
       ],

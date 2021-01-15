@@ -35,7 +35,7 @@ export class CronicasActorSheet extends ActorSheet {
 
     // Prepare items.
     if (this.actor.data.type == 'character') {
-      // this._prepareCharacterItems(data);
+      this._prepareCharacterItems(data);
     }
 
     return data;
@@ -52,46 +52,26 @@ export class CronicasActorSheet extends ActorSheet {
     const actorData = sheetData.actor;
 
     // Initialize containers.
-    // const gear = [];
-    // const features = [];
-    // const spells = {
-    //   0: [],
-    //   1: [],
-    //   2: [],
-    //   3: [],
-    //   4: [],
-    //   5: [],
-    //   6: [],
-    //   7: [],
-    //   8: [],
-    //   9: []
-    // };
+    const virtudes = [];
+    const fraquezas = [];
 
     // Iterate through items, allocating to containers
-    // let totalWeight = 0;
-    // for (let i of sheetData.items) {
-    //   let item = i.data;
-    //   i.img = i.img || DEFAULT_TOKEN;
-    //   // Append to gear.
-    //   if (i.type === 'item') {
-    //     gear.push(i);
-    //   }
-    //   // Append to features.
-    //   else if (i.type === 'feature') {
-    //     features.push(i);
-    //   }
-    //   // Append to spells.
-    //   else if (i.type === 'spell') {
-    //     if (i.data.spellLevel != undefined) {
-    //       spells[i.data.spellLevel].push(i);
-    //     }
-    //   }
-    // }
+    for (let i of sheetData.items) {
+      let item = i.data;
+      i.img = i.img || DEFAULT_TOKEN;
+      // Append to virtues.
+      if (i.type == 'virtude') {
+        virtudes.push(i);
+      }
+      // Append to weakness.
+      if (i.type == 'fraqueza') {
+        fraquezas.push(i);
+      }
+    }
 
     // Assign and return
-    // actorData.gear = gear;
-    // actorData.features = features;
-    // actorData.spells = spells;
+    actorData.virtudes = virtudes;
+    actorData.fraquezas = fraquezas;
   }
 
   /* -------------------------------------------- */
@@ -167,7 +147,7 @@ export class CronicasActorSheet extends ActorSheet {
     // Grab any data associated with this control.
     const data = duplicate(header.dataset);
     // Initialize a default name.
-    const name = `New ${type.capitalize()}`;
+    const name = `Nova ${type.capitalize()}`;
     // Prepare the item object.
     const itemData = {
       name: name,
