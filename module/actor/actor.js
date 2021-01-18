@@ -24,9 +24,9 @@ export class CronicasActor extends Actor {
   _evaluateAttributes() {
     const data = this.data.data;
     for (let [key, atributo] of Object.entries(data.atributos)) {
-      atributo.total = atributo.valor - data.penalidades.ferimento - data.penalidades.hesitacao - data.penalidades.frustracao;
+      atributo.total = atributo.valor + atributo.outros - data.penalidades.ferimento - data.penalidades.hesitacao - data.penalidades.frustracao;
       for (let [key, especializacao] of Object.entries(atributo.especializacoes)) {
-        especializacao.total = especializacao.valor + atributo.total;
+        especializacao.total = especializacao.valor + especializacao.outros + atributo.total;
       }
     }
   }
