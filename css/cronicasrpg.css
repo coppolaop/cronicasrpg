@@ -230,6 +230,10 @@
   -ms-flex: 0 0 24px;
   flex: 0 0 24px;
   margin-right: 5px;
+  height: 24px;
+  width: 24px;
+  background-size: 24px;
+  background-repeat: no-repeat;
 }
 
 .cronicasrpg .items-list .item img {

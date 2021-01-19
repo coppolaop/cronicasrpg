@@ -14,48 +14,56 @@ export async function prepRoll(event, item, actor = null, extra = {}) {
         rollModes: CONFIG.Dice.rollModes,
         dificuldade: 0
     };
-    formula = formula
-        .replace(/ /g, "")
-        .replace(/\+0/g, "")
-        .replace(/\-0/g, "")
-        .replace(/\++/g, "+");
-    if (!event.shiftKey) {
-        rollCronicas(formula, actor, templateData);
-    } else {
-        templateData.formula = formula;
-        templateData.rollMode = rollMode;
-        let dialogCallback = (html) => {
-            rollMode = html.find('[name="rollMode"]').val();
-            let rollMod = html.find('[name="mod"]').val();
-            if (
-                rollMod.length > 0 &&
-                rollMod.trim().charAt(0) != "+" &&
-                rollMod.trim().charAt(0) != "-"
-            )
-                rollMod = "+" + rollMod;
-            formula = formula + rollMod;
+
+    if (formula) {
+
+        formula = formula
+            .replace(/ /g, "")
+            .replace(/\+0/g, "")
+            .replace(/\-0/g, "")
+            .replace(/\++/g, "+");
+        if (!event.shiftKey) {
             rollCronicas(formula, actor, templateData);
-        };
-        return new Promise((resolve) => {
-            renderTemplate("systems/cronicasrpg/templates/chat/roll-dialog.html", templateData).then((dlg) => {
-                new Dialog({
-                    title: "Rolagem de " + flavorText,
-                    content: dlg,
-                    buttons: {
-                        normal: {
-                            label: "Rolar",
-                            callback: (html) => {
-                                resolve(dialogCallback(html));
+        } else {
+            templateData.formula = formula;
+            templateData.rollMode = rollMode;
+            let dialogCallback = (html) => {
+                rollMode = html.find('[name="rollMode"]').val();
+                let rollMod = html.find('[name="mod"]').val();
+                if (
+                    rollMod.length > 0 &&
+                    rollMod.trim().charAt(0) != "+" &&
+                    rollMod.trim().charAt(0) != "-"
+                )
+                    rollMod = "+" + rollMod;
+                formula = formula + rollMod;
+                rollCronicas(formula, actor, templateData);
+            };
+            return new Promise((resolve) => {
+                renderTemplate("systems/cronicasrpg/templates/chat/roll-dialog.html", templateData).then((dlg) => {
+                    new Dialog({
+                        title: "Rolagem de " + flavorText,
+                        content: dlg,
+                        buttons: {
+                            normal: {
+                                label: "Rolar",
+                                callback: (html) => {
+                                    resolve(dialogCallback(html));
+                                },
                             },
                         },
-                    },
-                    default: "normal",
-                    close: () => {
-                        // noop
-                    },
-                }).render(true);
+                        default: "normal",
+                        close: () => {
+                            // noop
+                        },
+                    }).render(true);
+                });
             });
-        });
+        }
+    } else {
+        templateData.title = item.name;
+        templateData.details = item.data.data.descricao;
+        rollCronicas(formula, actor, templateData);
     }
 }
 
@@ -93,105 +101,114 @@ function rollCronicas(roll, actor, templateData, criticoM = null) {
     let tipo = "";
     let dificuldade = 0;
 
-    //Changing all empty dices to d6
-    roll = roll.replace(/[Dd][\+]/g, "d6+").replace(/[Dd][\-]/g, "d6-").replace(/[Dd]$/g, "d6");
-    //counting success
-    roll = roll.trim().replace(/([\+])/g, " +").replace(/([\-])/g, " -");
-    const dados = roll.split(" ");
-    roll = "";
-    dados.forEach(function (dado) {
-        if (dado.match(/.*[sS].*/g)) {
-            dado = dado.replace(/([sS])/g, "");
-            dificuldade += Number(dado);
-        }
-        else {
-            let quantidade = dado.split("d")[0];
-            for (let i = 0; i < quantidade; i++) {
-                roll += "+1d6";
+    let rollTemplate = {
+        template: "systems/cronicasrpg/templates/chat/cronicaroll.html",
+    };
+
+    if (roll) {
+
+        //Changing all empty dices to d6
+        roll = roll.replace(/[Dd][\+]/g, "d6+").replace(/[Dd][\-]/g, "d6-").replace(/[Dd]$/g, "d6");
+        //counting success
+        roll = roll.trim().replace(/([\+])/g, " +").replace(/([\-])/g, " -");
+        const dados = roll.split(" ");
+        roll = "";
+        dados.forEach(function (dado) {
+            if (dado.match(/.*[sS].*/g)) {
+                dado = dado.replace(/([sS])/g, "");
+                dificuldade += Number(dado);
             }
-        }
-    })
-
-    templateData.dificuldade = dificuldade;
-
-    if (roll.match(/(\d*)d\d+/g)) {
-        formula = roll;
-    } else if (Number(roll) !== NaN) {
-        formula = null;
-        result = new Roll(roll).roll();
-    }
-    if (formula != null) {
-        let roll = new Roll(`${formula}`);
-        roll.roll();
-        result = roll.results[0];
-
-        if (result == 6) {
-            tipo = "critico";
-        } else if (result == 5 || result == 4) {
-            tipo = "sucesso";
-        } else if (result == 3 || result == 2) {
-            tipo = "falha";
-        } else if (result == 1) {
-            tipo = "falha";
-        }
-        if (templateData.title == "Iniciativa" && combate) {
-            let combatente = combate.combatants.find(
-                (combatant) => combatant.actor.id === actor.id
-            );
-            if (combatente && combatente.iniciative == null) {
-                combate.setInitiative(combatente._id, result);
-                console.log(
-                    "Foundry VTT | Iniciativa Atualizada para " +
-                    combatente._id +
-                    " (" +
-                    combatente.actor.name +
-                    ")"
-                );
-            }
-        }
-        let rollTemplate = {
-            template: "systems/cronicasrpg/templates/chat/cronicaroll.html",
-        };
-
-        chatData.roll = roll;
-
-        // Render it.
-        roll.render(rollTemplate).then((r) => {
-            templateData.roll = r;
-            renderTemplate(template, templateData).then((content) => {
-                chatData.content = content;
-                if (game.dice3d) {
-                    game.dice3d
-                        .showForRoll(
-                            roll,
-                            game.user,
-                            true,
-                            chatData.whisper,
-                            chatData.blind
-                        )
-                        .then((displayed) => ChatMessage.create(chatData));
-                    if (dmgroll) {
-                        game.dice3d.showForRoll(
-                            dmgroll,
-                            game.user,
-                            true,
-                            chatData.whisper,
-                            chatData.blind
-                        );
-                    }
-                } else {
-                    chatData.sound = CONFIG.sounds.dice;
-                    ChatMessage.create(chatData);
+            else {
+                let quantidade = dado.split("d")[0];
+                for (let i = 0; i < quantidade; i++) {
+                    roll += "+1d6";
                 }
+            }
+        })
+
+        templateData.dificuldade = dificuldade;
+
+        if (roll.match(/(\d*)d\d+/g)) {
+            formula = roll;
+        } else if (Number(roll) !== NaN) {
+            formula = null;
+            result = new Roll(roll).roll();
+        }
+        if (formula != null) {
+            let roll = new Roll(`${formula}`);
+            roll.roll();
+            result = roll.results[0];
+
+            if (result == 6) {
+                tipo = "critico";
+            } else if (result == 5 || result == 4) {
+                tipo = "sucesso";
+            } else if (result == 3 || result == 2) {
+                tipo = "falha";
+            } else if (result == 1) {
+                tipo = "falha";
+            }
+            if (templateData.title == "Iniciativa" && combate) {
+                let combatente = combate.combatants.find(
+                    (combatant) => combatant.actor.id === actor.id
+                );
+                if (combatente && combatente.iniciative == null) {
+                    combate.setInitiative(combatente._id, result);
+                    console.log(
+                        "Foundry VTT | Iniciativa Atualizada para " +
+                        combatente._id +
+                        " (" +
+                        combatente.actor.name +
+                        ")"
+                    );
+                }
+            }
+
+            chatData.roll = roll;
+
+            // Render it.
+            roll.render(rollTemplate).then((r) => {
+                templateData.roll = r;
+                renderTemplate(template, templateData).then((content) => {
+                    chatData.content = content;
+                    if (game.dice3d) {
+                        game.dice3d
+                            .showForRoll(
+                                roll,
+                                game.user,
+                                true,
+                                chatData.whisper,
+                                chatData.blind
+                            )
+                            .then((displayed) => ChatMessage.create(chatData));
+                        if (dmgroll) {
+                            game.dice3d.showForRoll(
+                                dmgroll,
+                                game.user,
+                                true,
+                                chatData.whisper,
+                                chatData.blind
+                            );
+                        }
+                    } else {
+                        chatData.sound = CONFIG.sounds.dice;
+                        ChatMessage.create(chatData);
+                    }
+                });
             });
-        });
+        } else {
+            result.render(rollTemplate).then((r) => {
+                templateData.roll = r;
+                renderTemplate(template, templateData).then((content) => {
+                    chatData.content = content;
+                    ChatMessage.create(chatData);
+                });
+            });
+        }
     } else {
-        result.render(rollTemplate).then((r) => {
-            templateData.roll = r;
-            renderTemplate(template, templateData).then((content) => {
-                chatData.content = content;
-                ChatMessage.create(chatData);
-            });
+        renderTemplate(template, templateData).then((content) => {
+            chatData.content = content;
+            ChatMessage.create(chatData);
         });
     }
 }

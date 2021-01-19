@@ -54,6 +54,7 @@ export class CronicasActorSheet extends ActorSheet {
     // Initialize containers.
     const virtudes = [];
     const fraquezas = [];
+    const posses = [];
 
     // Iterate through items, allocating to containers
     for (let i of sheetData.items) {
@@ -67,11 +68,16 @@ export class CronicasActorSheet extends ActorSheet {
       if (i.type == 'fraqueza') {
         fraquezas.push(i);
       }
+      // Append to goods.
+      if (i.type == 'posse') {
+        posses.push(i);
+      }
     }
 
     // Assign and return
     actorData.virtudes = virtudes;
     actorData.fraquezas = fraquezas;
+    actorData.posses = posses;
   }
 
   /* -------------------------------------------- */
@@ -169,12 +175,17 @@ export class CronicasActorSheet extends ActorSheet {
   async _onRoll(event, actor = null) {
     event.preventDefault();
     actor = !actor ? this.actor : actor;
+    const a = event.currentTarget;
     const element = event.currentTarget;
     const dataset = element.dataset;
-
+    const itemId = $(a).parents('.item').attr('data-item-id');
     let item = {
       roll: dataset.roll,
       label: dataset.label
+    }
+
+    if (itemId && ($(a).hasClass('virtude-rollable') || $(a).hasClass('fraqueza-rollable') || $(a).hasClass('posse-rollable') || $(a).hasClass('arma-rollable') || $(a).hasClass('armadura-rollable') || $(a).hasClass('ataque-rollable'))) {
+      item = actor.getOwnedItem(itemId);
     }
 
     await prepRoll(event, item, actor);
