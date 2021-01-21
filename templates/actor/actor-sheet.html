@@ -113,7 +113,55 @@
 
     {{!-- Combat Tab --}}
     <div class="tab combat" data-group="primary" data-tab="combat">
-
+      <div class="grid grid-5col">
+        <div class="infos resource">
+          <select class="selectatr" name="data.combate.escolha" value={{data.combate.escolha}} data-dtype="String">
+            {{#select data.combate.escolha}}
+            <option value="agilidade">{{localize 'cronicasrpg.agilidade'}}</option>
+            <option value="inteligencia">{{localize 'cronicasrpg.inteligencia'}}</option>
+            {{/select}}
+          </select>
+          <p>{{localize 'cronicasrpg.fisico'}}</p>
+          <p>{{localize 'cronicasrpg.mental'}}</p>
+          <p>{{localize 'cronicasrpg.social'}}</p>
+        </div>
+        <div class="infos resource">
+          <p>{{localize 'cronicasrpg.iniciativa'}}</p>
+          <input type="text" name="data.combate.fisico.iniciativa" value="{{data.combate.fisico.iniciativa}}"
+            data-dtype="String" />
+          <input type="text" name="data.combate.mental.iniciativa" value="{{data.combate.mental.iniciativa}}"
+            data-dtype="String" />
+          <input type="text" name="data.combate.social.iniciativa" value="{{data.combate.social.iniciativa}}"
+            data-dtype="String" />
+        </div>
+        <div class="infos resource">
+          <p>{{localize 'cronicasrpg.defesa'}}</p>
+          <input type="text" name="data.combate.fisico.defesa" value="{{data.combate.fisico.defesa}}"
+            data-dtype="String" />
+          <input type="text" name="data.combate.mental.defesa" value="{{data.combate.mental.defesa}}"
+            data-dtype="String" />
+          <input type="text" name="data.combate.social.defesa" value="{{data.combate.social.defesa}}"
+            data-dtype="String" />
+        </div>
+        <div class="infos resource">
+          <p>{{localize 'cronicasrpg.absorcao'}}</p>
+          <input type="text" name="data.combate.fisico.absorcao" value="{{data.combate.fisico.absorcao}}"
+            data-dtype="String" />
+          <input type="text" name="data.combate.mental.absorcao" value="{{data.combate.mental.absorcao}}"
+            data-dtype="String" />
+          <input type="text" name="data.combate.social.absorcao" value="{{data.combate.social.absorcao}}"
+            data-dtype="String" />
+        </div>
+        <div class="infos resource">
+          <p>{{localize 'cronicasrpg.vigor'}}</p>
+          <input type="text" name="data.combate.fisico.vigor" value="{{data.combate.fisico.vigor}}"
+            data-dtype="String" />
+          <input type="text" name="data.combate.mental.vigor" value="{{data.combate.mental.vigor}}"
+            data-dtype="String" />
+          <input type="text" name="data.combate.social.vigor" value="{{data.combate.social.vigor}}"
+            data-dtype="String" />
+        </div>
+      </div>
     </div>
 
     {{!-- Personality Tab --}}

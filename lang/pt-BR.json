@@ -19,9 +19,16 @@
     "cronicasrpg.experiencia.atual": "Experiência atual",
     "cronicasrpg.experiencia.gasta": "Experiência gasta",
     "cronicasrpg.experiencia.resto": "Experiência sobrando",
+    "cronicasrpg.fisico": "Físico",
+    "cronicasrpg.mental": "Mental",
+    "cronicasrpg.social": "Social",
     "cronicasrpg.ferimento": "Ferimento",
     "cronicasrpg.hesitacao": "Hesitação",
     "cronicasrpg.frustracao": "Frustração",
+    "cronicasrpg.iniciativa": "Iniciativa",
+    "cronicasrpg.defesa": "Defesa",
+    "cronicasrpg.absorcao": "Absorção",
+    "cronicasrpg.vigor": "Vigor",
     "cronicasrpg.info.povo": "Povo/Raça",
     "cronicasrpg.info.ocupacao": "Ocupação",
     "cronicasrpg.info.posicao": "Posição",
@@ -150,5 +157,7 @@
     "cronicasrpg.settings.autoroll.name": "Rolagem automática de iniciativa",
     "cronicasrpg.settings.autoroll.hint": "Ao invés de utilizar rolagem manual de iniciativa, o sistema rola automaticamente as iniciativas no inicio de cada turno.",
     "cronicasrpg.settings.autoCalcExp.name": "Cálculo automático de experiência",
-    "cronicasrpg.settings.autoCalcExp.hint": "Sistema realiza o cálculo automático de experiência gasta."
+    "cronicasrpg.settings.autoCalcExp.hint": "Sistema realiza o cálculo automático de experiência gasta.",
+    "cronicasrpg.settings.autoCalcCmb.name": "Cálculo automático de pontos de combate",
+    "cronicasrpg.settings.autoCalcCmb.hint": "Sistema realiza o cálculo automático do pontos utilizados em combate (Iniciativa, Defesa, Absorção e Vigor), para todos os três tipos de combate (Físico, Mental e Social)."
 }

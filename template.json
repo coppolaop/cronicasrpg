@@ -58,6 +58,7 @@
         "status": 2
       },
       "combate": {
+        "escolha": "agilidade",
         "fisico": {
           "iniciativa": 0,
           "defesa": 0,

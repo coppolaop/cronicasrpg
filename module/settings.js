@@ -56,4 +56,16 @@ export const SystemSettings = function () {
     type: Boolean,
   });
 
+  /**
+   * Option to disable automatic calculation of Combat stats.
+   */
+  game.settings.register("cronicasrpg", "autoCalcCmb", {
+    name: game.i18n.localize("cronicasrpg.settings.autoCalcCmb.name"),
+    hint: game.i18n.localize("cronicasrpg.settings.autoCalcCmb.hint"),
+    scope: "world",
+    config: true,
+    default: true,
+    type: Boolean,
+  });
+
 }
