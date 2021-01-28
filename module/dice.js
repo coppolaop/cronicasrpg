@@ -22,7 +22,7 @@ export async function prepRoll(event, item, actor = null, extra = {}) {
             .replace(/\+0/g, "")
             .replace(/\-0/g, "")
             .replace(/\++/g, "+");
-        if (!event.shiftKey) {
+        if (!event.shiftKey || flavorText.startsWith('Iniciativa')) {
             rollCronicas(formula, actor, templateData);
         } else {
             templateData.formula = formula;
@@ -42,11 +42,11 @@ export async function prepRoll(event, item, actor = null, extra = {}) {
             return new Promise((resolve) => {
                 renderTemplate("systems/cronicasrpg/templates/chat/roll-dialog.html", templateData).then((dlg) => {
                     new Dialog({
-                        title: "Rolagem de " + flavorText,
+                        title: game.i18n.localize("cronicasrpg.rolagemDe") + " " + flavorText,
                         content: dlg,
                         buttons: {
                             normal: {
-                                label: "Rolar",
+                                label: game.i18n.localize("cronicasrpg.rolar"),
                                 callback: (html) => {
                                     resolve(dialogCallback(html));
                                 },
@@ -96,8 +96,6 @@ function rollCronicas(roll, actor, templateData, criticoM = null) {
     // Handle dice rolls.
     let formula = "";
     let result;
-    let danoFormula = false;
-    let critFormula = false;
     let tipo = "";
     let dificuldade = 0;
 
@@ -106,7 +104,6 @@ function rollCronicas(roll, actor, templateData, criticoM = null) {
     };
 
     if (roll) {
-
         //Changing all empty dices to d6
         roll = roll.replace(/[Dd][\+]/g, "d6+").replace(/[Dd][\-]/g, "d6-").replace(/[Dd]$/g, "d6");
         //counting success
@@ -119,9 +116,13 @@ function rollCronicas(roll, actor, templateData, criticoM = null) {
                 dificuldade += Number(dado);
             }
             else {
-                let quantidade = dado.split("d")[0];
-                for (let i = 0; i < quantidade; i++) {
-                    roll += "+1d6";
+                if (templateData.title == null || (templateData.title.startsWith(game.i18n.localize("cronicasrpg.iniciativa")) && !dado.includes("d"))) {
+                    roll += dado;
+                } else {
+                    let quantidade = dado.split("d")[0];
+                    for (let i = 0; i < quantidade; i++) {
+                        roll += "+1d6";
+                    }
                 }
             }
         })
@@ -148,12 +149,12 @@ function rollCronicas(roll, actor, templateData, criticoM = null) {
             } else if (result == 1) {
                 tipo = "falha";
             }
-            if (templateData.title == "Iniciativa" && combate) {
+            if (templateData.title != null && templateData.title.startsWith("Iniciativa") && combate) {
                 let combatente = combate.combatants.find(
                     (combatant) => combatant.actor.id === actor.id
                 );
                 if (combatente && combatente.iniciative == null) {
-                    combate.setInitiative(combatente._id, result);
+                    combate.setInitiative(combatente._id, roll.total);
                     console.log(
                         "Foundry VTT | Iniciativa Atualizada para " +
                         combatente._id +
@@ -215,7 +216,7 @@ function rollCronicas(roll, actor, templateData, criticoM = null) {
 
 /* Add hook to calculate number of success and change the total of the roll */
 Hooks.on('renderChatMessage', (message, html, data) => {
-    if (!message.roll) return;
+    if (!message.roll || message.data.content.includes(game.i18n.localize("cronicasrpg.iniciativa"))) return;
 
     const dados = message.roll.results;
     let sucessos = Number(html.find('.valor-dificuldade').text());

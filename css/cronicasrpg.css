@@ -269,3 +269,34 @@
   margin: auto;
   margin-top: 0;
 }
+
+.cronicasrpg .InputAddOn {
+  display: flex;
+}
+
+.cronicasrpg .InputAddOn-field {
+  flex: 1;
+}
+
+.cronicasrpg .btn-addOn {
+  height: 25px;
+  width: 25px;
+  padding: 0;
+  margin-left: 0;
+  text-align: left;
+}
+
+.cronicasrpg .btn-addOn i {
+  height: 25px;
+  width: 25px;
+}
+
+#selectTipoCombate {
+  color: white;
+  width: 100%;
+  text-align-last: center;
+}
+
+#selectTipoCombate option {
+  color: black;
+}

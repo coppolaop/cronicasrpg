@@ -150,6 +150,8 @@
     "cronicasrpg.botoes.editarPosse": "Editar posse",
     "cronicasrpg.botoes.excluirPosse": "Excluir posse",
     "cronicasrpg.botoes.novaPosse": "Nova posse",
+    "cronicasrpg.rolar": "Rolar",
+    "cronicasrpg.rolagemDe": "Rolagem de",
     "cronicasrpg.settings.diagonalMovement.name": "Movimento diagonal",
     "cronicasrpg.settings.diagonalMovement.hint": "Configura qual regra de movimento diagonal será usada no sistema.",
     "cronicasrpg.settings.automaticActionSpend.name": "Gasto de ações",

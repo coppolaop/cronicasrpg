@@ -127,12 +127,27 @@
         </div>
         <div class="infos resource">
           <p>{{localize 'cronicasrpg.iniciativa'}}</p>
-          <input type="text" name="data.combate.fisico.iniciativa" value="{{data.combate.fisico.iniciativa}}"
-            data-dtype="String" />
-          <input type="text" name="data.combate.mental.iniciativa" value="{{data.combate.mental.iniciativa}}"
-            data-dtype="String" />
-          <input type="text" name="data.combate.social.iniciativa" value="{{data.combate.social.iniciativa}}"
-            data-dtype="String" />
+          <div class="InputAddOn">
+            <input class="InputAddOn-field" type="text" name="data.combate.fisico.iniciativa"
+              value="{{data.combate.fisico.iniciativa}}" data-dtype="String" />
+            <button class="btn-addOn rollable" data-roll="1d6+{{data.combate.fisico.iniciativa}}"
+              data-label="{{localize 'cronicasrpg.iniciativa'}}({{localize 'cronicasrpg.fisico'}})" type=" button"><i
+                class="fas fa-dice"></i></button>
+          </div>
+          <div class="InputAddOn">
+            <input type="text" name="data.combate.mental.iniciativa" value="{{data.combate.mental.iniciativa}}"
+              data-dtype="String" />
+            <button class="btn-addOn rollable" data-roll="1d6+{{data.combate.mental.iniciativa}}"
+              data-label="{{localize 'cronicasrpg.iniciativa'}}({{localize 'cronicasrpg.mental'}})" type="button"><i
+                class="fas fa-dice"></i></button>
+          </div>
+          <div class="InputAddOn">
+            <input type="text" name="data.combate.social.iniciativa" value="{{data.combate.social.iniciativa}}"
+              data-dtype="String" />
+            <button class="btn-addOn rollable" data-roll="1d6+{{data.combate.social.iniciativa}}"
+              data-label="{{localize 'cronicasrpg.iniciativa'}}({{localize 'cronicasrpg.social'}})" type="button"><i
+                class="fas fa-dice"></i></button>
+          </div>
         </div>
         <div class="infos resource">
           <p>{{localize 'cronicasrpg.defesa'}}</p>
