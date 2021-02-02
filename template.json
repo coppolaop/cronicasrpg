@@ -594,7 +594,7 @@
       "virtude",
       "fraqueza",
       "poder",
-      "ataque",
+      "arma",
       "defesa"
     ],
     "templates": {
@@ -627,6 +627,16 @@
         "base",
         "personalidade"
       ]
+    },
+    "arma": {
+      "templates": [
+        "base",
+        "objeto"
+      ],
+      "especializacaoAcerto": "manejo.especializacoes.briga",
+      "atributoDano": "agilidade",
+      "dano": 0,
+      "particularidades": ""
     },
     "poder": {
       "templates": [

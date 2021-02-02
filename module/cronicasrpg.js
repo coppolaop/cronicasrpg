@@ -236,7 +236,7 @@ async function rollItemMacro(itemName, extra = null) {
   if (extra) {
     item = actor
       ? actor.items.find(
-        (i) => i.name === itemName && extra && i.type !== "ataque"
+        (i) => i.name === itemName && extra && i.type !== "arma"
       )
       : null;
   } else {

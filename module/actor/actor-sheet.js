@@ -55,10 +55,10 @@ export class CronicasActorSheet extends ActorSheet {
     const virtudes = [];
     const fraquezas = [];
     const posses = [];
+    const armas = [];
 
     // Iterate through items, allocating to containers
     for (let i of sheetData.items) {
-      let item = i.data;
       i.img = i.img || DEFAULT_TOKEN;
       // Append to virtues.
       if (i.type == 'virtude') {
@@ -72,12 +72,19 @@ export class CronicasActorSheet extends ActorSheet {
       if (i.type == 'posse') {
         posses.push(i);
       }
+      // Append to Attacks.
+      if (i.type == 'arma') {
+        var array = i.data.especializacaoAcerto.split(".");
+        i.acerto = actorData.data.atributos[array[0]][array[1]][array[2]].total;
+        armas.push(i);
+      }
     }
 
     // Assign and return
     actorData.virtudes = virtudes;
     actorData.fraquezas = fraquezas;
     actorData.posses = posses;
+    actorData.armas = armas;
   }
 
   /* -------------------------------------------- */
@@ -184,8 +191,17 @@ export class CronicasActorSheet extends ActorSheet {
       label: dataset.label
     }
 
-    if (itemId && ($(a).hasClass('virtude-rollable') || $(a).hasClass('fraqueza-rollable') || $(a).hasClass('posse-rollable') || $(a).hasClass('arma-rollable') || $(a).hasClass('armadura-rollable') || $(a).hasClass('ataque-rollable'))) {
+    if (itemId && ($(a).hasClass('virtude-rollable') || $(a).hasClass('fraqueza-rollable') || $(a).hasClass('posse-rollable') || $(a).hasClass('arma-rollable') || $(a).hasClass('armadura-rollable'))) {
       item = actor.getOwnedItem(itemId);
+    }
+
+    if (itemId && $(a).hasClass('arma-multipla-rollable')) {
+      let quantidade = item.roll.split('d')[0];
+      quantidade -= 2;
+      item.roll = quantidade + 'd6'
+      item.label = game.i18n.localize("cronicasrpg.acao.primeiro") + ' ' + dataset.label;
+      await prepRoll(event, item, actor);
+      item.label = game.i18n.localize("cronicasrpg.acao.segundo") + ' ' + dataset.label;
     }
 
     await prepRoll(event, item, actor);
