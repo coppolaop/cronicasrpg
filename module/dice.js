@@ -68,7 +68,7 @@ export async function prepRoll(event, item, actor = null, extra = {}) {
 }
 
 
-function rollCronicas(roll, actor, templateData, criticoM = null) {
+function rollCronicas(roll, actor, templateData) {
     // Render the roll
     let template = "systems/cronicasrpg/templates/chat/chat-card.html";
     let dmgroll = null;
@@ -96,7 +96,6 @@ function rollCronicas(roll, actor, templateData, criticoM = null) {
     // Handle dice rolls.
     let formula = "";
     let result;
-    let tipo = "";
     let dificuldade = 0;
 
     let rollTemplate = {
@@ -140,15 +139,6 @@ function rollCronicas(roll, actor, templateData, criticoM = null) {
             roll.roll();
             result = roll.results[0];
 
-            if (result == 6) {
-                tipo = "critico";
-            } else if (result == 5 || result == 4) {
-                tipo = "sucesso";
-            } else if (result == 3 || result == 2) {
-                tipo = "falha";
-            } else if (result == 1) {
-                tipo = "falha";
-            }
             if (templateData.title != null && templateData.title.startsWith("Iniciativa") && combate) {
                 let combatente = combate.combatants.find(
                     (combatant) => combatant.actor.id === actor.id
@@ -220,23 +210,33 @@ Hooks.on('renderChatMessage', (message, html, data) => {
 
     const dados = message.roll.results;
     let sucessos = Number(html.find('.valor-dificuldade').text());
-    let critico = 0;
+    let critico = false;
+    let falha = false;
     let sucessoMsg = game.i18n.localize("cronicasrpg.sucessoMsgPlural");
 
     dados.forEach(function (result) {
-        if (result == 4 || result == 5) {
+        if (result == 1) {
+            falha = true;
+        }
+        else if (result == 4 || result == 5) {
             sucessos++;
         } else if (result == 6) {
             sucessos++;
-            critico++;
+            critico = true;
         }
     });
 
     if (sucessos === 1) {
         sucessoMsg = game.i18n.localize("cronicasrpg.sucessoMsgSingular");
     }
+    else if (sucessos === 0 && falha) {
+        html.find('.dice-total').css({ 'color': 'red' });
+    }
+
+    if (critico) {
+        html.find('.dice-total').css({ 'color': 'green' });
+    }
 
     var newTotal = sucessos + ' ' + sucessoMsg;
     html.find('.dice-total').empty().append(newTotal);
-
 });
