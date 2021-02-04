@@ -188,11 +188,13 @@ export class CronicasActorSheet extends ActorSheet {
     const itemId = $(a).parents('.item').attr('data-item-id');
     let item = {
       roll: dataset.roll,
-      label: dataset.label
+      label: dataset.label,
     }
 
-    if (itemId && ($(a).hasClass('virtude-rollable') || $(a).hasClass('fraqueza-rollable') || $(a).hasClass('posse-rollable') || $(a).hasClass('arma-rollable') || $(a).hasClass('armadura-rollable'))) {
+    if (itemId && ($(a).hasClass('virtude-rollable') || $(a).hasClass('fraqueza-rollable') || $(a).hasClass('posse-rollable') || $(a).hasClass('acao-rollable'))) {
       item = actor.getOwnedItem(itemId);
+      item.roll = dataset.roll;
+      item.label = dataset.label;
     }
 
     if (itemId && $(a).hasClass('arma-multipla-rollable')) {

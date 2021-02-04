@@ -12,8 +12,12 @@ export async function prepRoll(event, item, actor = null, extra = {}) {
         title: flavorText,
         rollMode: rollMode,
         rollModes: CONFIG.Dice.rollModes,
-        dificuldade: 0
     };
+
+    if (item.data && item.data.data.dano) {
+        templateData.rollDano = actor.data.data.atributos[item.data.data.atributoDano].total;
+        templateData.rollDano += item.data.data.dano;
+    }
 
     if (formula) {
 
@@ -172,15 +176,6 @@ function rollCronicas(roll, actor, templateData) {
                                 chatData.blind
                             )
                             .then((displayed) => ChatMessage.create(chatData));
-                        if (dmgroll) {
-                            game.dice3d.showForRoll(
-                                dmgroll,
-                                game.user,
-                                true,
-                                chatData.whisper,
-                                chatData.blind
-                            );
-                        }
                     } else {
                         chatData.sound = CONFIG.sounds.dice;
                         ChatMessage.create(chatData);

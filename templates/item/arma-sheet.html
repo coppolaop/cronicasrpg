@@ -15,27 +15,37 @@
     {{!-- Sheet Body --}}
     <section class="sheet-body">
         <div class="grid grid-3col">
-            <select class="selectatr" name="data.especializacaoAcerto" value={{data.especializacaoAcerto}}
-                data-dtype="String">
-                {{#select data.especializacaoAcerto}}
-                <option value="manejo.especializacoes.briga">{{localize 'cronicasrpg.briga'}}</option>
-                <option value="manejo.especializacoes.umaMao">{{localize 'cronicasrpg.umaMao'}}</option>
-                <option value="manejo.especializacoes.duasMaos">{{localize 'cronicasrpg.duasMaos'}}</option>
-                <option value="manejo.especializacoes.escudo">{{localize 'cronicasrpg.escudo'}}</option>
-                <option value="pontaria.especializacoes.arco">{{localize 'cronicasrpg.arco'}}</option>
-                <option value="pontaria.especializacoes.armaDeGuerra">{{localize 'cronicasrpg.armaDeGuerra'}}</option>
-                <option value="pontaria.especializacoes.arremesso">{{localize 'cronicasrpg.arremesso'}}</option>
-                <option value="pontaria.especializacoes.besta">{{localize 'cronicasrpg.besta'}}</option>
-                <option value="pontaria.especializacoes.raio">{{localize 'cronicasrpg.raio'}}</option>
-                {{/select}}
-            </select>
-            <select class="selectatr" name="data.atributoDano" value={{data.atributoDano}} data-dtype="String">
-                {{#select data.atributoDano}}
-                <option value="agilidade">{{localize 'cronicasrpg.agilidade'}}</option>
-                <option value="forca">{{localize 'cronicasrpg.forca'}}</option>
-                {{/select}}
-            </select>
-            <input type="text" name="data.dano" value="{{data.dano}}" data-dtype="Number" />
+            <div>
+                <label>{{localize 'cronicasrpg.atributoAcerto'}}</label>
+                <select class="selectatr" name="data.especializacaoAcerto" value={{data.especializacaoAcerto}}
+                    data-dtype="String">
+                    {{#select data.especializacaoAcerto}}
+                    <option value="manejo.especializacoes.briga">{{localize 'cronicasrpg.briga'}}</option>
+                    <option value="manejo.especializacoes.umaMao">{{localize 'cronicasrpg.umaMao'}}</option>
+                    <option value="manejo.especializacoes.duasMaos">{{localize 'cronicasrpg.duasMaos'}}</option>
+                    <option value="manejo.especializacoes.escudo">{{localize 'cronicasrpg.escudo'}}</option>
+                    <option value="pontaria.especializacoes.arco">{{localize 'cronicasrpg.arco'}}</option>
+                    <option value="pontaria.especializacoes.armaDeGuerra">{{localize 'cronicasrpg.armaDeGuerra'}}
+                    </option>
+                    <option value="pontaria.especializacoes.arremesso">{{localize 'cronicasrpg.arremesso'}}</option>
+                    <option value="pontaria.especializacoes.besta">{{localize 'cronicasrpg.besta'}}</option>
+                    <option value="pontaria.especializacoes.raio">{{localize 'cronicasrpg.raio'}}</option>
+                    {{/select}}
+                </select>
+            </div>
+            <div>
+                <label>{{localize 'cronicasrpg.atributoDano'}}</label>
+                <select class="selectatr" name="data.atributoDano" value={{data.atributoDano}} data-dtype="String">
+                    {{#select data.atributoDano}}
+                    <option value="agilidade">{{localize 'cronicasrpg.agilidade'}}</option>
+                    <option value="forca">{{localize 'cronicasrpg.forca'}}</option>
+                    {{/select}}
+                </select>
+            </div>
+            <div>
+                <label>{{localize 'cronicasrpg.danoArma'}}</label>
+                <input type="text" name="data.dano" value="{{data.dano}}" data-dtype="Number" />
+            </div>
         </div>
         <div class="full border">
             <label>{{localize 'cronicasrpg.particularidades'}}</label>
