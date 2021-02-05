@@ -600,7 +600,7 @@
       "fraqueza",
       "poder",
       "arma",
-      "defesa"
+      "armadura"
     ],
     "templates": {
       "base": {
@@ -642,6 +642,15 @@
       "atributoDano": "agilidade",
       "dano": 0,
       "particularidades": ""
+    },
+    "armadura": {
+      "templates": [
+        "base",
+        "objeto"
+      ],
+      "absorcao": 0,
+      "penalidade": 0,
+      "equipada": false
     },
     "poder": {
       "templates": [

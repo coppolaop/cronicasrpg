@@ -316,3 +316,11 @@
   height: 25px;
   width: 25px;
 }
+
+.cronicasrpg .item-controls .item-toggle {
+  opacity: 0.5;
+}
+
+.cronicasrpg .item-controls .item-toggle.active {
+  opacity: 1;
+}

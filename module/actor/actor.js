@@ -27,8 +27,19 @@ export class CronicasActor extends Actor {
    */
   _evaluateAttributes() {
     const data = this.data.data;
+    let penalidadeArmadura = 0;
+
+    this.data.items.forEach(item => {
+      if (item.type === "armadura" && item.data.equipada) {
+        penalidadeArmadura = item.data.penalidade;
+      }
+    })
+
     for (let [key, atributo] of Object.entries(data.atributos)) {
       atributo.total = atributo.valor + atributo.outros - data.penalidades.ferimento - data.penalidades.hesitacao - data.penalidades.frustracao;
+      if (key === "agilidade" || key === "forca" || key === "furtividade") {
+        atributo.total -= penalidadeArmadura;
+      }
       for (let [key, especializacao] of Object.entries(atributo.especializacoes)) {
         especializacao.total = especializacao.valor + especializacao.outros + atributo.total;
       }
@@ -55,10 +66,18 @@ export class CronicasActor extends Actor {
    */
   _evaluateCombatStatus() {
     const data = this.data.data;
+    let armadura = 0;
+
+    this.data.items.forEach(item => {
+      if (item.type === "armadura" && item.data.equipada) {
+        armadura = item.data.absorcao;
+      }
+    })
+
     //Fisico
     data.combate.fisico.iniciativa = data.atributos[data.combate.escolha].valor - data.penalidades.ferimento;
     data.combate.fisico.defesa = Math.trunc((data.atributos.agilidade.valor + data.atributos.manejo.valor) / 3);
-    //data.combate.fisico.absorcao = armadura;
+    data.combate.fisico.absorcao = armadura;
     data.combate.fisico.vigor = data.atributos.resistencia.valor;
     //Mental
     data.combate.mental.iniciativa = data.atributos.inteligencia.valor - data.penalidades.frustracao;

@@ -56,6 +56,7 @@ export class CronicasActorSheet extends ActorSheet {
     const fraquezas = [];
     const posses = [];
     const armas = [];
+    const armaduras = [];
 
     // Iterate through items, allocating to containers
     for (let i of sheetData.items) {
@@ -72,11 +73,15 @@ export class CronicasActorSheet extends ActorSheet {
       if (i.type == 'posse') {
         posses.push(i);
       }
-      // Append to Attacks.
+      // Append to weapons.
       if (i.type == 'arma') {
         var array = i.data.especializacaoAcerto.split(".");
         i.acerto = actorData.data.atributos[array[0]][array[1]][array[2]].total;
         armas.push(i);
+      }
+      // Append to armor.
+      if (i.type == 'armadura') {
+        armaduras.push(i);
       }
     }
 
@@ -85,6 +90,7 @@ export class CronicasActorSheet extends ActorSheet {
     actorData.fraquezas = fraquezas;
     actorData.posses = posses;
     actorData.armas = armas;
+    actorData.armaduras = armaduras;
   }
 
   /* -------------------------------------------- */
@@ -95,6 +101,9 @@ export class CronicasActorSheet extends ActorSheet {
 
     // Everything below here is only needed if the sheet is editable
     if (!this.options.editable) return;
+
+    // Update Inventory Item
+    html.find('.toggle-armor').click(this._onToggleArmor.bind(this));
 
     // Add Inventory Item
     html.find('.item-create').click(this._onItemCreate.bind(this));
@@ -172,6 +181,15 @@ export class CronicasActorSheet extends ActorSheet {
 
     // Finally, create the item!
     return this.actor.createOwnedItem(itemData);
+  }
+
+  /* -------------------------------------------- */
+  //  
+  _onToggleArmor(ev) {
+    const li = $(ev.currentTarget).parents(".item");
+    const armadura = this.actor.getOwnedItem(li.data("itemId"));
+    armadura.data.data.equipada = !armadura.data.data.equipada;
+    armadura.update({ "data.equipada": armadura.data.data.equipada });
   }
 
   /**
