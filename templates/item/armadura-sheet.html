@@ -14,7 +14,12 @@
 
     {{!-- Sheet Body --}}
     <section class="sheet-body">
-        <div class="grid grid-2col">
+        <div>
+            <label>{{localize 'cronicasrpg.particularidade.fardo'}}</label>
+            <input type="checkbox" name="data.fardo" value="{{data.fardo}}" {{#if data.fardo }}checked{{/if}}
+                data-dtype="Boolean" />
+        </div>
+        <div class="grid grid-3col">
             <div>
                 <label>{{localize 'cronicasrpg.absorcao'}}</label>
                 <input type="text" name="data.absorcao" value="{{data.absorcao}}" data-dtype="Number" />
@@ -22,6 +27,10 @@
             <div>
                 <label>{{localize 'cronicasrpg.penalidade'}}</label>
                 <input type="text" name="data.penalidade" value="{{data.penalidade}}" data-dtype="Number" />
+            </div>
+            <div>
+                <label>{{localize 'cronicasrpg.recursos'}}</label>
+                <input type="text" name="data.valor" value="{{data.valor}}" data-dtype="Number" />
             </div>
         </div>
         <div class="full border">

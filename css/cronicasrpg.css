@@ -324,3 +324,13 @@
 .cronicasrpg .item-controls .item-toggle.active {
   opacity: 1;
 }
+
+.cronicasrpg .input-sheet {
+  width: 100%;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.cronicasrpg .selectatr {
+  width: 100%;
+}

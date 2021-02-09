@@ -14,8 +14,13 @@
 
     {{!-- Sheet Body --}}
     <section class="sheet-body">
-        <div class="grid grid-3col">
-            <div>
+        <div class="input-sheet">
+            <label>{{localize 'cronicasrpg.particularidade.fardo'}}</label>
+            <input type="checkbox" name="data.fardo" value="{{data.fardo}}" {{#if data.fardo }}checked{{/if}}
+                data-dtype="Boolean" />
+        </div>
+        <div class="grid grid-4col">
+            <div class="input-sheet">
                 <label>{{localize 'cronicasrpg.atributoAcerto'}}</label>
                 <select class="selectatr" name="data.especializacaoAcerto" value={{data.especializacaoAcerto}}
                     data-dtype="String">
@@ -33,7 +38,7 @@
                     {{/select}}
                 </select>
             </div>
-            <div>
+            <div class="input-sheet">
                 <label>{{localize 'cronicasrpg.atributoDano'}}</label>
                 <select class="selectatr" name="data.atributoDano" value={{data.atributoDano}} data-dtype="String">
                     {{#select data.atributoDano}}
@@ -42,9 +47,13 @@
                     {{/select}}
                 </select>
             </div>
-            <div>
+            <div class="input-sheet">
                 <label>{{localize 'cronicasrpg.danoArma'}}</label>
                 <input type="text" name="data.dano" value="{{data.dano}}" data-dtype="Number" />
+            </div>
+            <div>
+                <label>{{localize 'cronicasrpg.recursos'}}</label>
+                <input type="text" name="data.valor" value="{{data.valor}}" data-dtype="Number" />
             </div>
         </div>
         <div class="full border">
