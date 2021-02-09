@@ -14,7 +14,15 @@
     "css/cronicasrpg.css"
   ],
   "scripts": [],
-  "packs": [],
+  "packs": [
+    {
+      "name": "armaduras",
+      "label": "Armaduras",
+      "system": "cronicasrpg",
+      "path": "./packs/armaduras.db",
+      "entity": "Item"
+    }
+  ],
   "languages": [
     {
       "lang": "pt-BR",
