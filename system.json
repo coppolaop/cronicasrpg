@@ -30,12 +30,12 @@
       "path": "lang/pt-BR.json"
     }
   ],
-  "gridDistance": 1.5,
+  "gridDistance": 1,
   "gridUnits": "m",
   "primaryTokenAttribute": "",
   "secondaryTokenAttribute": "",
-  "url": "",
-  "manifest": "",
-  "download": "",
+  "url": "https://github.com/coppolaop/cronicasrpg",
+  "manifest": "https://github.com/coppolaop/cronicasrpg/blob/master/system.json",
+  "download": "https://github.com/coppolaop/cronicasrpg/archive/master.zip",
   "license": "LICENSE.txt"
 }

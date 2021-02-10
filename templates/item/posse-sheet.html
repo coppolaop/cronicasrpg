@@ -13,6 +13,11 @@
 
     {{!-- Sheet Body --}}
     <section class="sheet-body">
+        <div>
+            <label>{{localize 'cronicasrpg.particularidade.fardo'}}</label>
+            <input type="checkbox" name="data.fardo" value="{{data.fardo}}" {{#if data.fardo }}checked{{/if}}
+                data-dtype="Boolean" />
+        </div>
         <div class="full border">
             <label>{{localize 'cronicasrpg.descricao'}}</label>
             <textarea class="largeTextArea" name="data.descricao"

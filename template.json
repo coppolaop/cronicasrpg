@@ -83,6 +83,12 @@
         "hesitacao": 0,
         "frustracao": 0
       },
+      "movimentacao": {
+        "base": 4,
+        "penalidade": 0,
+        "outros": 0,
+        "total": 4
+      },
       "atributos": {
         "agilidade": {
           "valor": 2,
@@ -609,6 +615,7 @@
       "objeto": {
         "quantidade": 1,
         "fardo": false,
+        "guardado": false,
         "valor": 0
       },
       "personalidade": {

@@ -103,7 +103,9 @@ export class CronicasActorSheet extends ActorSheet {
     if (!this.options.editable) return;
 
     // Update Inventory Item
-    html.find('.toggle-armor').click(this._onToggleArmor.bind(this));
+    html.find('.toggle-equipped').click(this._onToggleEquipped.bind(this));
+    html.find('.toggle-carried').click(this._onToggleCarried.bind(this));
+
 
     // Add Inventory Item
     html.find('.item-create').click(this._onItemCreate.bind(this));
@@ -185,11 +187,24 @@ export class CronicasActorSheet extends ActorSheet {
 
   /* -------------------------------------------- */
   //  
-  _onToggleArmor(ev) {
+  _onToggleCarried(ev) {
     const li = $(ev.currentTarget).parents(".item");
-    const armadura = this.actor.getOwnedItem(li.data("itemId"));
-    armadura.data.data.equipada = !armadura.data.data.equipada;
-    armadura.update({ "data.equipada": armadura.data.data.equipada });
+    const item = this.actor.getOwnedItem(li.data("itemId"));
+    if (!item.data.data.equipada) {
+      item.data.data.guardado = !item.data.data.guardado;
+      item.update({ "data.guardado": item.data.data.guardado });
+    }
+  }
+
+  /* -------------------------------------------- */
+  //  
+  _onToggleEquipped(ev) {
+    const li = $(ev.currentTarget).parents(".item");
+    const item = this.actor.getOwnedItem(li.data("itemId"));
+    if (!item.data.data.guardado) {
+      item.data.data.equipada = !item.data.data.equipada;
+      item.update({ "data.equipada": item.data.data.equipada });
+    }
   }
 
   /**

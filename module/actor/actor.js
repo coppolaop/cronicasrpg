@@ -11,6 +11,7 @@ export class CronicasActor extends Actor {
     super.prepareData();
 
     this._evaluateAttributes();
+    this._evaluateMovement();
 
     if (game.settings.get("cronicasrpg", "autoCalcExp")) {
       this._evaluateExperience();
@@ -19,7 +20,6 @@ export class CronicasActor extends Actor {
     if (game.settings.get("cronicasrpg", "autoCalcCmb")) {
       this._evaluateCombatStatus();
     }
-
   }
 
   /**
@@ -91,4 +91,30 @@ export class CronicasActor extends Actor {
     data.combate.social.vigor = data.atributos.lideranca.valor;
   }
 
+  /**
+   * Calculate Character movement according to his penalities
+   */
+  _evaluateMovement() {
+    const data = this.data.data;
+
+    let fardo = 0;
+    let penalidade = 0;
+
+    this.data.items.forEach(item => {
+      if (item.type === "armadura" && item.data.equipada) {
+        penalidade = item.data.penalidade;
+      }
+      if (item.data.fardo && !item.data.guardado) {
+        fardo++;
+      }
+    });
+
+    if (fardo > penalidade) {
+      penalidade = fardo;
+    }
+
+    data.movimentacao.base = Number(game.settings.get("cronicasrpg", "baseMovement"));
+    data.movimentacao.penalidade = penalidade;
+    data.movimentacao.total = data.movimentacao.base + data.movimentacao.outros - penalidade;
+  }
 }

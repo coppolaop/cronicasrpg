@@ -13,11 +13,23 @@ export const SystemSettings = function () {
     default: "MANHATTAN",
     type: String,
     choices: {
-      "MANHATTAN": "Padrão (3m)",
-      "EQUIDISTANT": "Equidistante (1,5m)",
-      "PATHFINDER": "Pathfinder/3.5 (1,5m/3m/1,5m)",
+      "MANHATTAN": game.i18n.localize("cronicasrpg.settings.diagonalMovement.padrao"),
+      "EQUIDISTANT": game.i18n.localize("cronicasrpg.settings.diagonalMovement.equidistant"),
+      "PATHFINDER": game.i18n.localize("cronicasrpg.settings.diagonalMovement.pathfinder"),
     },
     onChange: rule => canvas.grid.diagonalRule = rule
+  });
+
+  /**
+   * Automatic spend of actions
+   */
+  game.settings.register("cronicasrpg", "baseMovement", {
+    name: game.i18n.localize("cronicasrpg.settings.baseMovement.name"),
+    hint: game.i18n.localize("cronicasrpg.settings.baseMovement.hint"),
+    scope: "world",
+    config: true,
+    default: 4,
+    type: Number
   });
 
   /**
