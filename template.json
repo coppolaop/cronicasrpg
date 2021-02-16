@@ -63,19 +63,22 @@
           "iniciativa": 0,
           "defesa": 0,
           "absorcao": 0,
-          "vigor": 0
+          "vigor": 0,
+          "vigorAtual": 0
         },
         "mental": {
           "iniciativa": 0,
           "defesa": 0,
           "absorcao": 0,
-          "vigor": 0
+          "vigor": 0,
+          "vigorAtual": 0
         },
         "social": {
           "iniciativa": 0,
           "defesa": 0,
           "absorcao": 0,
-          "vigor": 0
+          "vigor": 0,
+          "vigorAtual": 0
         }
       },
       "penalidades": {
@@ -649,7 +652,11 @@
       "especializacaoAcerto": "manejo.especializacoes.briga",
       "atributoDano": "agilidade",
       "dano": 0,
-      "particularidades": ""
+      "particularidades": "",
+      "complicada": false,
+      "defensiva": false,
+      "ruimDeBloqueio": false,
+      "defensivaValor": 0
     },
     "armadura": {
       "templates": [

@@ -1,5 +1,5 @@
 /* Standardized Roll Script */
-export async function prepRoll(event, item, actor = null, extra = {}) {
+export async function prepRoll(event, item, actor = null, actionType = {}) {
     actor = !actor ? this.actor : actor;
     // Initialize variables.
     event.preventDefault();
@@ -7,6 +7,7 @@ export async function prepRoll(event, item, actor = null, extra = {}) {
     let formula = item.roll;
     let flavorText = item.label;
     let rollMode = game.settings.get("core", "rollMode");
+    let itemDt = item.data.data;
 
     let templateData = {
         title: flavorText,
@@ -14,20 +15,27 @@ export async function prepRoll(event, item, actor = null, extra = {}) {
         rollModes: CONFIG.Dice.rollModes,
     };
 
-    if (item.data && item.data.data.dano) {
-        templateData.rollDano = actor.data.data.atributos[item.data.data.atributoDano].total;
-        templateData.rollDano += item.data.data.dano;
+    if (item.data && itemDt.dano && (actionType === 'padrao' || actionType === 'total' || actionType === 'multiplo')) {
+        templateData.rollDano = actor.data.data.atributos[itemDt.atributoDano].total;
+        templateData.rollDano += itemDt.dano;
     }
 
     if (formula) {
+
+        if ((itemDt.ruimDeBloqueio) && (actionType === 'bloqueio' || actionType === 'bloqueioMaior')) {
+            formula += '-1S';
+        } else if ((itemDt.complicada) && (actionType === 'padrao' || actionType === 'total' || actionType === 'multiplo')) {
+            formula += '-1D';
+        }
 
         formula = formula
             .replace(/ /g, "")
             .replace(/\+0/g, "")
             .replace(/\-0/g, "")
             .replace(/\++/g, "+");
-        if (!event.shiftKey || flavorText.startsWith('Iniciativa')) {
-            rollCronicas(formula, actor, templateData);
+
+        if (!event.shiftKey || actionType === 'iniciativa') {
+            rollCronicas(formula, actor, templateData, actionType);
         } else {
             templateData.formula = formula;
             templateData.rollMode = rollMode;
@@ -41,7 +49,7 @@ export async function prepRoll(event, item, actor = null, extra = {}) {
                 )
                     rollMod = "+" + rollMod;
                 formula = formula + rollMod;
-                rollCronicas(formula, actor, templateData);
+                rollCronicas(formula, actor, templateData, actionType);
             };
             return new Promise((resolve) => {
                 renderTemplate("systems/cronicasrpg/templates/chat/roll-dialog.html", templateData).then((dlg) => {
@@ -67,15 +75,14 @@ export async function prepRoll(event, item, actor = null, extra = {}) {
     } else {
         templateData.title = item.name;
         templateData.details = item.data.data.descricao;
-        rollCronicas(formula, actor, templateData);
+        rollCronicas(formula, actor, templateData, actionType);
     }
 }
 
 
-function rollCronicas(roll, actor, templateData) {
+function rollCronicas(roll, actor, templateData, actionType = {}) {
     // Render the roll
     let template = "systems/cronicasrpg/templates/chat/chat-card.html";
-    let dmgroll = null;
     // GM rolls.
     let combate = game.combats.active;
 
@@ -119,7 +126,7 @@ function rollCronicas(roll, actor, templateData) {
                 dificuldade += Number(dado);
             }
             else {
-                if (templateData.title == null || (templateData.title.startsWith(game.i18n.localize("cronicasrpg.iniciativa")) && !dado.includes("d"))) {
+                if (templateData.title == null || (actionType === "iniciativa" && !dado.includes("d"))) {
                     roll += dado;
                 } else {
                     let quantidade = dado.split("d")[0];
@@ -143,7 +150,7 @@ function rollCronicas(roll, actor, templateData) {
             roll.roll();
             result = roll.results[0];
 
-            if (templateData.title != null && templateData.title.startsWith("Iniciativa") && combate) {
+            if (templateData.title != null && actionType === "iniciativa" && combate) {
                 let combatente = combate.combatants.find(
                     (combatant) => combatant.actor.id === actor.id
                 );
@@ -210,12 +217,12 @@ Hooks.on('renderChatMessage', (message, html, data) => {
     let sucessoMsg = game.i18n.localize("cronicasrpg.sucessoMsgPlural");
 
     dados.forEach(function (result) {
-        if (result == 1) {
+        if (result === 1) {
             falha = true;
         }
-        else if (result == 4 || result == 5) {
+        else if (result === 4 || result === 5) {
             sucessos++;
-        } else if (result == 6) {
+        } else if (result === 6) {
             sucessos++;
             critico = true;
         }

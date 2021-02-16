@@ -113,7 +113,7 @@
 
     {{!-- Combat Tab --}}
     <div class="tab combat" data-group="primary" data-tab="combat">
-      <div class="grid grid-5col">
+      <div class="grid grid-6col">
         <div class="infos resource">
           <select class="selectatr" name="data.combate.escolha" value={{data.combate.escolha}} data-dtype="String">
             {{#select data.combate.escolha}}
@@ -130,21 +130,21 @@
           <div class="InputAddOn">
             <input class="InputAddOn-field" type="text" name="data.combate.fisico.iniciativa"
               value="{{data.combate.fisico.iniciativa}}" data-dtype="String" />
-            <button class="btn-addOn rollable" data-roll="1d6+{{data.combate.fisico.iniciativa}}"
+            <button class="btn-addOn rollable iniciativa-rollable" data-roll="1d6+{{data.combate.fisico.iniciativa}}"
               data-label="{{localize 'cronicasrpg.iniciativa'}}({{localize 'cronicasrpg.fisico'}})" type=" button"><i
                 class="fas fa-dice"></i></button>
           </div>
           <div class="InputAddOn">
             <input type="text" name="data.combate.mental.iniciativa" value="{{data.combate.mental.iniciativa}}"
               data-dtype="String" />
-            <button class="btn-addOn rollable" data-roll="1d6+{{data.combate.mental.iniciativa}}"
+            <button class="btn-addOn rollable iniciativa-rollable" data-roll="1d6+{{data.combate.mental.iniciativa}}"
               data-label="{{localize 'cronicasrpg.iniciativa'}}({{localize 'cronicasrpg.mental'}})" type="button"><i
                 class="fas fa-dice"></i></button>
           </div>
           <div class="InputAddOn">
             <input type="text" name="data.combate.social.iniciativa" value="{{data.combate.social.iniciativa}}"
               data-dtype="String" />
-            <button class="btn-addOn rollable" data-roll="1d6+{{data.combate.social.iniciativa}}"
+            <button class="btn-addOn rollable iniciativa-rollable" data-roll="1d6+{{data.combate.social.iniciativa}}"
               data-label="{{localize 'cronicasrpg.iniciativa'}}({{localize 'cronicasrpg.social'}})" type="button"><i
                 class="fas fa-dice"></i></button>
           </div>
@@ -152,29 +152,38 @@
         <div class="infos resource">
           <p>{{localize 'cronicasrpg.defesa'}}</p>
           <input type="text" name="data.combate.fisico.defesa" value="{{data.combate.fisico.defesa}}"
-            data-dtype="String" />
+            data-dtype="Number" />
           <input type="text" name="data.combate.mental.defesa" value="{{data.combate.mental.defesa}}"
-            data-dtype="String" />
+            data-dtype="Number" />
           <input type="text" name="data.combate.social.defesa" value="{{data.combate.social.defesa}}"
-            data-dtype="String" />
+            data-dtype="Number" />
         </div>
         <div class="infos resource">
           <p>{{localize 'cronicasrpg.absorcao'}}</p>
           <input type="text" name="data.combate.fisico.absorcao" value="{{data.combate.fisico.absorcao}}"
-            data-dtype="String" />
+            data-dtype="Number" />
           <input type="text" name="data.combate.mental.absorcao" value="{{data.combate.mental.absorcao}}"
-            data-dtype="String" />
+            data-dtype="Number" />
           <input type="text" name="data.combate.social.absorcao" value="{{data.combate.social.absorcao}}"
-            data-dtype="String" />
+            data-dtype="Number" />
         </div>
         <div class="infos resource">
           <p>{{localize 'cronicasrpg.vigor'}}</p>
           <input type="text" name="data.combate.fisico.vigor" value="{{data.combate.fisico.vigor}}"
-            data-dtype="String" />
+            data-dtype="Number" />
           <input type="text" name="data.combate.mental.vigor" value="{{data.combate.mental.vigor}}"
-            data-dtype="String" />
+            data-dtype="Number" />
           <input type="text" name="data.combate.social.vigor" value="{{data.combate.social.vigor}}"
-            data-dtype="String" />
+            data-dtype="Number" />
+        </div>
+        <div class="infos resource">
+          <p>{{localize 'cronicasrpg.vigorAtual'}}</p>
+          <input type="text" name="data.combate.fisico.vigorAtual" value="{{data.combate.fisico.vigorAtual}}"
+            data-dtype="Number" />
+          <input type="text" name="data.combate.mental.vigorAtual" value="{{data.combate.mental.vigorAtual}}"
+            data-dtype="Number" />
+          <input type="text" name="data.combate.social.vigorAtual" value="{{data.combate.social.vigorAtual}}"
+            data-dtype="Number" />
         </div>
       </div>
       <div class="armas">
@@ -194,17 +203,29 @@
           {{#each actor.armas as |item id|}}
           <li class="item flexrow" data-item-id="{{item._id}}">
             <div class="item-image" style="background-image: url('{{item.img}}')"></div>
-            <span class="rollable acao-rollable" data-roll="{{item.acerto}}d6"
+            <span {{#if item.data.guardado}} class="disabled"
+              {{else}}class="rollable acao-rollable ataque-padrao-rollable" {{/if}} data-roll="{{item.acerto}}d6"
               data-label="{{localize 'cronicasrpg.acao.ataque'}} ({{item.name}})">
               <h4 class="item-name">{{item.name}}</h4>
             </span>
             <div class="item-acoes">
-              <a class="rollable acao-rollable" data-roll="{{item.acerto}}d6+2d6"
+              <a {{#if item.data.guardado}} class="disabled"
+                {{else}}class="rollable acao-rollable ataque-total-rollable" {{/if}} data-roll="{{item.acerto}}d6+2d6"
                 data-label="{{localize 'cronicasrpg.acao.ataqueTotal'}} ({{item.name}})"
                 title="{{localize 'cronicasrpg.acao.ataqueTotal'}}"><i class="fas fa-crosshairs"></i></a>
-              <a class="rollable acao-rollable arma-multipla-rollable" data-roll="{{item.acerto}}d6"
+              <a {{#if item.data.guardado}} class="disabled" {{else}}{{#ifEGreater 2 item.acerto}} class="disabled"
+                {{else}} class="rollable acao-rollable arma-multipla-rollable" {{/ifEGreater}}{{/if}}
+                data-roll="{{item.acerto}}d6"
                 data-label="{{localize 'cronicasrpg.acao.ataqueMultiploSingular'}} ({{item.name}})"
                 title="{{localize 'cronicasrpg.acao.ataqueMultiplo'}}"><i class="fas fa-check-double"></i></a>
+              <a {{#if item.data.guardado}} class="disabled" {{else}}class="rollable acao-rollable bloqueio-rollable"
+                {{/if}} data-roll="{{item.acerto}}d6"
+                data-label="{{localize 'cronicasrpg.acao.bloquear'}} ({{item.name}})"
+                title="{{localize 'cronicasrpg.acao.bloquear'}}"><i class="fas fa-user-shield"></i></a>
+              <a {{#if item.data.guardado}} class="disabled"
+                {{else}}class="rollable acao-rollable bloqueio-maior-rollable" {{/if}} data-roll="{{item.acerto}}d6+2d6"
+                data-label="{{localize 'cronicasrpg.acao.bloquearMaior'}} ({{item.name}})"
+                title="{{localize 'cronicasrpg.acao.bloquearMaior'}}"><i class="fas fa-ban"></i></a>
             </div>
             <div class="item-controls">
               <a class="item-control item-toggle toggle-carried{{#if item.data.guardado}} active{{/if}}"

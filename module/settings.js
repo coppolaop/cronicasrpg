@@ -21,7 +21,7 @@ export const SystemSettings = function () {
   });
 
   /**
-   * Automatic spend of actions
+   * Base character movement
    */
   game.settings.register("cronicasrpg", "baseMovement", {
     name: game.i18n.localize("cronicasrpg.settings.baseMovement.name"),
@@ -35,14 +35,14 @@ export const SystemSettings = function () {
   /**
    * Automatic spend of actions
    */
-  game.settings.register("cronicasrpg", "automaticActionSpend", {
-    name: game.i18n.localize("cronicasrpg.settings.automaticActionSpend.name"),
-    hint: game.i18n.localize("cronicasrpg.settings.automaticActionSpend.hint"),
-    scope: "world",
-    config: true,
-    default: true,
-    type: Boolean
-  });
+  // game.settings.register("cronicasrpg", "automaticActionSpend", {
+  //   name: game.i18n.localize("cronicasrpg.settings.automaticActionSpend.name"),
+  //   hint: game.i18n.localize("cronicasrpg.settings.automaticActionSpend.hint"),
+  //   scope: "world",
+  //   config: true,
+  //   default: true,
+  //   type: Boolean
+  // });
 
   /**
    * Option to disable initiative roll after end of turn.
@@ -74,6 +74,18 @@ export const SystemSettings = function () {
   game.settings.register("cronicasrpg", "autoCalcCmb", {
     name: game.i18n.localize("cronicasrpg.settings.autoCalcCmb.name"),
     hint: game.i18n.localize("cronicasrpg.settings.autoCalcCmb.hint"),
+    scope: "world",
+    config: true,
+    default: true,
+    type: Boolean,
+  });
+
+  /**
+   * Option to disable automatic calculation of penalties.
+   */
+  game.settings.register("cronicasrpg", "autoCalcPen", {
+    name: game.i18n.localize("cronicasrpg.settings.autoCalcPen.name"),
+    hint: game.i18n.localize("cronicasrpg.settings.autoCalcPen.hint"),
     scope: "world",
     config: true,
     default: true,

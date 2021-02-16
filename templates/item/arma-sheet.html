@@ -14,10 +14,33 @@
 
     {{!-- Sheet Body --}}
     <section class="sheet-body">
-        <div class="input-sheet">
-            <label>{{localize 'cronicasrpg.particularidade.fardo'}}</label>
-            <input type="checkbox" name="data.fardo" value="{{data.fardo}}" {{#if data.fardo }}checked{{/if}}
-                data-dtype="Boolean" />
+        <div class="grid grid-3col">
+            <div class="input-sheet">
+                <input type="checkbox" name="data.ruimDeBloqueio" value="{{data.ruimDeBloqueio}}" {{#if
+                    data.ruimDeBloqueio }}checked{{/if}} data-dtype="Boolean" />
+                <label>{{localize 'cronicasrpg.particularidade.ruimDeBloqueio'}}</label>
+            </div>
+            <div class="input-sheet">
+                <input type="checkbox" name="data.complicada" value="{{data.complicada}}" {{#if data.complicada
+                    }}checked{{/if}} data-dtype="Boolean" />
+                <label>{{localize 'cronicasrpg.particularidade.complicada'}}</label>
+            </div>
+        </div>
+        <div class="grid grid-3col">
+            <div class="input-sheet">
+                <input type="checkbox" name="data.fardo" value="{{data.fardo}}" {{#if data.fardo }}checked{{/if}}
+                    data-dtype="Boolean" />
+                <label>{{localize 'cronicasrpg.particularidade.fardo'}}</label>
+            </div>
+            <div class="input-sheet">
+                <input type="checkbox" name="data.defensiva" value="{{data.defensiva}}" {{#if data.defensiva
+                    }}checked{{/if}} data-dtype="Boolean" />
+                <label>{{localize 'cronicasrpg.particularidade.defensiva'}}</label>
+            </div>
+            {{#if data.defensiva}}
+            <input name="data.defensivaValor" type="Number" value="{{data.defensivaValor}}"
+                placeholder="{{localize 'cronicasrpg.particularidade.defensiva'}}" />
+            {{/if}}
         </div>
         <div class="grid grid-4col">
             <div class="input-sheet">

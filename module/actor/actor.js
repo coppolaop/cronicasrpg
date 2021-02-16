@@ -20,6 +20,10 @@ export class CronicasActor extends Actor {
     if (game.settings.get("cronicasrpg", "autoCalcCmb")) {
       this._evaluateCombatStatus();
     }
+
+    if (game.settings.get("cronicasrpg", "autoCalcPen")) {
+      this._evaluatePenalties();
+    }
   }
 
   /**
@@ -67,16 +71,20 @@ export class CronicasActor extends Actor {
   _evaluateCombatStatus() {
     const data = this.data.data;
     let armadura = 0;
+    let defesaArma = 0;
 
     this.data.items.forEach(item => {
-      if (item.type === "armadura" && item.data.equipada) {
+      if (item.type === "armadura" && item.data.equipada && (armadura < item.data.absorcao)) {
         armadura = item.data.absorcao;
       }
-    })
+      if (item.data.defensiva && !item.data.guardado && (defesaArma < item.data.defensivaValor)) {
+        defesaArma = item.data.defensivaValor;
+      }
+    });
 
     //Fisico
     data.combate.fisico.iniciativa = data.atributos[data.combate.escolha].valor - data.penalidades.ferimento;
-    data.combate.fisico.defesa = Math.trunc((data.atributos.agilidade.valor + data.atributos.manejo.valor) / 3);
+    data.combate.fisico.defesa = Math.trunc((data.atributos.agilidade.valor + data.atributos.manejo.valor) / 3) + defesaArma;
     data.combate.fisico.absorcao = armadura;
     data.combate.fisico.vigor = data.atributos.resistencia.valor;
     //Mental
@@ -89,6 +97,46 @@ export class CronicasActor extends Actor {
     data.combate.social.defesa = Math.trunc((data.atributos.blefe.valor + data.atributos.labia.valor) / 3);
     data.combate.social.absorcao = data.pontos.status;
     data.combate.social.vigor = data.atributos.lideranca.valor;
+  }
+
+  /**
+   * Prepare Character penalties according to his actual vigor
+   */
+  _evaluatePenalties() {
+    const data = this.data.data;
+    //Fisico (ferimento)
+    let calculoVigor = (data.combate.fisico.vigor * 3) / ((data.combate.fisico.vigor * 2) + data.combate.fisico.vigorAtual);
+    if (calculoVigor < 0 || calculoVigor == Infinity) {
+      data.penalidades.ferimento = 3;
+    } else if (calculoVigor < 1.5) {
+      data.penalidades.ferimento = 0;
+    } else if (calculoVigor < 3) {
+      data.penalidades.ferimento = 1;
+    } else {
+      data.penalidades.ferimento = 2;
+    }
+    //Mental (frustracao)
+    calculoVigor = (data.combate.mental.vigor * 3) / ((data.combate.mental.vigor * 2) + data.combate.mental.vigorAtual);
+    if (calculoVigor < 0 || calculoVigor == Infinity) {
+      data.penalidades.frustracao = 3;
+    } else if (calculoVigor < 1.5) {
+      data.penalidades.frustracao = 0;
+    } else if (calculoVigor < 3) {
+      data.penalidades.frustracao = 1;
+    } else {
+      data.penalidades.frustracao = 2;
+    }
+    //Social (hesitacao)
+    calculoVigor = (data.combate.social.vigor * 3) / ((data.combate.social.vigor * 2) + data.combate.social.vigorAtual);
+    if (calculoVigor < 0 || calculoVigor == Infinity) {
+      data.penalidades.hesitacao = 3;
+    } else if (calculoVigor < 1.5) {
+      data.penalidades.hesitacao = 0;
+    } else if (calculoVigor < 3) {
+      data.penalidades.hesitacao = 1;
+    } else {
+      data.penalidades.hesitacao = 2;
+    }
   }
 
   /**

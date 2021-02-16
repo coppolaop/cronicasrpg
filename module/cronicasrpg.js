@@ -79,6 +79,13 @@ Hooks.once('init', async function () {
     return options.inverse(this);
   });
 
+  Handlebars.registerHelper("ifLesser", function (arg1, arg2) {
+    if (arg1 < arg2) {
+      return true;
+    }
+    return false;
+  });
+
 });
 
 Hooks.once("ready", async function () {

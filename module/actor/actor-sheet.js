@@ -219,9 +219,24 @@ export class CronicasActorSheet extends ActorSheet {
     const element = event.currentTarget;
     const dataset = element.dataset;
     const itemId = $(a).parents('.item').attr('data-item-id');
+    let rollType = "outro";
     let item = {
       roll: dataset.roll,
       label: dataset.label,
+    }
+
+    if ($(a).hasClass('ataque-padrao-rollable')) {
+      rollType = "padrao";
+    } else if ($(a).hasClass('ataque-total-rollable')) {
+      rollType = "total";
+    } else if ($(a).hasClass('arma-multipla-rollable')) {
+      rollType = "multiplo";
+    } else if ($(a).hasClass('bloqueio-rollable')) {
+      rollType = "bloqueio";
+    } else if ($(a).hasClass('bloqueio-maior-rollable')) {
+      rollType = "bloqueioMaior";
+    } else if ($(a).hasClass('iniciativa-rollable')) {
+      rollType = "iniciativa";
     }
 
     if (itemId && ($(a).hasClass('virtude-rollable') || $(a).hasClass('fraqueza-rollable') || $(a).hasClass('posse-rollable') || $(a).hasClass('acao-rollable'))) {
@@ -230,15 +245,17 @@ export class CronicasActorSheet extends ActorSheet {
       item.label = dataset.label;
     }
 
-    if (itemId && $(a).hasClass('arma-multipla-rollable')) {
-      let quantidade = item.roll.split('d')[0];
-      quantidade -= 2;
-      item.roll = quantidade + 'd6'
-      item.label = game.i18n.localize("cronicasrpg.acao.primeiro") + ' ' + dataset.label;
-      await prepRoll(event, item, actor);
-      item.label = game.i18n.localize("cronicasrpg.acao.segundo") + ' ' + dataset.label;
+    if (itemId) {
+      if (rollType === "multiplo") {
+        let quantidade = item.roll.split('d')[0];
+        quantidade -= 2;
+        item.roll = quantidade + 'd6'
+        item.label = game.i18n.localize("cronicasrpg.acao.primeiro") + ' ' + dataset.label;
+        await prepRoll(event, item, actor, rollType);
+        item.label = game.i18n.localize("cronicasrpg.acao.segundo") + ' ' + dataset.label;
+      }
     }
 
-    await prepRoll(event, item, actor);
+    await prepRoll(event, item, actor, rollType);
   }
 }
