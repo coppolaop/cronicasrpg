@@ -29,25 +29,32 @@
       "path": "./packs/armas.db",
       "entity": "Item"
     },
-	{
+    {
       "name": "virtudes",
       "label": "Virtudes",
       "system": "cronicasrpg",
       "path": "./packs/virtudes.db",
       "entity": "Item"
     },
-	{
+    {
       "name": "virtudes-unicas",
       "label": "Virtudes Únicas",
       "system": "cronicasrpg",
       "path": "./packs/virtudes-unicas.db",
       "entity": "Item"
     },
-	{
+    {
       "name": "fraquezas",
       "label": "Fraquezas",
       "system": "cronicasrpg",
       "path": "./packs/fraquezas.db",
+      "entity": "Item"
+    },
+    {
+      "name": "fraquezas-exclusivas",
+      "label": "Fraquezas Exclusivas",
+      "system": "cronicasrpg",
+      "path": "./packs/fraquezas-exclusivas.db",
       "entity": "Item"
     }
   ],
