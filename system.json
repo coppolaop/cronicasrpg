@@ -35,6 +35,13 @@
       "system": "cronicasrpg",
       "path": "./packs/virtudes.db",
       "entity": "Item"
+    },
+	{
+      "name": "virtudes-unicas",
+      "label": "Virtudes Únicas",
+      "system": "cronicasrpg",
+      "path": "./packs/virtudes-unicas.db",
+      "entity": "Item"
     }
   ],
   "languages": [
