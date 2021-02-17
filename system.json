@@ -28,6 +28,13 @@
       "system": "cronicasrpg",
       "path": "./packs/armas.db",
       "entity": "Item"
+    },
+	{
+      "name": "virtudes",
+      "label": "Virtudes",
+      "system": "cronicasrpg",
+      "path": "./packs/virtudes.db",
+      "entity": "Item"
     }
   ],
   "languages": [
