@@ -7,7 +7,11 @@ export async function prepRoll(event, item, actor = null, actionType = {}) {
     let formula = item.roll;
     let flavorText = item.label;
     let rollMode = game.settings.get("core", "rollMode");
-    let itemDt = item.data.data;
+    let itemDt;
+
+    if (item.data) {
+        itemDt = item.data.data
+    }
 
     let templateData = {
         title: flavorText,
@@ -15,17 +19,19 @@ export async function prepRoll(event, item, actor = null, actionType = {}) {
         rollModes: CONFIG.Dice.rollModes,
     };
 
-    if (item.data && itemDt.dano && (actionType === 'padrao' || actionType === 'total' || actionType === 'multiplo')) {
+    if (itemDt && itemDt.dano && (actionType === 'padrao' || actionType === 'total' || actionType === 'multiplo')) {
         templateData.rollDano = actor.data.data.atributos[itemDt.atributoDano].total;
         templateData.rollDano += itemDt.dano;
     }
 
     if (formula) {
 
-        if ((itemDt.ruimDeBloqueio) && (actionType === 'bloqueio' || actionType === 'bloqueioMaior')) {
-            formula += '-1S';
-        } else if ((itemDt.complicada) && (actionType === 'padrao' || actionType === 'total' || actionType === 'multiplo')) {
-            formula += '-1D';
+        if (itemDt) {
+            if ((itemDt.ruimDeBloqueio) && (actionType === 'bloqueio' || actionType === 'bloqueioMaior')) {
+                formula += '-1S';
+            } else if ((itemDt.complicada) && (actionType === 'padrao' || actionType === 'total' || actionType === 'multiplo')) {
+                formula += '-1D';
+            }
         }
 
         formula = formula
