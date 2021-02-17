@@ -42,6 +42,13 @@
       "system": "cronicasrpg",
       "path": "./packs/virtudes-unicas.db",
       "entity": "Item"
+    },
+	{
+      "name": "fraquezas",
+      "label": "Fraquezas",
+      "system": "cronicasrpg",
+      "path": "./packs/fraquezas.db",
+      "entity": "Item"
     }
   ],
   "languages": [
