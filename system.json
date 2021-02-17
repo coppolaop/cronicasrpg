@@ -21,6 +21,13 @@
       "system": "cronicasrpg",
       "path": "./packs/armaduras.db",
       "entity": "Item"
+    },
+    {
+      "name": "armas",
+      "label": "Armas",
+      "system": "cronicasrpg",
+      "path": "./packs/armas.db",
+      "entity": "Item"
     }
   ],
   "languages": [
