@@ -64,21 +64,21 @@
           "defesa": 0,
           "absorcao": 0,
           "vigor": 0,
-          "vigorAtual": 0
+          "vigorAtual": 2
         },
         "mental": {
           "iniciativa": 0,
           "defesa": 0,
           "absorcao": 0,
           "vigor": 0,
-          "vigorAtual": 0
+          "vigorAtual": 2
         },
         "social": {
           "iniciativa": 0,
           "defesa": 0,
           "absorcao": 0,
           "vigor": 0,
-          "vigorAtual": 0
+          "vigorAtual": 2
         }
       },
       "penalidades": {

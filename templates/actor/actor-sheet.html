@@ -94,6 +94,7 @@
               <input type="text" name="data.atributos.{{key}}.valor" value="{{atributo.valor}}" data-dtype="Number" />
               <input type="text" name="data.atributos.{{key}}.outros" value="{{atributo.outros}}" data-dtype="Number" />
             </div>
+            <hr>
             {{#each atributo.especializacoes as |especializacao ekey|}}
             <div class="grid grid-4col">
               <p class="rollable" data-roll="{{especializacao.total}}d6" data-label="{{especializacao.label}}">
