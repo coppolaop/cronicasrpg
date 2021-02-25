@@ -47,14 +47,14 @@ export const SystemSettings = function () {
   /**
    * Option to disable initiative roll after end of turn.
    */
-  game.settings.register("cronicasrpg", "autoRoll", {
-    name: game.i18n.localize("cronicasrpg.settings.autoroll.name"),
-    hint: game.i18n.localize("cronicasrpg.settings.autoroll.hint"),
-    scope: "world",
-    config: true,
-    default: true,
-    type: Boolean,
-  });
+  // game.settings.register("cronicasrpg", "autoRoll", {
+  //   name: game.i18n.localize("cronicasrpg.settings.autoroll.name"),
+  //   hint: game.i18n.localize("cronicasrpg.settings.autoroll.hint"),
+  //   scope: "world",
+  //   config: true,
+  //   default: true,
+  //   type: Boolean,
+  // });
 
   /**
    * Option to disable automatic calculation of spent experience.

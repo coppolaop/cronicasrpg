@@ -107,7 +107,7 @@ Hooks.on("canvasInit", function () {
 /*  Sidebar Initialization                       */
 /* -------------------------------------------- */
 
-Hooks.on("renderSidebarTab", async (app, html, options) => {
+Hooks.on("renderSidebarTab", async (object, html) => {
   var arrayTipoCombate = ["fisico", "mental", "social"];
   var tipoCombate = localStorage.getItem('tipoCombate');
   if (tipoCombate == "") {
@@ -136,6 +136,22 @@ Hooks.on("renderSidebarTab", async (app, html, options) => {
     localStorage.setItem("tipoCombate", tipoCombate);
     CONFIG.Combat.initiative.formula = "1d6 + @combate." + tipoCombate + ".iniciativa"
   };
+
+  if (object instanceof Settings) {
+    let gamesystem = html.find("#game-details");
+    // License text
+    const template = "systems/cronicasrpg/templates/chat/license.html";
+    const rendered = await renderTemplate(template);
+    gamesystem.find(".system").append(rendered);
+
+    // Site do Crônicas RPG
+    let docs = html.find("button[data-action='docs']");
+    const styling = "border:none;margin-right:2px;vertical-align:middle;margin-bottom:5px";
+    $(`<button data-action="userguide"><img src='/systems/cronicasrpg/assets/d6.ico' width='18' height='18' style='${styling}'/>Site do Crônicas RPG</button>`).insertAfter(docs);
+    html.find('button[data-action="userguide"]').click(ev => {
+      new FrameViewer('https://cronicasrpg.com.br/', { resizable: true }).render(true);
+    });
+  }
 })
 
 /* -------------------------------------------- */
