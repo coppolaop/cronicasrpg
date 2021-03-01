@@ -215,6 +215,7 @@ function rollCronicas(roll, actor, templateData, actionType = {}) {
 /* Add hook to calculate number of success and change the total of the roll */
 Hooks.on('renderChatMessage', (message, html, data) => {
     if (!message.roll || message.data.content.includes(game.i18n.localize("cronicasrpg.iniciativa"))) return;
+    if (message.data.flavor && message.data.flavor.includes("Initiative")) return;
 
     const dados = message.roll.results;
     let sucessos = Number(html.find('.valor-dificuldade').text());
