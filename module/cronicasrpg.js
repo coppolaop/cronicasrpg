@@ -147,7 +147,7 @@ Hooks.on("renderSidebarTab", async (object, html) => {
     // Site do Crônicas RPG
     let docs = html.find("button[data-action='docs']");
     const styling = "border:none;margin-right:2px;vertical-align:middle;margin-bottom:5px";
-    $(`<button data-action="userguide"><img src='/systems/cronicasrpg/assets/d6.ico' width='18' height='18' style='${styling}'/>Site do Crônicas RPG</button>`).insertAfter(docs);
+    $(`<button data-action="userguide"><i class="fas fa-dice"></i>Site do Crônicas RPG</button>`).insertAfter(docs);
     html.find('button[data-action="userguide"]').click(ev => {
       new FrameViewer('https://cronicasrpg.com.br/', { resizable: true }).render(true);
     });
