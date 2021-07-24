@@ -29,8 +29,8 @@ Hooks.once('init', async function () {
   SystemSettings();
 
   // Define custom Entity classes
-  CONFIG.Actor.entityClass = CronicasActor;
-  CONFIG.Item.entityClass = CronicasItem;
+  CONFIG.Actor.documentClass = CronicasActor;
+  CONFIG.Item.documentClass = CronicasItem;
 
   // Register sheet application classes
   Actors.unregisterSheet("core", ActorSheet);

@@ -20,13 +20,13 @@ export class CronicasActorSheet extends ActorSheet {
   /* -------------------------------------------- */
 
   /** @override */
-  getData() {
-    const data = super.getData();
+  getData(options) {
+    const data = super.getData(options);
     data.dtypes = ["String", "Number", "Boolean"];
-    for (let attr of Object.values(data.data.atributos)) {
+    for (let attr of Object.values(data.data.data.atributos)) {
       attr.isCheckbox = attr.dtype === "Boolean";
     }
-    for (let [key, atributo] of Object.entries(data.data.atributos)) {
+    for (let [key, atributo] of Object.entries(data.data.data.atributos)) {
       for (let [key, especializacao] of Object.entries(atributo.especializacoes)) {
         especializacao.label = game.i18n.localize(cronicasrpg.attributes[key]);
       }
@@ -49,7 +49,7 @@ export class CronicasActorSheet extends ActorSheet {
    * @return {undefined}
    */
   _prepareCharacterItems(sheetData) {
-    const actorData = sheetData.actor;
+    const actorData = sheetData.actor.data;
 
     // Initialize containers.
     const virtudes = [];
@@ -97,6 +97,7 @@ export class CronicasActorSheet extends ActorSheet {
 
   /** @override */
   activateListeners(html) {
+    const data = this.getData().data.data;
     super.activateListeners(html);
 
     // Everything below here is only needed if the sheet is editable
@@ -113,14 +114,15 @@ export class CronicasActorSheet extends ActorSheet {
     // Update Inventory Item
     html.find('.item-edit').click(ev => {
       const li = $(ev.currentTarget).parents(".item");
-      const item = this.actor.getOwnedItem(li.data("itemId"));
+      const item = this.actor.items.get(li.data("itemId"));
       item.sheet.render(true);
     });
 
     // Delete Inventory Item
     html.find('.item-delete').click(ev => {
       const li = $(ev.currentTarget).parents(".item");
-      this.actor.deleteOwnedItem(li.data("itemId"));
+      const item = this.actor.items.get(li.data("itemId"));
+      if (item) return item.delete();
       li.slideUp(200, () => this.render(false));
     });
 
@@ -138,7 +140,7 @@ export class CronicasActorSheet extends ActorSheet {
     }
 
 
-    for (let [key, atributo] of Object.entries(this.getData().data.atributos)) {
+    for (let [key, atributo] of Object.entries(data.atributos)) {
       if (localStorage.getItem('accordion-' + key) === 'true') {
         html.find('#accordion-' + key).click();
       }
@@ -168,28 +170,23 @@ export class CronicasActorSheet extends ActorSheet {
     const header = event.currentTarget;
     // Get the type of item to create.
     const type = header.dataset.type;
-    // Grab any data associated with this control.
-    const data = duplicate(header.dataset);
-    // Initialize a default name.
-    const name = `Nova ${type.capitalize()}`;
     // Prepare the item object.
     const itemData = {
-      name: name,
+      name: `Nova ${type.capitalize()}`,
       type: type,
-      data: data
+      data: foundry.utils.deepClone(header.dataset)
     };
     // Remove the type from the dataset since it's in the itemData.type prop.
     delete itemData.data["type"];
-
     // Finally, create the item!
-    return this.actor.createOwnedItem(itemData);
+    return this.actor.createEmbeddedDocuments("Item", [itemData]);
   }
 
   /* -------------------------------------------- */
   //  
   _onToggleCarried(ev) {
     const li = $(ev.currentTarget).parents(".item");
-    const item = this.actor.getOwnedItem(li.data("itemId"));
+    const item = this.actor.items.get(li.data("itemId"));
     if (!item.data.data.equipada) {
       item.data.data.guardado = !item.data.data.guardado;
       item.update({ "data.guardado": item.data.data.guardado });
@@ -200,7 +197,7 @@ export class CronicasActorSheet extends ActorSheet {
   //  
   _onToggleEquipped(ev) {
     const li = $(ev.currentTarget).parents(".item");
-    const item = this.actor.getOwnedItem(li.data("itemId"));
+    const item = this.actor.items.get(li.data("itemId"));
     if (!item.data.data.guardado) {
       item.data.data.equipada = !item.data.data.equipada;
       item.update({ "data.equipada": item.data.data.equipada });
@@ -240,7 +237,7 @@ export class CronicasActorSheet extends ActorSheet {
     }
 
     if (itemId && ($(a).hasClass('virtude-rollable') || $(a).hasClass('fraqueza-rollable') || $(a).hasClass('posse-rollable') || $(a).hasClass('acao-rollable'))) {
-      item = actor.getOwnedItem(itemId);
+      item = actor.items.get(itemId);
       item.roll = dataset.roll;
       item.label = dataset.label;
     }

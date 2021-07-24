@@ -13,26 +13,26 @@
         and it will add a small amount of padding, a border, and will
         center all of its child elements content and text. --}}
         <div class="infos resource flex-group-center">
-          <input type="text" name="data.pontos.ela.valor" value="{{data.pontos.ela.valor}}" data-dtype="Number" />
+          <input type="text" name="data.pontos.ela.valor" value="{{data.data.pontos.ela.valor}}" data-dtype="Number" />
           {{localize 'cronicasrpg.ela'}}</label>
-          <input type="text" name="data.pontos.recursos" value="{{data.pontos.recursos}}" data-dtype="Number" />
+          <input type="text" name="data.pontos.recursos" value="{{data.data.pontos.recursos}}" data-dtype="Number" />
           {{localize 'cronicasrpg.recursos'}}</label>
-          <input type="text" name="data.pontos.status" value="{{data.pontos.status}}" data-dtype="Number" />
+          <input type="text" name="data.pontos.status" value="{{data.data.pontos.status}}" data-dtype="Number" />
           {{localize 'cronicasrpg.status'}}</label>
         </div>
         <div class="infos resource flex-group-center">
           <label>
-            <input type="text" name="data.penalidades.ferimento" value="{{data.penalidades.ferimento}}"
+            <input type="text" name="data.penalidades.ferimento" value="{{data.data.penalidades.ferimento}}"
               data-dtype="String" />
             {{localize 'cronicasrpg.ferimento'}}
           </label>
           <label>
-            <input type="text" name="data.penalidades.frustracao" value="{{data.penalidades.frustracao}}"
+            <input type="text" name="data.penalidades.frustracao" value="{{data.data.penalidades.frustracao}}"
               data-dtype="String" />
             {{localize 'cronicasrpg.frustracao'}}
           </label>
           <label>
-            <input type="text" name="data.penalidades.hesitacao" value="{{data.penalidades.hesitacao}}"
+            <input type="text" name="data.penalidades.hesitacao" value="{{data.data.penalidades.hesitacao}}"
               data-dtype="String" />
             {{localize 'cronicasrpg.hesitacao'}}
           </label>
@@ -56,28 +56,28 @@
       <div class="grid grid-5col">
         <i class="fas fa-dice die-icon rollable" width='50px' height='50px' data-roll="1d6"></i>
         <label>
-          <input type="text" name="data.pontos.experiencia.inicial" value="{{data.pontos.experiencia.inicial}}"
+          <input type="text" name="data.pontos.experiencia.inicial" value="{{data.data.pontos.experiencia.inicial}}"
             data-dtype="Number" />
           {{localize 'cronicasrpg.experiencia.inicial'}}
         </label>
         <label>
-          <input type="text" name="data.pontos.experiencia.valor" value="{{data.pontos.experiencia.valor}}"
+          <input type="text" name="data.pontos.experiencia.valor" value="{{data.data.pontos.experiencia.valor}}"
             data-dtype="Number" />
           {{localize 'cronicasrpg.experiencia.atual'}}
         </label>
         <label>
-          <input type="text" name="data.pontos.experiencia.gasta" value="{{data.pontos.experiencia.gasta}}"
+          <input type="text" name="data.pontos.experiencia.gasta" value="{{data.data.pontos.experiencia.gasta}}"
             data-dtype="Number" />
           {{localize 'cronicasrpg.experiencia.gasta'}}
         </label>
         <label>
-          <input type="text" name="data.pontos.experiencia.resto" value="{{data.pontos.experiencia.resto}}"
+          <input type="text" name="data.pontos.experiencia.resto" value="{{data.data.pontos.experiencia.resto}}"
             data-dtype="Number" />
           {{localize 'cronicasrpg.experiencia.resto'}}
         </label>
       </div>
       <div class="grid grid-2col">
-        {{#each data.atributos as |atributo key|}}
+        {{#each data.data.atributos as |atributo key|}}
         <div class="flex-group-center">
           <button class="accordion" id="accordion-{{key}}">{{atributo.label}} {{atributo.total}}</button>
           <div class="panel" id="panel-{{key}}" style="display:none">
@@ -116,8 +116,8 @@
     <div class="tab combat" data-group="primary" data-tab="combat">
       <div class="grid grid-6col">
         <div class="infos resource">
-          <select class="selectatr" name="data.combate.escolha" value={{data.combate.escolha}} data-dtype="String">
-            {{#select data.combate.escolha}}
+          <select class="selectatr" name="data.combate.escolha" value={{data.data.combate.escolha}} data-dtype="String">
+            {{#select data.data.combate.escolha}}
             <option value="agilidade">{{localize 'cronicasrpg.agilidade'}}</option>
             <option value="inteligencia">{{localize 'cronicasrpg.inteligencia'}}</option>
             {{/select}}
@@ -130,60 +130,63 @@
           <p>{{localize 'cronicasrpg.iniciativa'}}</p>
           <div class="InputAddOn">
             <input class="InputAddOn-field" type="text" name="data.combate.fisico.iniciativa"
-              value="{{data.combate.fisico.iniciativa}}" data-dtype="String" />
-            <button class="btn-addOn rollable iniciativa-rollable" data-roll="1d6+{{data.combate.fisico.iniciativa}}"
+              value="{{data.data.combate.fisico.iniciativa}}" data-dtype="String" />
+            <button class="btn-addOn rollable iniciativa-rollable"
+              data-roll="1d6+{{data.data.combate.fisico.iniciativa}}"
               data-label="{{localize 'cronicasrpg.iniciativa'}}({{localize 'cronicasrpg.fisico'}})" type=" button"><i
                 class="fas fa-dice"></i></button>
           </div>
           <div class="InputAddOn">
-            <input type="text" name="data.combate.mental.iniciativa" value="{{data.combate.mental.iniciativa}}"
+            <input type="text" name="data.combate.mental.iniciativa" value="{{data.data.combate.mental.iniciativa}}"
               data-dtype="String" />
-            <button class="btn-addOn rollable iniciativa-rollable" data-roll="1d6+{{data.combate.mental.iniciativa}}"
+            <button class="btn-addOn rollable iniciativa-rollable"
+              data-roll="1d6+{{data.data.combate.mental.iniciativa}}"
               data-label="{{localize 'cronicasrpg.iniciativa'}}({{localize 'cronicasrpg.mental'}})" type="button"><i
                 class="fas fa-dice"></i></button>
           </div>
           <div class="InputAddOn">
-            <input type="text" name="data.combate.social.iniciativa" value="{{data.combate.social.iniciativa}}"
+            <input type="text" name="data.combate.social.iniciativa" value="{{data.data.combate.social.iniciativa}}"
               data-dtype="String" />
-            <button class="btn-addOn rollable iniciativa-rollable" data-roll="1d6+{{data.combate.social.iniciativa}}"
+            <button class="btn-addOn rollable iniciativa-rollable"
+              data-roll="1d6+{{data.data.combate.social.iniciativa}}"
               data-label="{{localize 'cronicasrpg.iniciativa'}}({{localize 'cronicasrpg.social'}})" type="button"><i
                 class="fas fa-dice"></i></button>
           </div>
         </div>
         <div class="infos resource">
           <p>{{localize 'cronicasrpg.defesa'}}</p>
-          <input type="text" name="data.combate.fisico.defesa" value="{{data.combate.fisico.defesa}}"
+          <input type="text" name="data.combate.fisico.defesa" value="{{data.data.combate.fisico.defesa}}"
             data-dtype="Number" />
-          <input type="text" name="data.combate.mental.defesa" value="{{data.combate.mental.defesa}}"
+          <input type="text" name="data.combate.mental.defesa" value="{{data.data.combate.mental.defesa}}"
             data-dtype="Number" />
-          <input type="text" name="data.combate.social.defesa" value="{{data.combate.social.defesa}}"
+          <input type="text" name="data.combate.social.defesa" value="{{data.data.combate.social.defesa}}"
             data-dtype="Number" />
         </div>
         <div class="infos resource">
           <p>{{localize 'cronicasrpg.absorcao'}}</p>
-          <input type="text" name="data.combate.fisico.absorcao" value="{{data.combate.fisico.absorcao}}"
+          <input type="text" name="data.combate.fisico.absorcao" value="{{data.data.combate.fisico.absorcao}}"
             data-dtype="Number" />
-          <input type="text" name="data.combate.mental.absorcao" value="{{data.combate.mental.absorcao}}"
+          <input type="text" name="data.combate.mental.absorcao" value="{{data.data.combate.mental.absorcao}}"
             data-dtype="Number" />
-          <input type="text" name="data.combate.social.absorcao" value="{{data.combate.social.absorcao}}"
+          <input type="text" name="data.combate.social.absorcao" value="{{data.data.combate.social.absorcao}}"
             data-dtype="Number" />
         </div>
         <div class="infos resource">
           <p>{{localize 'cronicasrpg.vigor'}}</p>
-          <input type="text" name="data.combate.fisico.vigor" value="{{data.combate.fisico.vigor}}"
+          <input type="text" name="data.combate.fisico.vigor" value="{{data.data.combate.fisico.vigor}}"
             data-dtype="Number" />
-          <input type="text" name="data.combate.mental.vigor" value="{{data.combate.mental.vigor}}"
+          <input type="text" name="data.combate.mental.vigor" value="{{data.data.combate.mental.vigor}}"
             data-dtype="Number" />
-          <input type="text" name="data.combate.social.vigor" value="{{data.combate.social.vigor}}"
+          <input type="text" name="data.combate.social.vigor" value="{{data.data.combate.social.vigor}}"
             data-dtype="Number" />
         </div>
         <div class="infos resource">
           <p>{{localize 'cronicasrpg.vigorAtual'}}</p>
-          <input type="text" name="data.combate.fisico.vigorAtual" value="{{data.combate.fisico.vigorAtual}}"
+          <input type="text" name="data.combate.fisico.vigorAtual" value="{{data.data.combate.fisico.vigorAtual}}"
             data-dtype="Number" />
-          <input type="text" name="data.combate.mental.vigorAtual" value="{{data.combate.mental.vigorAtual}}"
+          <input type="text" name="data.combate.mental.vigorAtual" value="{{data.data.combate.mental.vigorAtual}}"
             data-dtype="Number" />
-          <input type="text" name="data.combate.social.vigorAtual" value="{{data.combate.social.vigorAtual}}"
+          <input type="text" name="data.combate.social.vigorAtual" value="{{data.data.combate.social.vigorAtual}}"
             data-dtype="Number" />
         </div>
       </div>
@@ -201,7 +204,7 @@
                 {{localize 'cronicasrpg.novo'}}</a>
             </div>
           </li>
-          {{#each actor.armas as |item id|}}
+          {{#each actor.data.armas as |item id|}}
           <li class="item flexrow" data-item-id="{{item._id}}">
             <div class="item-image" style="background-image: url('{{item.img}}')"></div>
             <span {{#if item.data.guardado}} class="disabled"
@@ -260,7 +263,7 @@
                   {{localize 'cronicasrpg.novo'}}</a>
               </div>
             </li>
-            {{#each actor.virtudes as |item id|}}
+            {{#each actor.data.virtudes as |item id|}}
             <li class="item flexrow" data-item-id="{{item._id}}">
               <div class="item-image" style="background-image: url('{{item.img}}')"></div>
               <span class="rollable virtude-rollable" data-label="{{item.name}}">
@@ -289,7 +292,7 @@
                   {{localize 'cronicasrpg.novo'}}</a>
               </div>
             </li>
-            {{#each actor.fraquezas as |item id|}}
+            {{#each actor.data.fraquezas as |item id|}}
             <li class="item flexrow" data-item-id="{{item._id}}">
               <div class="item-image" style="background-image: url('{{item.img}}')"></div>
               <span class="rollable fraqueza-rollable" data-label="{{item.name}}">
@@ -312,51 +315,51 @@
     <div class="tab biography" data-group="primary" data-tab="biography">
       <div class="grid grid-4col">
         <div class="infos resource flex-group-center">
-          <input type="text" name="data.info.povo" value="{{data.info.povo}}" data-dtype="String" />
+          <input type="text" name="data.info.povo" value="{{data.data.info.povo}}" data-dtype="String" />
           {{localize 'cronicasrpg.info.povo'}}</label>
-          <input type="text" name="data.info.cabelos" value="{{data.info.cabelos}}" data-dtype="String" />
+          <input type="text" name="data.info.cabelos" value="{{data.data.info.cabelos}}" data-dtype="String" />
           {{localize 'cronicasrpg.info.cabelos'}}</label>
-          <input type="text" name="data.info.olhos" value="{{data.info.olhos}}" data-dtype="String" />
+          <input type="text" name="data.info.olhos" value="{{data.data.info.olhos}}" data-dtype="String" />
           {{localize 'cronicasrpg.info.olhos'}}</label>
         </div>
         <div class="infos resource flex-group-center">
-          <input type="text" name="data.info.morada" value="{{data.info.morada}}" data-dtype="String" />
+          <input type="text" name="data.info.morada" value="{{data.data.info.morada}}" data-dtype="String" />
           {{localize 'cronicasrpg.info.morada'}}</label>
-          <input type="text" name="data.info.patrono" value="{{data.info.patrono}}" data-dtype="String" />
+          <input type="text" name="data.info.patrono" value="{{data.data.info.patrono}}" data-dtype="String" />
           {{localize 'cronicasrpg.info.patrono'}}</label>
-          <input type="text" name="data.info.lealdade" value="{{data.info.lealdade}}" data-dtype="String" />
+          <input type="text" name="data.info.lealdade" value="{{data.data.info.lealdade}}" data-dtype="String" />
           {{localize 'cronicasrpg.info.lealdade'}}</label>
         </div>
         <div class="infos resource flex-group-center">
-          <input type="text" name="data.info.devocao" value="{{data.info.devocao}}" data-dtype="String" />
+          <input type="text" name="data.info.devocao" value="{{data.data.info.devocao}}" data-dtype="String" />
           {{localize 'cronicasrpg.info.devocao'}}</label>
-          <input type="text" name="data.info.ocupacao" value="{{data.info.ocupacao}}" data-dtype="String" />
+          <input type="text" name="data.info.ocupacao" value="{{data.data.info.ocupacao}}" data-dtype="String" />
           {{localize 'cronicasrpg.info.ocupacao'}}</label>
-          <input type="text" name="data.info.posicao" value="{{data.info.posicao}}" data-dtype="String" />
+          <input type="text" name="data.info.posicao" value="{{data.data.info.posicao}}" data-dtype="String" />
           {{localize 'cronicasrpg.info.posicao'}}</label>
         </div>
         <div class="infos resource flex-group-center">
-          <input type="text" name="data.info.idade" value="{{data.info.idade}}" data-dtype="Number" />
+          <input type="text" name="data.info.idade" value="{{data.data.info.idade}}" data-dtype="Number" />
           {{localize 'cronicasrpg.info.idade'}}</label>
-          <input type="text" name="data.info.altura" value="{{data.info.altura}}" data-dtype="Number" />
+          <input type="text" name="data.info.altura" value="{{data.data.info.altura}}" data-dtype="Number" />
           {{localize 'cronicasrpg.info.altura'}}</label>
-          <input type="text" name="data.info.peso" value="{{data.info.peso}}" data-dtype="Number" />
+          <input type="text" name="data.info.peso" value="{{data.data.info.peso}}" data-dtype="Number" />
           {{localize 'cronicasrpg.info.peso'}}</label>
         </div>
       </div>
       <div class="infos resource flex-group-center">
         <textarea type="text" class="smallTextArea" name="data.info.aparencia"
-          data-dtype="String">{{data.info.aparencia}}</textarea>
+          data-dtype="String">{{data.data.info.aparencia}}</textarea>
         {{localize 'cronicasrpg.info.aparencia'}}</label>
       </div>
       <div class="infos resource flex-group-center">
         <textarea type="text" class="smallTextArea" name="data.biografia.comportamento"
-          data-dtype="String">{{data.biografia.comportamento}}</textarea>
+          data-dtype="String">{{data.data.biografia.comportamento}}</textarea>
         {{localize 'cronicasrpg.bio.comportamento'}}</label>
       </div>
       <div class="infos resource flex-group-center">
         <textarea type="text" class="largeTextArea" name="data.biografia.historico"
-          data-dtype="String">{{data.biografia.historico}}</textarea>
+          data-dtype="String">{{data.data.biografia.historico}}</textarea>
         {{localize 'cronicasrpg.bio.historico'}}</label>
       </div>
     </div>
@@ -368,20 +371,23 @@
       </li>
       <div class="grid grid-4col">
         <label>
-          <input type="text" name="data.movimentacao.base" value="{{data.movimentacao.base}}" data-dtype="Number" />
+          <input type="text" name="data.movimentacao.base" value="{{data.data.movimentacao.base}}"
+            data-dtype="Number" />
           {{localize 'cronicasrpg.base'}}
         </label>
         <label>
-          <input type="text" name="data.movimentacao.penalidade" value="{{data.movimentacao.penalidade}}"
+          <input type="text" name="data.movimentacao.penalidade" value="{{data.data.movimentacao.penalidade}}"
             data-dtype="Number" />
           - {{localize 'cronicasrpg.particularidade.fardo'}}/{{localize 'cronicasrpg.penalidade'}}
         </label>
         <label>
-          <input type="text" name="data.movimentacao.outros" value="{{data.movimentacao.outros}}" data-dtype="Number" />
+          <input type="text" name="data.movimentacao.outros" value="{{data.data.movimentacao.outros}}"
+            data-dtype="Number" />
           + {{localize 'cronicasrpg.outros'}}
         </label>
         <label>
-          <input type="text" name="data.movimentacao.total" value="{{data.movimentacao.total}}" data-dtype="Number" />
+          <input type="text" name="data.movimentacao.total" value="{{data.data.movimentacao.total}}"
+            data-dtype="Number" />
           = {{localize 'cronicasrpg.total'}}
         </label>
       </div>
@@ -398,7 +404,7 @@
                 {{localize 'cronicasrpg.novo'}}</a>
             </div>
           </li>
-          {{#each actor.armaduras as |armadura id|}}
+          {{#each actor.data.armaduras as |armadura id|}}
           <li class="item flexrow" data-item-id="{{armadura._id}}">
             <div class="item-image" style="background-image: url('{{armadura.img}}')"></div>
             <span class="rollable armadura-rollable" data-label="{{armadura.name}}">
@@ -433,7 +439,7 @@
                 {{localize 'cronicasrpg.novo'}}</a>
             </div>
           </li>
-          {{#each actor.posses as |posse id|}}
+          {{#each actor.data.posses as |posse id|}}
           <li class="item flexrow" data-item-id="{{posse._id}}">
             <div class="item-image" style="background-image: url('{{posse.img}}')"></div>
             <span class="rollable posse-rollable" data-label="{{posse.name}}">

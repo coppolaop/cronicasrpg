@@ -26,6 +26,7 @@ export class CronicasItemSheet extends ItemSheet {
   /** @override */
   getData() {
     const data = super.getData();
+    console.log(data)
     return data;
   }
 

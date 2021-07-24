@@ -34,8 +34,8 @@ export class CronicasActor extends Actor {
     let penalidadeArmadura = 0;
 
     this.data.items.forEach(item => {
-      if (item.type === "armadura" && item.data.equipada) {
-        penalidadeArmadura = item.data.penalidade;
+      if (item.type === "armadura" && item.data.data.equipada) {
+        penalidadeArmadura = item.data.data.penalidade;
       }
     })
 
@@ -149,10 +149,11 @@ export class CronicasActor extends Actor {
     let penalidade = 0;
 
     this.data.items.forEach(item => {
-      if (item.type === "armadura" && item.data.equipada) {
-        penalidade = item.data.penalidade;
+      let itemData = item.data.data;
+      if (item.type === "armadura" && itemData.equipada) {
+        penalidade = itemData.penalidade;
       }
-      if (item.data.fardo && !item.data.guardado) {
+      if (itemData.fardo && !itemData.guardado) {
         fardo++;
       }
     });

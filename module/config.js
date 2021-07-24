@@ -78,6 +78,7 @@ cronicasrpg.attributes = {
     "armaDeGuerra": "cronicasrpg.armaDeGuerra",
     "arremesso": "cronicasrpg.arremesso",
     "besta": "cronicasrpg.besta",
+    "raio": "cronicasrpg.raio",
     "resistencia": "cronicasrpg.resistencia",
     "recuperacao": "cronicasrpg.recuperacao",
     "fortitude": "cronicasrpg.fortitude",

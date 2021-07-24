@@ -15,13 +15,13 @@
     <section class="sheet-body">
         <div>
             <label>{{localize 'cronicasrpg.particularidade.fardo'}}</label>
-            <input type="checkbox" name="data.fardo" value="{{data.fardo}}" {{#if data.fardo }}checked{{/if}}
+            <input type="checkbox" name="data.fardo" value="{{data.data.fardo}}" {{#if data.data.fardo }}checked{{/if}}
                 data-dtype="Boolean" />
         </div>
         <div class="full border">
             <label>{{localize 'cronicasrpg.descricao'}}</label>
             <textarea class="largeTextArea" name="data.descricao"
-                data-dtype="String">{{#if data.descricao}}{{data.descricao}}{{/if}}</textarea>
+                data-dtype="String">{{#if data.data.descricao}}{{data.data.descricao}}{{/if}}</textarea>
         </div>
 
     </section>

@@ -5,6 +5,8 @@ Este projeto é o módulo oficial do sistema Crônicas RPG adaptado para o Found
 ## Colaboradores
 * **Marcos "Coppola" Gonçalves** - *2020-2021* - [Coppolaop](https://github.com/coppolaop)
 * **Igor Huayck** - *2020-2021* - [Flaigor](https://github.com/Flaigor)
+* **VK Dolea** - *2021* - [vkdolea](https://github.com/vkdolea)
+* **EstolanoBeu** - *2021* - [EstolanoBeu](https://github.com/EstolanoBeu)
 
 ## Agradecimentos especiais
 - Pedro Borges, autor do Crônicas RPG, pela criação e suporte ao projeto
