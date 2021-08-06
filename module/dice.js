@@ -19,7 +19,7 @@ export async function prepRoll(event, item, actor = null, actionType = {}) {
         rollModes: CONFIG.Dice.rollModes,
     };
 
-    if (itemDt && itemDt.dano && (actionType === 'padrao' || actionType === 'total' || actionType === 'multiplo')) {
+    if (itemDt && itemDt.dano && (actionType == 'padrao' || actionType == 'total' || actionType == 'multiplo')) {
         templateData.rollDano = actor.data.data.atributos[itemDt.atributoDano].total;
         templateData.rollDano += itemDt.dano;
     }
@@ -27,9 +27,9 @@ export async function prepRoll(event, item, actor = null, actionType = {}) {
     if (formula) {
 
         if (itemDt) {
-            if ((itemDt.ruimDeBloqueio) && (actionType === 'bloqueio' || actionType === 'bloqueioMaior')) {
+            if ((itemDt.ruimDeBloqueio) && (actionType == 'bloqueio' || actionType == 'bloqueioMaior')) {
                 formula += '-1S';
-            } else if ((itemDt.complicada) && (actionType === 'padrao' || actionType === 'total' || actionType === 'multiplo')) {
+            } else if ((itemDt.complicada) && (actionType == 'padrao' || actionType == 'total' || actionType == 'multiplo')) {
                 formula += '-1D';
             }
         }
@@ -40,7 +40,7 @@ export async function prepRoll(event, item, actor = null, actionType = {}) {
             .replace(/\-0/g, "")
             .replace(/\++/g, "+");
 
-        if (!event.shiftKey || actionType === 'iniciativa') {
+        if (!event.shiftKey || actionType == 'iniciativa') {
             rollCronicas(formula, actor, templateData, actionType);
         } else {
             templateData.formula = formula;
@@ -93,7 +93,8 @@ function rollCronicas(roll, actor, templateData, actionType = {}) {
     let combate = game.combats.active;
 
     let chatData = {
-        user: game.user._id,
+        user: game.user.id
+        ,
         speaker: ChatMessage.getSpeaker({
             actor: actor,
         }),
@@ -107,8 +108,8 @@ function rollCronicas(roll, actor, templateData, actionType = {}) {
 
     if (["gmroll", "blindroll"].includes(rollMode))
         chatData["whisper"] = ChatMessage.getWhisperRecipients("GM");
-    if (rollMode === "selfroll") chatData["whisper"] = [game.user._id];
-    if (rollMode === "blindroll") chatData["blind"] = true;
+    if (rollMode == "selfroll") chatData["whisper"] = [game.user.id];
+    if (rollMode == "blindroll") chatData["blind"] = true;
 
     // Handle dice rolls.
     let formula = "";
@@ -132,7 +133,7 @@ function rollCronicas(roll, actor, templateData, actionType = {}) {
                 dificuldade += Number(dado);
             }
             else {
-                if (templateData.title == null || (actionType === "iniciativa" && !dado.includes("d"))) {
+                if (templateData.title == null || (actionType == "iniciativa" && !dado.includes("d"))) {
                     roll += dado;
                 } else {
                     let quantidade = dado.split("d")[0];
@@ -154,17 +155,17 @@ function rollCronicas(roll, actor, templateData, actionType = {}) {
         if (formula != null) {
             let roll = new Roll(`${formula}`);
             roll.roll();
-            result = roll.results[0];
+            result = roll.result;
 
-            if (templateData.title != null && actionType === "iniciativa" && combate) {
+            if (templateData.title != null && actionType == "iniciativa" && combate) {
                 let combatente = combate.combatants.find(
-                    (combatant) => combatant.actor.id === actor.id
+                    (combatant) => combatant.actor.id == actor.id
                 );
                 if (combatente && combatente.iniciative == null) {
-                    combate.setInitiative(combatente._id, roll.total);
+                    combate.setInitiative(combatente.id, roll.total);
                     console.log(
                         "Foundry VTT | Iniciativa Atualizada para " +
-                        combatente._id +
+                        combatente.id +
                         " (" +
                         combatente.actor.name +
                         ")"
@@ -217,28 +218,28 @@ Hooks.on('renderChatMessage', (message, html, data) => {
     if (!message.roll || message.data.content.includes(game.i18n.localize("cronicasrpg.iniciativa"))) return;
     if (message.data.flavor && message.data.flavor.includes("Initiative")) return;
 
-    const dados = message.roll.results;
+    const dados = message.roll.result.replace(/ /g, "").replace(/\+/g, " ").split(" ");
     let sucessos = Number(html.find('.valor-dificuldade').text());
     let critico = false;
     let falha = false;
     let sucessoMsg = game.i18n.localize("cronicasrpg.sucessoMsgPlural");
 
     dados.forEach(function (result) {
-        if (result === 1) {
+        if (result == 1) {
             falha = true;
         }
-        else if (result === 4 || result === 5) {
+        else if (result == 4 || result == 5) {
             sucessos++;
-        } else if (result === 6) {
+        } else if (result == 6) {
             sucessos++;
             critico = true;
         }
     });
 
-    if (sucessos === 1) {
+    if (sucessos == 1) {
         sucessoMsg = game.i18n.localize("cronicasrpg.sucessoMsgSingular");
     }
-    else if (sucessos === 0 && falha) {
+    else if (sucessos == 0 && falha) {
         html.find('.dice-total').css({ 'color': 'red' });
     }
 
