@@ -47,7 +47,7 @@
                 <label>{{localize 'cronicasrpg.atributoAcerto'}}</label>
                 <select class="selectatr" name="data.especializacaoAcerto" value={{data.data.especializacaoAcerto}}
                     data-dtype="String">
-                    {{#select data.especializacaoAcerto}}
+                    {{#select data.data.especializacaoAcerto}}
                     <option value="manejo.especializacoes.briga">{{localize 'cronicasrpg.briga'}}</option>
                     <option value="manejo.especializacoes.umaMao">{{localize 'cronicasrpg.umaMao'}}</option>
                     <option value="manejo.especializacoes.duasMaos">{{localize 'cronicasrpg.duasMaos'}}</option>
@@ -64,7 +64,7 @@
             <div class="input-sheet">
                 <label>{{localize 'cronicasrpg.atributoDano'}}</label>
                 <select class="selectatr" name="data.atributoDano" value={{data.data.atributoDano}} data-dtype="String">
-                    {{#select data.atributoDano}}
+                    {{#select data.data.atributoDano}}
                     <option value="agilidade">{{localize 'cronicasrpg.agilidade'}}</option>
                     <option value="forca">{{localize 'cronicasrpg.forca'}}</option>
                     {{/select}}
