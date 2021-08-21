@@ -79,7 +79,6 @@ export class CronicasActor extends Actor {
       }
       if (item.data.data.defensiva && !item.data.data.guardado && (defesaArma < item.data.data.defensivaValor)) {
         defesaArma = item.data.data.defensivaValor;
-        console.log(item.data.data.defensivaValor)
       }
     });
 
