@@ -34,14 +34,14 @@ export class CronicasActor extends Actor {
     let penalidadeArmadura = 0;
 
     this.data.items.forEach(item => {
-      if (item.type === "armadura" && item.data.data.equipada) {
+      if (item.type == "armadura" && item.data.data.equipada) {
         penalidadeArmadura = item.data.data.penalidade;
       }
     })
 
     for (let [key, atributo] of Object.entries(data.atributos)) {
       atributo.total = atributo.valor + atributo.outros - data.penalidades.ferimento - data.penalidades.hesitacao - data.penalidades.frustracao;
-      if (key === "agilidade" || key === "forca" || key === "furtividade") {
+      if (key == "agilidade" || key == "forca" || key == "furtividade") {
         atributo.total -= penalidadeArmadura;
       }
       for (let [key, especializacao] of Object.entries(atributo.especializacoes)) {
@@ -74,11 +74,12 @@ export class CronicasActor extends Actor {
     let defesaArma = 0;
 
     this.data.items.forEach(item => {
-      if (item.type === "armadura" && item.data.equipada && (armadura < item.data.absorcao)) {
-        armadura = item.data.absorcao;
+      if (item.data.type == "armadura" && item.data.data.equipada && (armadura < item.data.data.absorcao)) {
+        armadura = item.data.data.absorcao;
       }
-      if (item.data.defensiva && !item.data.guardado && (defesaArma < item.data.defensivaValor)) {
-        defesaArma = item.data.defensivaValor;
+      if (item.data.data.defensiva && !item.data.data.guardado && (defesaArma < item.data.data.defensivaValor)) {
+        defesaArma = item.data.data.defensivaValor;
+        console.log(item.data.data.defensivaValor)
       }
     });
 
@@ -150,7 +151,7 @@ export class CronicasActor extends Actor {
 
     this.data.items.forEach(item => {
       let itemData = item.data.data;
-      if (item.type === "armadura" && itemData.equipada) {
+      if (item.type == "armadura" && itemData.equipada) {
         penalidade = itemData.penalidade;
       }
       if (itemData.fardo && !itemData.guardado) {

@@ -24,7 +24,7 @@ export class CronicasActorSheet extends ActorSheet {
     const data = super.getData(options);
     data.dtypes = ["String", "Number", "Boolean"];
     for (let attr of Object.values(data.data.data.atributos)) {
-      attr.isCheckbox = attr.dtype === "Boolean";
+      attr.isCheckbox = attr.dtype == "Boolean";
     }
     for (let [key, atributo] of Object.entries(data.data.data.atributos)) {
       for (let [key, especializacao] of Object.entries(atributo.especializacoes)) {
@@ -141,17 +141,17 @@ export class CronicasActorSheet extends ActorSheet {
 
 
     for (let [key, atributo] of Object.entries(data.atributos)) {
-      if (localStorage.getItem('accordion-' + key) === 'true') {
+      if (localStorage.getItem('accordion-' + key) == 'true') {
         html.find('#accordion-' + key).click();
       }
       html.on('keyup keypress', function (e) {
         var keyCode = e.keyCode || e.which;
-        if (keyCode === 13 && e.target.type != "textarea") {
+        if (keyCode == 13 && e.target.type != "textarea") {
           e.preventDefault();
         }
       });
       html.find('#accordion-' + key).on('click', function () {
-        if (localStorage.getItem('accordion-' + key) === 'true') {
+        if (localStorage.getItem('accordion-' + key) == 'true') {
           localStorage.removeItem('accordion-' + key);
         } else {
           localStorage.setItem('accordion-' + key, true);
@@ -243,7 +243,7 @@ export class CronicasActorSheet extends ActorSheet {
     }
 
     if (itemId) {
-      if (rollType === "multiplo") {
+      if (rollType == "multiplo") {
         let quantidade = item.roll.split('d')[0];
         quantidade -= 2;
         item.roll = quantidade + 'd6'

@@ -170,18 +170,18 @@ export const getItemOwner = function (item) {
   if (item.actor) return item.actor;
   if (item._id) {
     return game.actors.entities.filter((o) => {
-      return o.items.filter((i) => i._id === item._id).length > 0;
+      return o.items.filter((i) => i._id == item._id).length > 0;
     })[0];
   }
   return null;
 };
 
 async function createCronicasMacro(data, slot) {
-  if (data.type === "Atributo") {
+  if (data.type == "Atributo") {
     const item = data.data;
     const command = `game.cronicasrpg.rollAttributeMacro("${item.label}","${data.subtype}");`;
     let macro = game.macros.entities.find(
-      (m) => m.name === item.label && m.command === command
+      (m) => m.name == item.label && m.command == command
     );
     if (!macro) {
       macro = await Macro.create({
@@ -193,7 +193,7 @@ async function createCronicasMacro(data, slot) {
     game.user.assignHotbarMacro(macro, slot);
     return false;
   }
-  if (data.type === "Item") {
+  if (data.type == "Item") {
     if (!("data" in data))
       return ui.notifications.warn(
         "Você só pode criar Macros para Atributos, ou Itens. Você pode referenciar atributos e perícias com @. Ex.: @for ou @luta"
@@ -202,7 +202,7 @@ async function createCronicasMacro(data, slot) {
     // const actor = getItemOwner(item);
     // Create the macro command
     let command = "";
-    if (item.type === "arma") {
+    if (item.type == "arma") {
       command = `
 //UTILIZE OS CAMPOS ABAIXO PARA MODIFICAR um ATAQUE
 //VALORES SERÃO SOMADOS A CARACTEÍSTICA.
@@ -226,7 +226,7 @@ game.cronicasrpg.rollItemMacro("${item.name}",{
     }
 
     let macro = game.macros.entities.find(
-      (m) => m.name === item.name && m.command === command
+      (m) => m.name == item.name && m.command == command
     );
     if (!macro) {
       macro = await Macro.create({
@@ -259,11 +259,11 @@ async function rollItemMacro(itemName, extra = null) {
   if (extra) {
     item = actor
       ? actor.items.find(
-        (i) => i.name === itemName && extra && i.type !== "arma"
+        (i) => i.name == itemName && extra && i.type !== "arma"
       )
       : null;
   } else {
-    item = actor ? actor.items.find((i) => i.name === itemName) : null;
+    item = actor ? actor.items.find((i) => i.name == itemName) : null;
   }
   if (!actor) return ui.notifications.warn(`Selecione um personagem.`);
   if (!item)
@@ -283,21 +283,21 @@ async function rollAttributeMacro(skillName, subtype) {
   if (!actor) return ui.notifications.warn(`Selecione um personagem.`);
   if (subtype == "oficios") {
     for (let [t, sk] of Object.entries(actor.data.data.pericias["ofi"].mais)) {
-      if (sk.label === skillName) {
+      if (sk.label == skillName) {
         skill = sk;
         break;
       }
     }
   } else if (subtype == "custom") {
     for (let [t, sk] of Object.entries(actor.data.data.periciasCustom)) {
-      if (sk.label === skillName) {
+      if (sk.label == skillName) {
         skill = sk;
         break;
       }
     }
   } else {
     for (let [t, sk] of Object.entries(actor.data.data.pericias)) {
-      if (sk.label === skillName) {
+      if (sk.label == skillName) {
         skill = sk;
         break;
       }
