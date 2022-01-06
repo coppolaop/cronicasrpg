@@ -54,6 +54,10 @@
           "valor": 5,
           "gasta": 0
         },
+        "pontospoder": {
+          "maximos": 0,
+          "atuais": 0
+        },
         "recursos": 2,
         "status": 2
       },

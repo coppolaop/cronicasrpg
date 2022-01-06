@@ -237,7 +237,6 @@
   list-style: none;
   margin: 7px 0;
   padding: 0;
-  overflow-y: auto;
 }
 
 .cronicasrpg .items-list .item-header {
@@ -260,6 +259,10 @@
   width: 24px;
   background-size: 24px;
   background-repeat: no-repeat;
+}
+
+.cronicasrpg .poder-list label{
+  padding: 10px 25px 0 25px;
 }
 
 .cronicasrpg .items-list .item img {

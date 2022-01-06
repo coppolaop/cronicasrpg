@@ -12,7 +12,7 @@ export class CronicasActorSheet extends ActorSheet {
       classes: ["cronicasrpg", "sheet", "actor"],
       template: "systems/cronicasrpg/templates/actor/actor-sheet.html",
       width: 600,
-      height: 600,
+      height: 650,
       tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "descricao" }]
     });
   }

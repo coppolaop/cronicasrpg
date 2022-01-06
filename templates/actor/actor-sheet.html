@@ -245,6 +245,25 @@
           {{/each}}
         </ol>
       </div>
+      <div class="poder-list">
+        <ol class="items-list">
+          <li class="item flexrow item-header flex-center">
+            <div>{{localize 'cronicasrpg.pontosdepoder'}}</div>
+          </li>
+          <li class="flexrow flex-center">
+            <label>
+              <input type="text" name="data.pontospoder.maximos" value="{{data.data.pontospoder.maximos}}"
+                data-dtype="Number" />
+              {{localize 'cronicasrpg.maximos'}}
+            </label>
+            <label>
+              <input type="text" name="data.pontospoder.atuais" value="{{data.data.pontospoder.atuais}}"
+                data-dtype="Number" />
+              {{localize 'cronicasrpg.atuais'}}
+            </label>
+          </li>
+        </ol>
+      </div>
     </div>
 
     {{!-- Personality Tab --}}
