@@ -26,7 +26,7 @@ Se for possível e você julgar necessário, adicione prints para nos facilitar 
 **Por favor, complete as seguintes informações:**
  - Seu Sistema Operacional: [e.g. iOS]
  - A versão que você está utilizando do Foundry VTT: [e.g. v9] (Observe a compatibilidade do sistema)
- - A versão que você está utilizando do Sistema Crônicas RPG: [e.g. 1.1.2] (tente sempre utilizar a última)
+ - A versão que você está utilizando do Sistema Crônicas RPG: [e.g. 1.2.0] (tente sempre utilizar a última)
 
 **Informações adicionais**
 Acrescente aqui qualquer outra informação que você acredita ser útil.
