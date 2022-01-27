@@ -145,8 +145,10 @@ function rollCronicas(roll, actor, templateData, actionType = {}) {
             }
         })
 
-        if (rollQuantity != 0 && actionType != "iniciativa") {
-            roll = rollQuantity;
+        if (actionType != "iniciativa") {
+            if (rollQuantity != 0) {
+                roll = rollQuantity;
+            }
             roll = roll + "d6cs>3";
         }
 
