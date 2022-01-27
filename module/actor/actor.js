@@ -72,13 +72,27 @@ export class CronicasActor extends Actor {
     const data = this.data.data;
     let armadura = 0;
     let defesaArma = 0;
+    let incrementoVigorFisico = 0;
+    let incrementoVigorMental = 0;
+    let incrementoVigorSocial = 0;
 
     this.data.items.forEach(item => {
       if (item.data.type == "armadura" && item.data.data.equipada && (armadura < item.data.data.absorcao)) {
         armadura = item.data.data.absorcao;
       }
+
       if (item.data.data.defensiva && !item.data.data.guardado && (defesaArma < item.data.data.defensivaValor)) {
         defesaArma = item.data.data.defensivaValor;
+      }
+
+      if (item.data.data.aumentoVigor == "fisico") {
+        incrementoVigorFisico += item.data.data.aumentoVigorValor
+      }
+      else if (item.data.data.aumentoVigor == "mental") {
+        incrementoVigorMental += item.data.data.aumentoVigorValor
+      }
+      else if (item.data.data.aumentoVigor == "social") {
+        incrementoVigorSocial += item.data.data.aumentoVigorValor
       }
     });
 
@@ -86,17 +100,17 @@ export class CronicasActor extends Actor {
     data.combate.fisico.iniciativa = data.atributos[data.combate.escolha].valor - data.penalidades.ferimento;
     data.combate.fisico.defesa = Math.trunc((data.atributos.agilidade.valor + data.atributos.manejo.valor) / 3) + defesaArma;
     data.combate.fisico.absorcao = armadura;
-    data.combate.fisico.vigor = data.atributos.resistencia.valor;
+    data.combate.fisico.vigor = data.atributos.resistencia.valor + incrementoVigorFisico;
     //Mental
     data.combate.mental.iniciativa = data.atributos.inteligencia.valor - data.penalidades.frustracao;
     data.combate.mental.defesa = Math.trunc((data.atributos.inteligencia.valor + data.atributos.conhecimento.valor) / 3);
     data.combate.mental.absorcao = data.atributos.conhecimento.valor
-    data.combate.mental.vigor = data.atributos.vontade.valor;
+    data.combate.mental.vigor = data.atributos.vontade.valor = incrementoVigorMental;
     //Social
     data.combate.social.iniciativa = data.atributos.labia.valor - data.penalidades.hesitacao;
     data.combate.social.defesa = Math.trunc((data.atributos.blefe.valor + data.atributos.labia.valor) / 3);
     data.combate.social.absorcao = data.pontos.status;
-    data.combate.social.vigor = data.atributos.lideranca.valor;
+    data.combate.social.vigor = data.atributos.lideranca.valor + incrementoVigorSocial;
   }
 
   /**

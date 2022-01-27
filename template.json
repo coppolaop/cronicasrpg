@@ -611,7 +611,6 @@
       "posse",
       "virtude",
       "fraqueza",
-      "poder",
       "arma",
       "armadura"
     ],
@@ -640,7 +639,9 @@
       "templates": [
         "base",
         "personalidade"
-      ]
+      ],
+      "aumentoVigor": "",
+      "aumentoVigorValor": 0
     },
     "fraqueza": {
       "templates": [
@@ -670,12 +671,6 @@
       "absorcao": 0,
       "penalidade": 0,
       "equipada": false
-    },
-    "poder": {
-      "templates": [
-        "base"
-      ],
-      "pontosGastos": 1
     }
   }
 }

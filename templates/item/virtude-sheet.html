@@ -18,6 +18,24 @@
             <textarea class="largeTextArea" name="data.descricao"
                 data-dtype="String">{{#if data.data.descricao}}{{data.data.descricao}}{{/if}}</textarea>
         </div>
-
+        <div class="grid grid-2col">
+            <div class="input-sheet">
+                <label>{{localize 'cronicasrpg.virtude.vigorincrementado'}}</label>
+                <select class="selectatr" name="data.aumentoVigor" value={{data.data.aumentoVigor}} data-dtype="String">
+                    {{#select data.data.aumentoVigor}}
+                    <option value="">{{localize 'cronicasrpg.nenhum'}}</option>
+                    <option value="fisico">{{localize 'cronicasrpg.fisico'}}</option>
+                    <option value="mental">{{localize 'cronicasrpg.mental'}}</option>
+                    <option value="social">{{localize 'cronicasrpg.social'}}</option>
+                    {{/select}}
+                </select>
+            </div>
+            {{#if data.data.aumentoVigor}}
+            <div class="input-sheet">
+                <label>{{localize 'cronicasrpg.pontos'}}</label>
+                <input name="data.aumentoVigorValor" type="Number" value="{{data.data.aumentoVigorValor}}" />
+            </div>
+            {{/if}}
+        </div>
     </section>
 </form>

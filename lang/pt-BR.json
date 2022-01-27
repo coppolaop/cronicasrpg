@@ -187,6 +187,8 @@
     "cronicasrpg.acao.bloquearMaior": "Bloquear (Ação Maior)",
     "cronicasrpg.acao.primeiro": "1°",
     "cronicasrpg.acao.segundo": "2°",
+    "cronicasrpg.nenhum": "Nenhum",
+    "cronicasrpg.virtude.vigorincrementado": "Vigor Incrementado",
     "cronicasrpg.settings.diagonalMovement.name": "Movimento diagonal",
     "cronicasrpg.settings.diagonalMovement.hint": "Configura qual regra de movimento diagonal será usada no sistema.",
     "cronicasrpg.settings.diagonalMovement.padrao": "Padrão (2m)",
