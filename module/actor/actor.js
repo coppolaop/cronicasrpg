@@ -105,7 +105,7 @@ export class CronicasActor extends Actor {
     data.combate.mental.iniciativa = data.atributos.inteligencia.valor - data.penalidades.frustracao;
     data.combate.mental.defesa = Math.trunc((data.atributos.inteligencia.valor + data.atributos.conhecimento.valor) / 3);
     data.combate.mental.absorcao = data.atributos.conhecimento.valor
-    data.combate.mental.vigor = data.atributos.vontade.valor = incrementoVigorMental;
+    data.combate.mental.vigor = data.atributos.vontade.valor + incrementoVigorMental;
     //Social
     data.combate.social.iniciativa = data.atributos.labia.valor - data.penalidades.hesitacao;
     data.combate.social.defesa = Math.trunc((data.atributos.blefe.valor + data.atributos.labia.valor) / 3);
