@@ -2,7 +2,7 @@
   "name": "cronicasrpg",
   "title": "Crônicas RPG",
   "description": "The Crônicas RPG system for FoundryVTT!",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "minimumCoreVersion": "0.8.0",
   "compatibleCoreVersion": "9",
   "templateVersion": 2,
