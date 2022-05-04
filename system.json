@@ -60,8 +60,13 @@
   ],
   "languages": [
     {
+      "lang": "en",
+      "name": "English ",
+      "path": "lang/en.json"
+    },
+    {
       "lang": "pt-BR",
-      "name": "Brazilian Portuguese",
+      "name": "Português Brasileiro",
       "path": "lang/pt-BR.json"
     }
   ],
