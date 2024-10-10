@@ -15,14 +15,14 @@
     <section class="sheet-body">
         <div class="full border">
             <label>{{localize 'cronicasrpg.descricao'}}</label>
-            <textarea class="largeTextArea" name="data.descricao"
-                data-dtype="String">{{#if data.data.descricao}}{{data.data.descricao}}{{/if}}</textarea>
+            <textarea class="largeTextArea" name="descricao"
+                data-dtype="String">{{#if data.system.descricao}}{{data.system.descricao}}{{/if}}</textarea>
         </div>
         <div class="grid grid-2col">
             <div class="input-sheet">
                 <label>{{localize 'cronicasrpg.virtude.vigorincrementado'}}</label>
-                <select class="selectatr" name="data.aumentoVigor" value={{data.data.aumentoVigor}} data-dtype="String">
-                    {{#select data.data.aumentoVigor}}
+                <select class="selectatr" name="aumentoVigor" value={{data.system.aumentoVigor}} data-dtype="String">
+                    {{#select data.system.aumentoVigor}}
                     <option value="">{{localize 'cronicasrpg.nenhum'}}</option>
                     <option value="fisico">{{localize 'cronicasrpg.fisico'}}</option>
                     <option value="mental">{{localize 'cronicasrpg.mental'}}</option>
@@ -30,10 +30,10 @@
                     {{/select}}
                 </select>
             </div>
-            {{#if data.data.aumentoVigor}}
+            {{#if data.system.aumentoVigor}}
             <div class="input-sheet">
                 <label>{{localize 'cronicasrpg.pontos'}}</label>
-                <input name="data.aumentoVigorValor" type="Number" value="{{data.data.aumentoVigorValor}}" />
+                <input name="system.aumentoVigorValor" type="Number" value="{{data.system.aumentoVigorValor}}" />
             </div>
             {{/if}}
         </div>

@@ -177,11 +177,10 @@ export const getItemOwner = function (item) {
 };
 
 async function createCronicasMacro(data, slot) {
-  if (data.type == "Atributo") {
-    const item = data.data;
-    const command = `game.cronicasrpg.rollAttributeMacro("${item.label}","${data.subtype}");`;
+  if (type == "Atributo") {
+    const command = `game.cronicasrpg.rollAttributeMacro("${system.label}","${subtype}");`;
     let macro = game.macros.entities.find(
-      (m) => m.name == item.label && m.command == command
+      (m) => m.name == system.label && m.command == command
     );
     if (!macro) {
       macro = await Macro.create({
@@ -193,21 +192,20 @@ async function createCronicasMacro(data, slot) {
     game.user.assignHotbarMacro(macro, slot);
     return false;
   }
-  if (data.type == "Item") {
+  if (type == "Item") {
     if (!("data" in data))
       return ui.notifications.warn(
         "Você só pode criar Macros para Atributos, ou Itens. Você pode referenciar atributos e perícias com @. Ex.: @for ou @luta"
       );
-    const item = data.data;
     // const actor = getItemOwner(item);
     // Create the macro command
     let command = "";
-    if (item.type == "arma") {
+    if (system.type == "arma") {
       command = `
 //UTILIZE OS CAMPOS ABAIXO PARA MODIFICAR um ATAQUE
 //VALORES SERÃO SOMADOS A CARACTEÍSTICA.
 //INICIAR COM "=" SUBSTITUIRÁ O BÔNUS DA FICHA DA ARMA
-game.cronicasrpg.rollItemMacro("${item.name}",{
+game.cronicasrpg.rollItemMacro("${system.name}",{
            'atq' : "0",
       'dadoDano' : "",
           'dano' : "0", 
@@ -222,17 +220,17 @@ game.cronicasrpg.rollItemMacro("${item.name}",{
      'descricao' : ""
 });`;
     } else {
-      command = `game.cronicasrpg.rollItemMacro("${item.name}");`;
+      command = `game.cronicasrpg.rollItemMacro("${system.name}");`;
     }
 
     let macro = game.macros.entities.find(
-      (m) => m.name == item.name && m.command == command
+      (m) => m.name == system.name && m.command == command
     );
     if (!macro) {
       macro = await Macro.create({
-        name: item.name,
+        name: system.name,
         type: "script",
-        img: item.img,
+        img: system.img,
         command: command,
         flags: {
           "cronicasrpg.itemMacro": true,
@@ -282,21 +280,21 @@ async function rollAttributeMacro(skillName, subtype) {
   if (!actor) actor = game.actors.get(speaker.actor);
   if (!actor) return ui.notifications.warn(`Selecione um personagem.`);
   if (subtype == "oficios") {
-    for (let [t, sk] of Object.entries(actor.data.data.pericias["ofi"].mais)) {
+    for (let [t, sk] of Object.entries(actor.system.pericias["ofi"].mais)) {
       if (sk.label == skillName) {
         skill = sk;
         break;
       }
     }
   } else if (subtype == "custom") {
-    for (let [t, sk] of Object.entries(actor.data.data.periciasCustom)) {
+    for (let [t, sk] of Object.entries(actor.system.periciasCustom)) {
       if (sk.label == skillName) {
         skill = sk;
         break;
       }
     }
   } else {
-    for (let [t, sk] of Object.entries(actor.data.data.pericias)) {
+    for (let [t, sk] of Object.entries(actor.system.pericias)) {
       if (sk.label == skillName) {
         skill = sk;
         break;

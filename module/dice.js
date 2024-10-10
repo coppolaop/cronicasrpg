@@ -10,7 +10,7 @@ export async function prepRoll(event, item, actor = null, actionType = {}) {
     let itemDt;
 
     if (item.data) {
-        itemDt = item.data.data
+        itemDt = item.system
     }
 
     let templateData = {
@@ -20,8 +20,8 @@ export async function prepRoll(event, item, actor = null, actionType = {}) {
     };
 
     if (itemDt && itemDt.dano && (actionType == 'padrao' || actionType == 'total' || actionType == 'multiplo')) {
-        templateData.rollDano = actor.data.data.atributos[itemDt.atributoDano].total;
-        templateData.rollDano += itemDt.dano;
+        templaterollDano = actor.system.atributos[itemDt.atributoDano].total;
+        templaterollDano += itemDt.dano;
     }
 
     if (formula) {
@@ -43,8 +43,8 @@ export async function prepRoll(event, item, actor = null, actionType = {}) {
         if (!event.shiftKey || actionType == 'iniciativa') {
             rollCronicas(formula, actor, templateData, actionType);
         } else {
-            templateData.formula = formula;
-            templateData.rollMode = rollMode;
+            templateformula = formula;
+            templaterollMode = rollMode;
             let dialogCallback = (html) => {
                 rollMode = html.find('[name="rollMode"]').val();
                 let rollMod = html.find('[name="mod"]').val();
@@ -79,8 +79,8 @@ export async function prepRoll(event, item, actor = null, actionType = {}) {
             });
         }
     } else {
-        templateData.title = item.name;
-        templateData.details = item.data.data.descricao;
+        templatetitle = item.name;
+        templatedetails = item.system.descricao;
         rollCronicas(formula, actor, templateData, actionType);
     }
 }
@@ -101,8 +101,8 @@ function rollCronicas(roll, actor, templateData, actionType = {}) {
     };
 
     let rollMode = game.settings.get("core", "rollMode");
-    if (templateData.rollMode) {
-        rollMode = templateData.rollMode;
+    if (templaterollMode) {
+        rollMode = templaterollMode;
     }
 
     if (["gmroll", "blindroll"].includes(rollMode))
@@ -133,7 +133,7 @@ function rollCronicas(roll, actor, templateData, actionType = {}) {
                 dificuldade += Number(dado);
             }
             else {
-                if (templateData.title == null || (actionType == "iniciativa" && !dado.includes("d"))) {
+                if (templatetitle == null || (actionType == "iniciativa" && !dado.includes("d"))) {
                     roll += dado;
                 } else {
                     let quantidade = dado.split("d")[0];
@@ -152,7 +152,7 @@ function rollCronicas(roll, actor, templateData, actionType = {}) {
             roll = roll + "d6cs>3";
         }
 
-        templateData.dificuldade = dificuldade;
+        templatedificuldade = dificuldade;
 
         if (roll.match(/(\d*)d\d+/g)) {
             formula = roll;
@@ -165,7 +165,7 @@ function rollCronicas(roll, actor, templateData, actionType = {}) {
             roll.roll();
             result = roll.result;
 
-            if (templateData.title != null && actionType == "iniciativa" && combate) {
+            if (templatetitle != null && actionType == "iniciativa" && combate) {
                 let combatente = combate.combatants.find(
                     (combatant) => combatant.actor.id == actor.id
                 );
@@ -181,41 +181,41 @@ function rollCronicas(roll, actor, templateData, actionType = {}) {
                 }
             }
 
-            chatData.roll = roll;
+            chatroll = roll;
 
             // Render it.
             roll.render(rollTemplate).then((r) => {
-                templateData.roll = r;
+                templateroll = r;
                 renderTemplate(template, templateData).then((content) => {
-                    chatData.content = content;
+                    chatcontent = content;
                     if (game.dice3d) {
                         game.dice3d
                             .showForRoll(
                                 roll,
                                 game.user,
                                 true,
-                                chatData.whisper,
-                                chatData.blind
+                                chatwhisper,
+                                chatblind
                             )
                             .then((displayed) => ChatMessage.create(chatData));
                     } else {
-                        chatData.sound = CONFIG.sounds.dice;
+                        chatsound = CONFIG.sounds.dice;
                         ChatMessage.create(chatData);
                     }
                 });
             });
         } else {
             result.render(rollTemplate).then((r) => {
-                templateData.roll = r;
+                templateroll = r;
                 renderTemplate(template, templateData).then((content) => {
-                    chatData.content = content;
+                    chatcontent = content;
                     ChatMessage.create(chatData);
                 });
             });
         }
     } else {
         renderTemplate(template, templateData).then((content) => {
-            chatData.content = content;
+            chatcontent = content;
             ChatMessage.create(chatData);
         });
     }
@@ -223,8 +223,8 @@ function rollCronicas(roll, actor, templateData, actionType = {}) {
 
 /* Add hook to calculate number of success and change the total of the roll */
 Hooks.on('renderChatMessage', (message, html, data) => {
-    if (!message.roll || message.data.content.includes(game.i18n.localize("cronicasrpg.iniciativa"))) return;
-    if (message.data.flavor && message.data.flavor.includes("Initiative")) return;
+    if (!message.roll || message.content.includes(game.i18n.localize("cronicasrpg.iniciativa"))) return;
+    if (message.flavor && message.flavor.includes("Initiative")) return;
 
     let sucessos = Number(html.find('.valor-dificuldade').text());
     sucessos += Number(message.roll.result);
