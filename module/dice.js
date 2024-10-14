@@ -20,8 +20,8 @@ export async function prepRoll(event, item, actor = null, actionType = {}) {
     };
 
     if (itemDt && itemDt.dano && (actionType == 'padrao' || actionType == 'total' || actionType == 'multiplo')) {
-        templaterollDano = actor.system.atributos[itemDt.atributoDano].total;
-        templaterollDano += itemDt.dano;
+        templateData.rollDano = actor.system.atributos[itemDt.atributoDano].total;
+        templateData.rollDano += itemDt.dano;
     }
 
     if (formula) {
@@ -43,8 +43,8 @@ export async function prepRoll(event, item, actor = null, actionType = {}) {
         if (!event.shiftKey || actionType == 'iniciativa') {
             rollCronicas(formula, actor, templateData, actionType);
         } else {
-            templateformula = formula;
-            templaterollMode = rollMode;
+            templateData.formula = formula;
+            templateData.rollMode = rollMode;
             let dialogCallback = (html) => {
                 rollMode = html.find('[name="rollMode"]').val();
                 let rollMod = html.find('[name="mod"]').val();
@@ -79,8 +79,8 @@ export async function prepRoll(event, item, actor = null, actionType = {}) {
             });
         }
     } else {
-        templatetitle = item.name;
-        templatedetails = item.system.descricao;
+        templateData.title = item.name;
+        templateData.details = item.system.descricao;
         rollCronicas(formula, actor, templateData, actionType);
     }
 }
@@ -101,8 +101,8 @@ function rollCronicas(roll, actor, templateData, actionType = {}) {
     };
 
     let rollMode = game.settings.get("core", "rollMode");
-    if (templaterollMode) {
-        rollMode = templaterollMode;
+    if (templateData.rollMode) {
+        rollMode = templateData.rollMode;
     }
 
     if (["gmroll", "blindroll"].includes(rollMode))
@@ -133,7 +133,7 @@ function rollCronicas(roll, actor, templateData, actionType = {}) {
                 dificuldade += Number(dado);
             }
             else {
-                if (templatetitle == null || (actionType == "iniciativa" && !dado.includes("d"))) {
+                if (templateData.title == null || (actionType == "iniciativa" && !dado.includes("d"))) {
                     roll += dado;
                 } else {
                     let quantidade = dado.split("d")[0];
@@ -152,7 +152,7 @@ function rollCronicas(roll, actor, templateData, actionType = {}) {
             roll = roll + "d6cs>3";
         }
 
-        templatedificuldade = dificuldade;
+        templateData.dificuldade = dificuldade;
 
         if (roll.match(/(\d*)d\d+/g)) {
             formula = roll;
@@ -165,7 +165,7 @@ function rollCronicas(roll, actor, templateData, actionType = {}) {
             roll.roll();
             result = roll.result;
 
-            if (templatetitle != null && actionType == "iniciativa" && combate) {
+            if (templateData.title != null && actionType == "iniciativa" && combate) {
                 let combatente = combate.combatants.find(
                     (combatant) => combatant.actor.id == actor.id
                 );
@@ -181,41 +181,41 @@ function rollCronicas(roll, actor, templateData, actionType = {}) {
                 }
             }
 
-            chatroll = roll;
+            chatData.roll = roll;
 
             // Render it.
             roll.render(rollTemplate).then((r) => {
-                templateroll = r;
+                templateData.roll = r;
                 renderTemplate(template, templateData).then((content) => {
-                    chatcontent = content;
+                    chatData.content = content;
                     if (game.dice3d) {
                         game.dice3d
                             .showForRoll(
                                 roll,
                                 game.user,
                                 true,
-                                chatwhisper,
-                                chatblind
+                                chatData.whisper,
+                                chatData.blind
                             )
                             .then((displayed) => ChatMessage.create(chatData));
                     } else {
-                        chatsound = CONFIG.sounds.dice;
+                        chatData.sound = CONFIG.sounds.dice;
                         ChatMessage.create(chatData);
                     }
                 });
             });
         } else {
             result.render(rollTemplate).then((r) => {
-                templateroll = r;
+                templateData.roll = r;
                 renderTemplate(template, templateData).then((content) => {
-                    chatcontent = content;
+                    chatData.content = content;
                     ChatMessage.create(chatData);
                 });
             });
         }
     } else {
         renderTemplate(template, templateData).then((content) => {
-            chatcontent = content;
+            chatData.content = content;
             ChatMessage.create(chatData);
         });
     }
