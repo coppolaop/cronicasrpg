@@ -34,7 +34,7 @@ export class CronicasActorSheet extends ActorSheet {
     }
 
     // Prepare items.
-    if (this.actor.system.type == 'character') {
+    if (this.actor.type == 'character') {
       this._prepareCharacterItems(data);
     }
 
