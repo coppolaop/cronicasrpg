@@ -8,7 +8,7 @@ export class CronicasActorSheet extends ActorSheet {
 
   /** @override */
   static get defaultOptions() {
-    return mergeObject(super.defaultOptions, {
+    return foundry.utils.mergeObject(super.defaultOptions, {
       classes: ["cronicasrpg", "sheet", "actor"],
       template: "systems/cronicasrpg/templates/actor/actor-sheet.html",
       width: 600,
