@@ -3,12 +3,10 @@
   "title": "Crônicas RPG",
   "description": "The Crônicas RPG system for FoundryVTT!",
   "version": "2.0.0",
-  "minimumCoreVersion": "10.282",
-  "compatibleCoreVersion": "10",
   "compatibility": {
     "minimum": 10,
-    "verified": "10.282",
-    "maximum": 11
+    "verified": "12.331",
+    "maximum": 12
   },
   "templateVersion": 2,
   "author": "Coppolaop",
