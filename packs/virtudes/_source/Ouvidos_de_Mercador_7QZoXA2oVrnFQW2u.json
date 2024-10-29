@@ -1,0 +1,32 @@
+{
+  "_id": "7QZoXA2oVrnFQW2u",
+  "name": "Ouvidos de Mercador",
+  "type": "virtude",
+  "flags": {},
+  "img": "icons/commodities/treasure/medal-ribbon-silver-blue.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "ownership": {
+    "default": 0,
+    "sjRSmZ3ulIOCP3g3": 3
+  },
+  "system": {
+    "descricao": "+2D em Ouvir (Percepção) para conversas e +1D em Enganação (Blefe) para disfarçar.",
+    "especializacao": "",
+    "incremento": "",
+    "aumentoVigor": "",
+    "aumentoVigorValor": 0
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!7QZoXA2oVrnFQW2u"
+}

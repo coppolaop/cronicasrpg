@@ -1,0 +1,32 @@
+{
+  "_id": "7rPRKD5Lnkt2SHQC",
+  "name": "Preces Respondidas",
+  "type": "virtude",
+  "flags": {},
+  "img": "icons/commodities/treasure/medal-ribbon-gold-red.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "ownership": {
+    "default": 0,
+    "sjRSmZ3ulIOCP3g3": 3
+  },
+  "system": {
+    "descricao": "+2D num teste de um aliado ao focalizar suas preces em seu êxito (Ação Maior).",
+    "especializacao": "",
+    "incremento": "",
+    "aumentoVigor": "",
+    "aumentoVigorValor": 0
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!7rPRKD5Lnkt2SHQC"
+}

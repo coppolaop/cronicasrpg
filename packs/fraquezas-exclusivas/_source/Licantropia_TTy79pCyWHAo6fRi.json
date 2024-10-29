@@ -1,0 +1,30 @@
+{
+  "_id": "TTy79pCyWHAo6fRi",
+  "name": "Licantropia",
+  "type": "fraqueza",
+  "flags": {},
+  "img": "icons/commodities/bones/skull-white-purple.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "ownership": {
+    "default": 0,
+    "sjRSmZ3ulIOCP3g3": 3
+  },
+  "system": {
+    "descricao": "Nas noites de lua cheia o personagem se transforma num lobisomem (pág. 165), perdendo o controle sobre o próprio corpo se falhar num teste de Concentração (Vontade), dando lugar a uma fera selvagem controlada pelo narrador. Se estiver prestes a atacar um aliado, o jogador pode fazer o teste novamente para entender que não se trata de uma presa ou oponente. Adicionalmente, ataques feitos com armas de prata feitos a qualquer momento lhe causam um ponto adicional de Vigor físico a cada vez que for atingido.",
+    "especializacao": "",
+    "incremento": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!TTy79pCyWHAo6fRi"
+}

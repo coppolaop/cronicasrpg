@@ -1,0 +1,35 @@
+{
+  "_id": "W5F1z3IF7NVdBRf6",
+  "name": "Manto Pesado",
+  "type": "armadura",
+  "flags": {},
+  "img": "icons/equipment/back/cloak-heavy-collared-fur-green.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "ownership": {
+    "default": 0,
+    "sjRSmZ3ulIOCP3g3": 3
+  },
+  "system": {
+    "descricao": "Um agrupamento de panos com volume grande que protege de alguns impactos.",
+    "quantidade": 1,
+    "fardo": false,
+    "guardado": false,
+    "valor": 2,
+    "absorcao": 1,
+    "penalidade": 1,
+    "equipada": false
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!W5F1z3IF7NVdBRf6"
+}

@@ -1,0 +1,32 @@
+{
+  "_id": "blAU1tlyfB7f5jCw",
+  "name": "Veneno Cicuta",
+  "type": "virtude",
+  "flags": {},
+  "img": "icons/commodities/treasure/medal-ribbon-gold-red.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "ownership": {
+    "default": 0,
+    "sjRSmZ3ulIOCP3g3": 3
+  },
+  "system": {
+    "descricao": "Basta ingerir oito folhas para ter uma morte lenta e dolorosa.",
+    "especializacao": "",
+    "incremento": "",
+    "aumentoVigor": "",
+    "aumentoVigorValor": 0
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!blAU1tlyfB7f5jCw"
+}

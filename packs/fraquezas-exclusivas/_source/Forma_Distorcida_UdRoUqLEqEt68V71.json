@@ -1,0 +1,30 @@
+{
+  "_id": "UdRoUqLEqEt68V71",
+  "name": "Forma Distorcida",
+  "type": "fraqueza",
+  "flags": {},
+  "img": "icons/commodities/bones/skull-white-purple.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "ownership": {
+    "default": 0,
+    "sjRSmZ3ulIOCP3g3": 3
+  },
+  "system": {
+    "descricao": "Sua forma física (inclusive a parte física da sua Ficha de Personagem) foi transformada assim por uma poderosa força sobrenatural, podendo sua forma original inclusive pertencer a outra raça (fada, elfo, anão, ofre, etc.) A transformação se deu por uma razão especificada pelo narrador no Histórico, prendendo o personagem a uma demanda que precisa ser resolvida para recuperar a forma verdadeira. Até que sua missão seja cumprida ou outra solução encontrada, sua forma será a da Ficha de Personagem.",
+    "especializacao": "",
+    "incremento": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!UdRoUqLEqEt68V71"
+}

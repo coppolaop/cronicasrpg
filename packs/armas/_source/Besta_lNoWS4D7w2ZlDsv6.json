@@ -1,0 +1,40 @@
+{
+  "_id": "lNoWS4D7w2ZlDsv6",
+  "name": "Besta",
+  "type": "arma",
+  "flags": {},
+  "img": "icons/weapons/crossbows/crossbow-simple-brown.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "ownership": {
+    "default": 0,
+    "sjRSmZ3ulIOCP3g3": 3
+  },
+  "system": {
+    "descricao": "",
+    "quantidade": 1,
+    "fardo": false,
+    "guardado": false,
+    "valor": 3,
+    "especializacaoAcerto": "pontaria.especializacoes.besta",
+    "atributoDano": "agilidade",
+    "dano": 1,
+    "particularidades": "Distância 30m, Recarregável (Ação Maior) e Perfuradora.\n\n• Distância: Usa Pontaria no ataque ao invés\nde Manejo, podendo atingir alvos até a distância especificada sem penalidade, depois com\n-1S e +1 no dano até o dobro desta distância,\ndepois -3S e +2 no dano do dobro até o triplo.\n+1D contra alvos até 1m.\n• Recarregável: Se não estiver pronta para atirar precisa ser\ncarregada com a ação especificada.\n• Perfuradora: As descrições de estrago com a arma são de\nefeitos perfurantes. Certas virtudes afetam apenas as armas\ncom esta Particularidade.",
+    "complicada": false,
+    "defensiva": false,
+    "ruimDeBloqueio": false,
+    "defensivaValor": 0
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!lNoWS4D7w2ZlDsv6"
+}

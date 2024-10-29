@@ -1,0 +1,40 @@
+{
+  "_id": "4e7I2qSNRZa3Xufp",
+  "name": "Mangual",
+  "type": "arma",
+  "flags": {},
+  "img": "icons/weapons/maces/flail-ball-grey.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "ownership": {
+    "default": 0,
+    "sjRSmZ3ulIOCP3g3": 3
+  },
+  "system": {
+    "descricao": "",
+    "quantidade": 1,
+    "fardo": false,
+    "guardado": false,
+    "valor": 3,
+    "especializacaoAcerto": "manejo.especializacoes.umaMao",
+    "atributoDano": "forca",
+    "dano": 2,
+    "particularidades": "Complicada, Desastrosa, Dinâmica, Esmagadora e Ruim de Bloqueio.\n\n• Complicada: -1D nos ataques com essa\narma pela complexidade com que deve ser\nmanuseada.\n• Desastrosa: Falhas Críticas causam no atacante ou num aliado próximo o dano que seria\ninflingido em seu alvo.\n• Dinâmica: Pode ser manejada com uma ou\nas duas mãos, no segundo caso valendo-se da\ncaracterística de arma Duas Mãos.\n• Esmagadora: As descrições de estrago\ncom a arma são de efeitos contundentes. Algumas virtudes afetam apenas as armas com\nesta Particularidade.\n• Ruim de Bloqueio: Testes de Bloqueio são\npenalizados em -1S.",
+    "complicada": true,
+    "defensiva": false,
+    "ruimDeBloqueio": true,
+    "defensivaValor": 0
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!4e7I2qSNRZa3Xufp"
+}

@@ -1,0 +1,32 @@
+{
+  "_id": "X11OorlS4IkNwH5T",
+  "name": "Séquito",
+  "type": "virtude",
+  "flags": {},
+  "img": "icons/commodities/treasure/medal-ribbon-gold-red.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "ownership": {
+    "default": 0,
+    "sjRSmZ3ulIOCP3g3": 3
+  },
+  "system": {
+    "descricao": "Cerca de dez seguidores estão constantemente à sua disposição.",
+    "especializacao": "",
+    "incremento": "",
+    "aumentoVigor": "",
+    "aumentoVigorValor": 0
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!X11OorlS4IkNwH5T"
+}

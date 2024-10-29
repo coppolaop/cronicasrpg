@@ -1,0 +1,40 @@
+{
+  "_id": "CKzhH0oYW1l5sKWn",
+  "name": "Picareta",
+  "type": "arma",
+  "flags": {},
+  "img": "icons/tools/hand/pickaxe-steel-grey.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "ownership": {
+    "default": 0,
+    "sjRSmZ3ulIOCP3g3": 3
+  },
+  "system": {
+    "descricao": "",
+    "quantidade": 1,
+    "fardo": false,
+    "guardado": false,
+    "valor": 2,
+    "especializacaoAcerto": "manejo.especializacoes.duasMaos",
+    "atributoDano": "forca",
+    "dano": 2,
+    "particularidades": "Duas Mãos e Perfuradora.\n\n• Duas Mãos: Ao usar a especialização Duas\nMãos em Manejo, cada trunfo investido no\ndano causará +2 ao invés de +1.\n• Perfuradora: As descrições de estrago com a arma são de\nefeitos perfurantes. Certas virtudes afetam apenas as armas\ncom esta Particularidade.",
+    "complicada": false,
+    "defensiva": false,
+    "ruimDeBloqueio": false,
+    "defensivaValor": 0
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!CKzhH0oYW1l5sKWn"
+}

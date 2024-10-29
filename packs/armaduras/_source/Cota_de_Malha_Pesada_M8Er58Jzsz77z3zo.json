@@ -1,0 +1,35 @@
+{
+  "_id": "M8Er58Jzsz77z3zo",
+  "name": "Cota de Malha Pesada",
+  "type": "armadura",
+  "flags": {},
+  "img": "icons/equipment/chest/breastplate-banded-steel-gold.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "ownership": {
+    "default": 0,
+    "sjRSmZ3ulIOCP3g3": 3
+  },
+  "system": {
+    "descricao": "Uma cota de malha um pouco mais reforçada.",
+    "quantidade": 1,
+    "fardo": false,
+    "guardado": false,
+    "valor": 4,
+    "absorcao": 4,
+    "penalidade": 1,
+    "equipada": false
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!M8Er58Jzsz77z3zo"
+}

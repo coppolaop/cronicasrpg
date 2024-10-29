@@ -1,0 +1,30 @@
+{
+  "_id": "MNiOPQ8vQjoVgIE6",
+  "name": "Preso aos Mortos",
+  "type": "fraqueza",
+  "flags": {},
+  "img": "icons/commodities/bones/skull-white-purple.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "ownership": {
+    "default": 0,
+    "sjRSmZ3ulIOCP3g3": 3
+  },
+  "system": {
+    "descricao": "Um fantasma está preso ao personagem, incapaz de aparecer fisicamente, mas perturbando-o com pesadelos de suas piores lembranças. Essa fraqueza se parece com Melancolia (Delírio) pela falta de descanso, mas quando a cortina que separa o mundo dos vivos com o dos mortos se torna menos espesso (como nos cemitérios à noite ou num campo de mortos após uma batalha), este e outros espíritos poderão visitá-lo. Se o fantasma for alvo do poder Banimento, seus grilhões o farão retornar para o personagem em uma questão de dias.",
+    "especializacao": "",
+    "incremento": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!MNiOPQ8vQjoVgIE6"
+}

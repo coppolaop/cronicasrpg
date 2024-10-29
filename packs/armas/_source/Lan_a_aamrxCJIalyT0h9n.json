@@ -1,0 +1,40 @@
+{
+  "_id": "aamrxCJIalyT0h9n",
+  "name": "Lança",
+  "type": "arma",
+  "flags": {},
+  "img": "icons/weapons/polearms/spear-flared-steel.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "ownership": {
+    "default": 0,
+    "sjRSmZ3ulIOCP3g3": 3
+  },
+  "system": {
+    "descricao": "",
+    "quantidade": 1,
+    "fardo": false,
+    "guardado": false,
+    "valor": 1,
+    "especializacaoAcerto": "manejo.especializacoes.umaMao",
+    "atributoDano": "forca",
+    "dano": 2,
+    "particularidades": "Dinâmica, Haste e Perfuradora.\n\n• Dinâmica: Pode ser manejada com uma ou\nas duas mãos, no segundo caso valendo-se da\ncaracterística de arma Duas Mãos.\nHaste: A ação Derrubar pode ser realizada sem a\npenalidade de -2S, desde que não esteja montado ou num lugar\nmais alto que o alvo.\n• Perfuradora: As descrições de estrago com a arma são de\nefeitos perfurantes. Certas virtudes afetam apenas as armas\ncom esta Particularidade.",
+    "complicada": false,
+    "defensiva": false,
+    "ruimDeBloqueio": false,
+    "defensivaValor": 0
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!aamrxCJIalyT0h9n"
+}

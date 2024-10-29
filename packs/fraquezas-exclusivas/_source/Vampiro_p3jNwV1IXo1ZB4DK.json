@@ -1,0 +1,30 @@
+{
+  "_id": "p3jNwV1IXo1ZB4DK",
+  "name": "Vampiro",
+  "type": "fraqueza",
+  "flags": {},
+  "img": "icons/commodities/bones/skull-white-purple.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "ownership": {
+    "default": 0,
+    "sjRSmZ3ulIOCP3g3": 3
+  },
+  "system": {
+    "descricao": "Seu sangue carrega uma maldição que o transformou num morto vivo, com forma imortal e a possibilidade de comprar a virtude Poderes Vampíricos, mas oferece três desvantagens:\n1) O contato direto da sua pele com a luz do dia faz perder um ponto de Vigor físico por turno(até uma armadura fechada não consegue protegê-lo);\n2) Ataques com fogo (raios, flechas incendiárias, etc.) o fazem perder um ponto a mais de Vigor físico a cada vez que é atingido;\n3) Só sangue o alimenta, pois qualquer outra coisa consumida é desenvolvida quase imediatamente. Muitos outros detalhes de sua fisiologia variam de acordo com o cenário.",
+    "especializacao": "",
+    "incremento": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!p3jNwV1IXo1ZB4DK"
+}

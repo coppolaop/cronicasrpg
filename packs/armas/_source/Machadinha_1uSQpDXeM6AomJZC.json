@@ -1,0 +1,40 @@
+{
+  "_id": "1uSQpDXeM6AomJZC",
+  "name": "Machadinha",
+  "type": "arma",
+  "flags": {},
+  "img": "icons/weapons/axes/axe-broad-engraved.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "ownership": {
+    "default": 0,
+    "sjRSmZ3ulIOCP3g3": 3
+  },
+  "system": {
+    "descricao": "",
+    "quantidade": 1,
+    "fardo": false,
+    "guardado": false,
+    "valor": 2,
+    "especializacaoAcerto": "manejo.especializacoes.umaMao",
+    "atributoDano": "forca",
+    "dano": 1,
+    "particularidades": "Cortante ou Esmagadora, Defensiva +1 e Leve.\n\n• Cortante: As descrições de estrago com a\narma são de efeitos cortantes. Algumas virtudes afetam apenas as armas com esta Particularidade.\n• Esmagadora: As descrições de estrago\ncom a arma são de efeitos contundentes. Algumas virtudes afetam apenas as armas com\nesta Particularidade.\n• Defensiva: Soma o bônus na Defesa Física\ncontra ataques corpo a corpo frontais caso\nessa arma não foi utilizada para atacar ainda\nna rodada. Além disso, nos Testes de Bloqueio\narmas defensivas não sofrem a penalidade de\n-2S com a mão inábil. Atenção: bônus defensivos de armas diferentes não são cumulativos.\nEscudos somam o bônus especificado na Defesa Física contra ataques à distância frontais\nou pelo flanco das mãos que o seguram.\n• Leve: Personagens com a virtude Acuidade podem causar\ndano com Agilidade ao invés de Força.",
+    "complicada": false,
+    "defensiva": true,
+    "ruimDeBloqueio": false,
+    "defensivaValor": 1
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!1uSQpDXeM6AomJZC"
+}

@@ -1,0 +1,35 @@
+{
+  "_id": "gAtr4UEQvffH8fxs",
+  "name": "Veste de Couro",
+  "type": "armadura",
+  "flags": {},
+  "img": "icons/equipment/chest/coat-collared-red-gold.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "ownership": {
+    "default": 0,
+    "sjRSmZ3ulIOCP3g3": 3
+  },
+  "system": {
+    "descricao": "Armadura leve comumente utilizada por arqueiros e batedores.",
+    "quantidade": 1,
+    "fardo": false,
+    "guardado": false,
+    "valor": 2,
+    "absorcao": 1,
+    "penalidade": 0,
+    "equipada": false
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!gAtr4UEQvffH8fxs"
+}

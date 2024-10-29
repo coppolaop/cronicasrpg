@@ -1,0 +1,32 @@
+{
+  "_id": "7tSPBYsUM2a6EVmt",
+  "name": "Gigantesco",
+  "type": "virtude",
+  "flags": {},
+  "img": "icons/commodities/treasure/medal-ribbon-gold-red.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "ownership": {
+    "default": 0,
+    "sjRSmZ3ulIOCP3g3": 3
+  },
+  "system": {
+    "descricao": "Sua força e tamanho permitem usar armas de duas mãos com apenas uma.",
+    "especializacao": "",
+    "incremento": "",
+    "aumentoVigor": "",
+    "aumentoVigorValor": 0
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!7tSPBYsUM2a6EVmt"
+}

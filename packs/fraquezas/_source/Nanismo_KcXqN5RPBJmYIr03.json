@@ -1,0 +1,30 @@
+{
+  "name": "Nanismo",
+  "type": "fraqueza",
+  "flags": {},
+  "img": "icons/commodities/bones/skull-hollow-worn-white.webp",
+  "effects": [],
+  "_id": "KcXqN5RPBJmYIr03",
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "ownership": {
+    "default": 0,
+    "sjRSmZ3ulIOCP3g3": 3
+  },
+  "system": {
+    "descricao": "-1S em Agilidade e Força, -1m no Movimento e +1D em Furtividade.",
+    "especializacao": "",
+    "incremento": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!KcXqN5RPBJmYIr03"
+}

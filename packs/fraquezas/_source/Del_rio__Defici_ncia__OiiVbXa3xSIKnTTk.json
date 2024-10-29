@@ -1,0 +1,30 @@
+{
+  "name": "Delírio (Deficiência)",
+  "type": "fraqueza",
+  "flags": {},
+  "img": "icons/commodities/bones/skull-hollow-worn-white.webp",
+  "effects": [],
+  "_id": "OiiVbXa3xSIKnTTk",
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "ownership": {
+    "default": 0,
+    "sjRSmZ3ulIOCP3g3": 3
+  },
+  "system": {
+    "descricao": "Sente os sintomas de uma deficiência sem que o defeito físico exista.",
+    "especializacao": "",
+    "incremento": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!OiiVbXa3xSIKnTTk"
+}

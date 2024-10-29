@@ -1,0 +1,40 @@
+{
+  "_id": "uJIePqnFefllTL2X",
+  "name": "Machado",
+  "type": "arma",
+  "flags": {},
+  "img": "icons/weapons/axes/axe-simple-grey.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "ownership": {
+    "default": 0,
+    "sjRSmZ3ulIOCP3g3": 3
+  },
+  "system": {
+    "descricao": "",
+    "quantidade": 1,
+    "fardo": false,
+    "guardado": false,
+    "valor": 1,
+    "especializacaoAcerto": "manejo.especializacoes.umaMao",
+    "atributoDano": "forca",
+    "dano": 2,
+    "particularidades": "Cortante ou Esmagadora e Ruim de Bloqueio.\n\n• Cortante: As descrições de estrago com a\narma são de efeitos cortantes. Algumas virtudes afetam apenas as armas com esta Particularidade.\n• Esmagadora: As descrições de estrago\ncom a arma são de efeitos contundentes. Algumas virtudes afetam apenas as armas com\nesta Particularidade.\n• Ruim de Bloqueio: Testes de Bloqueio são\npenalizados em -1S.",
+    "complicada": false,
+    "defensiva": false,
+    "ruimDeBloqueio": true,
+    "defensivaValor": 0
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!uJIePqnFefllTL2X"
+}

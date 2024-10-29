@@ -22,42 +22,42 @@
       "name": "armaduras",
       "label": "Armaduras",
       "system": "cronicasrpg",
-      "path": "./packs/armaduras.db",
+      "path": "packs/armaduras",
       "type": "Item"
     },
     {
       "name": "armas",
       "label": "Armas",
       "system": "cronicasrpg",
-      "path": "./packs/armas.db",
+      "path": "packs/armas",
       "type": "Item"
     },
     {
       "name": "virtudes",
       "label": "Virtudes",
       "system": "cronicasrpg",
-      "path": "./packs/virtudes.db",
+      "path": "packs/virtudes",
       "type": "Item"
     },
     {
       "name": "virtudes-unicas",
       "label": "Virtudes Únicas",
       "system": "cronicasrpg",
-      "path": "./packs/virtudes-unicas.db",
+      "path": "packs/virtudes-unicas",
       "type": "Item"
     },
     {
       "name": "fraquezas",
       "label": "Fraquezas",
       "system": "cronicasrpg",
-      "path": "./packs/fraquezas.db",
+      "path": "packs/fraquezas",
       "type": "Item"
     },
     {
       "name": "fraquezas-exclusivas",
       "label": "Fraquezas Exclusivas",
       "system": "cronicasrpg",
-      "path": "./packs/fraquezas-exclusivas.db",
+      "path": "packs/fraquezas-exclusivas",
       "type": "Item"
     }
   ],

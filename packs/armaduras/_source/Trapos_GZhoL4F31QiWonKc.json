@@ -1,0 +1,35 @@
+{
+  "_id": "GZhoL4F31QiWonKc",
+  "name": "Trapos",
+  "type": "armadura",
+  "flags": {},
+  "img": "icons/equipment/chest/shirt-simple-grey.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "ownership": {
+    "default": 0,
+    "sjRSmZ3ulIOCP3g3": 3
+  },
+  "system": {
+    "descricao": "Pedaços de pano sem muito valor e rasgados. Farrapos comumente utilizados por maltrapilhos.",
+    "quantidade": 1,
+    "fardo": false,
+    "guardado": false,
+    "valor": 0,
+    "absorcao": 0,
+    "penalidade": 0,
+    "equipada": false
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!GZhoL4F31QiWonKc"
+}

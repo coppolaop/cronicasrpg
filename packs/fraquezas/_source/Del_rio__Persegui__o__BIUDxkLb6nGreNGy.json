@@ -1,0 +1,30 @@
+{
+  "name": "Delírio (Perseguição)",
+  "type": "fraqueza",
+  "flags": {},
+  "img": "icons/commodities/bones/skull-hollow-worn-white.webp",
+  "effects": [],
+  "_id": "BIUDxkLb6nGreNGy",
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "ownership": {
+    "default": 0,
+    "sjRSmZ3ulIOCP3g3": 3
+  },
+  "system": {
+    "descricao": "Convicção de que algo muito ruim está para acontecer.",
+    "especializacao": "",
+    "incremento": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!BIUDxkLb6nGreNGy"
+}
