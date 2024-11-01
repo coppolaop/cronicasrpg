@@ -1,0 +1,30 @@
+{
+  "name": "Matusalém",
+  "type": "fraqueza",
+  "flags": {},
+  "img": "icons/commodities/bones/skull-hollow-worn-white.webp",
+  "effects": [],
+  "_id": "y4uV1diOLXl7Q2WT",
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "ownership": {
+    "default": 0,
+    "sjRSmZ3ulIOCP3g3": 3
+  },
+  "system": {
+    "descricao": "Após dez anos da compra desta fraqueza, -1 em todos os atributos.",
+    "especializacao": "",
+    "incremento": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!y4uV1diOLXl7Q2WT"
+}

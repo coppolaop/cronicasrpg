@@ -1,0 +1,40 @@
+{
+  "_id": "y4pIOV1041Uu8U9P",
+  "name": "Martelo Pesado",
+  "type": "arma",
+  "flags": {},
+  "img": "icons/weapons/hammers/hammer-war-rounding.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "ownership": {
+    "default": 0,
+    "sjRSmZ3ulIOCP3g3": 3
+  },
+  "system": {
+    "descricao": "",
+    "quantidade": 1,
+    "fardo": true,
+    "guardado": false,
+    "valor": 3,
+    "especializacaoAcerto": "manejo.especializacoes.duasMaos",
+    "atributoDano": "forca",
+    "dano": 4,
+    "particularidades": "Duas Mãos, Esmagadora, Fardo, Mortal e Ruim de Bloqueio.\n\n• Duas Mãos: Ao usar a especialização Duas\nMãos em Manejo, cada trunfo investido no\ndano causará +2 ao invés de +1.\n• Esmagadora: As descrições de estrago\ncom a arma são de efeitos contundentes. Algumas virtudes afetam apenas as armas com\nesta Particularidade.\n• Fardo: O peso da arma torna mais lento, reduzindo seu Movimento em -1m/rodada para cada equipamento com esta particularidade.\n• Mortal: O Teste de Sobrevivência com esta arma passa a ser:\n1-3) Morte ou 4-6) Mutilação.\n• Ruim de Bloqueio: Testes de Bloqueio são\npenalizados em -1S.",
+    "complicada": false,
+    "defensiva": false,
+    "ruimDeBloqueio": true,
+    "defensivaValor": 0
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!y4pIOV1041Uu8U9P"
+}

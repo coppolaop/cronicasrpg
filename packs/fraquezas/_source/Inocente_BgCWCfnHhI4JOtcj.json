@@ -1,0 +1,30 @@
+{
+  "name": "Inocente",
+  "type": "fraqueza",
+  "flags": {},
+  "img": "icons/commodities/bones/skull-hollow-worn-white.webp",
+  "effects": [],
+  "_id": "BgCWCfnHhI4JOtcj",
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "ownership": {
+    "default": 0,
+    "sjRSmZ3ulIOCP3g3": 3
+  },
+  "system": {
+    "descricao": "-2S em todos os Testes Resistidos de Empatia (Percepção) contra Blefe.",
+    "especializacao": "",
+    "incremento": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!BgCWCfnHhI4JOtcj"
+}

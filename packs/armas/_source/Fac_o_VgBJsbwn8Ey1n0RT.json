@@ -1,0 +1,40 @@
+{
+  "_id": "VgBJsbwn8Ey1n0RT",
+  "name": "Facão",
+  "type": "arma",
+  "flags": {},
+  "img": "icons/weapons/swords/scimitar-bone.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "ownership": {
+    "default": 0,
+    "sjRSmZ3ulIOCP3g3": 3
+  },
+  "system": {
+    "descricao": "",
+    "quantidade": 1,
+    "fardo": false,
+    "guardado": false,
+    "valor": 2,
+    "especializacaoAcerto": "manejo.especializacoes.umaMao",
+    "atributoDano": "forca",
+    "dano": 1,
+    "particularidades": "Cortante ou Perfuradora.\n\n• Cortante: As descrições de estrago com a\narma são de efeitos cortantes. Algumas virtudes afetam apenas as armas com esta Particularidade.\n• Perfuradora: As descrições de estrago com a arma são de\nefeitos perfurantes. Certas virtudes afetam apenas as armas\ncom esta Particularidade.",
+    "complicada": false,
+    "defensiva": false,
+    "ruimDeBloqueio": false,
+    "defensivaValor": 0
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!VgBJsbwn8Ey1n0RT"
+}

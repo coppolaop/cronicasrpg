@@ -1,0 +1,30 @@
+{
+  "_id": "0TMlaeLW6wpIbSmM",
+  "name": "Peão",
+  "type": "fraqueza",
+  "flags": {},
+  "img": "icons/commodities/bones/skull-white-purple.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "ownership": {
+    "default": 0,
+    "sjRSmZ3ulIOCP3g3": 3
+  },
+  "system": {
+    "descricao": "O personagem é apenas uma peça de um complexo jogo político. Sua influência é garantida por um manipulador com ainda mais poder, que lhe diz o que deve fazer quando o assunto disser respeito ao jogo mencionado acima. A ideia de confrontá-lo deve ser inimaginável, por muito (ou tudo) o que acumulou na vida pode ser destruído. Especificar Manipulador.",
+    "especializacao": "",
+    "incremento": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!0TMlaeLW6wpIbSmM"
+}

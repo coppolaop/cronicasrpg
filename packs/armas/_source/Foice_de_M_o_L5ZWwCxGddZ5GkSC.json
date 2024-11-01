@@ -1,0 +1,40 @@
+{
+  "_id": "L5ZWwCxGddZ5GkSC",
+  "name": "Foice de Mão",
+  "type": "arma",
+  "flags": {},
+  "img": "icons/weapons/sickles/sickle-hooked-wood.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "ownership": {
+    "default": 0,
+    "sjRSmZ3ulIOCP3g3": 3
+  },
+  "system": {
+    "descricao": "",
+    "quantidade": 1,
+    "fardo": false,
+    "guardado": false,
+    "valor": 3,
+    "especializacaoAcerto": "manejo.especializacoes.umaMao",
+    "atributoDano": "forca",
+    "dano": 0,
+    "particularidades": "Cortante, Leve e Ruim de Bloqueio.\n\n• Cortante: As descrições de estrago com a\narma são de efeitos cortantes. Algumas virtudes afetam apenas as armas com esta Particularidade.\n• Leve: Personagens com a virtude Acuidade podem causar\ndano com Agilidade ao invés de Força.\n• Ruim de Bloqueio: Testes de Bloqueio são\npenalizados em -1S.",
+    "complicada": false,
+    "defensiva": false,
+    "ruimDeBloqueio": true,
+    "defensivaValor": 0
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!L5ZWwCxGddZ5GkSC"
+}

@@ -1,0 +1,40 @@
+{
+  "_id": "9KGLTX5y9jo6hErG",
+  "name": "Machado, Arremesso",
+  "type": "arma",
+  "flags": {},
+  "img": "icons/weapons/axes/axe-battle-black.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "ownership": {
+    "default": 0,
+    "sjRSmZ3ulIOCP3g3": 3
+  },
+  "system": {
+    "descricao": "",
+    "quantidade": 1,
+    "fardo": false,
+    "guardado": false,
+    "valor": 1,
+    "especializacaoAcerto": "manejo.especializacoes.umaMao",
+    "atributoDano": "agilidade",
+    "dano": 0,
+    "particularidades": "Cortante ou Esmagadora, e Distância 3m.\n\n• Cortante: As descrições de estrago com a\narma são de efeitos cortantes. Algumas virtudes afetam apenas as armas com esta Particularidade.\n• Esmagadora: As descrições de estrago\ncom a arma são de efeitos contundentes. Algumas virtudes afetam apenas as armas com\nesta Particularidade.\n• Distância: Usa Pontaria no ataque ao invés\nde Manejo, podendo atingir alvos até a distância especificada sem penalidade, depois com\n-1S e +1 no dano até o dobro desta distância,\ndepois -3S e +2 no dano do dobro até o triplo.\n+1D contra alvos até 1m.",
+    "complicada": false,
+    "defensiva": false,
+    "ruimDeBloqueio": false,
+    "defensivaValor": 0
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!9KGLTX5y9jo6hErG"
+}

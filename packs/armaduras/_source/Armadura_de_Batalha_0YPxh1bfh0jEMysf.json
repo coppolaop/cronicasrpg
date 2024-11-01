@@ -1,0 +1,35 @@
+{
+  "_id": "0YPxh1bfh0jEMysf",
+  "name": "Armadura de Batalha",
+  "type": "armadura",
+  "flags": {},
+  "img": "icons/equipment/head/helm-sallet-steel.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "ownership": {
+    "default": 0,
+    "sjRSmZ3ulIOCP3g3": 3
+  },
+  "system": {
+    "descricao": "Consiste de placas interconectadas que cobrem o corpo quase inteiro em uma carapaça de aço. Ela é cara e pesada e o usuário frequentemente precisa de ajuda para vesti-la corretamente, mas fornece uma das melhores defesas que uma armadura pode fornecer.",
+    "quantidade": 1,
+    "fardo": true,
+    "guardado": false,
+    "valor": 5,
+    "absorcao": 6,
+    "penalidade": 2,
+    "equipada": false
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!0YPxh1bfh0jEMysf"
+}

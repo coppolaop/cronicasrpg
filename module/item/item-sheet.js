@@ -6,7 +6,7 @@ export class CronicasItemSheet extends ItemSheet {
 
   /** @override */
   static get defaultOptions() {
-    return mergeObject(super.defaultOptions, {
+    return foundry.utils.mergeObject(super.defaultOptions, {
       classes: ["cronicasrpg", "sheet", "item"],
       width: 520,
       height: 400,
@@ -18,7 +18,7 @@ export class CronicasItemSheet extends ItemSheet {
   get template() {
     const path = "systems/cronicasrpg/templates/item";
 
-    return `${path}/${this.item.data.type}-sheet.html`;
+    return `${path}/${this.item.type}-sheet.html`;
   }
 
   /* -------------------------------------------- */

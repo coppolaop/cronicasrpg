@@ -1,0 +1,40 @@
+{
+  "_id": "ddiTIgPvCmz8J8mx",
+  "name": "Escudo",
+  "type": "arma",
+  "img": "icons/equipment/shield/round-wooden-boss-steel-brown.webp",
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "ownership": {
+    "default": 0,
+    "sjRSmZ3ulIOCP3g3": 3
+  },
+  "system": {
+    "descricao": "",
+    "quantidade": 1,
+    "fardo": false,
+    "guardado": false,
+    "valor": 2,
+    "especializacaoAcerto": "manejo.especializacoes.escudo",
+    "atributoDano": "forca",
+    "dano": 0,
+    "particularidades": "Defensiva +1 e Esmagadora.\n\n• Defensiva: Soma o bônus na Defesa Física\ncontra ataques corpo a corpo frontais caso\nessa arma não foi utilizada para atacar ainda\nna rodada. Além disso, nos Testes de Bloqueio\narmas defensivas não sofrem a penalidade de\n-2S com a mão inábil. Atenção: bônus defensivos de armas diferentes não são cumulativos.\nEscudos somam o bônus especificado na Defesa Física contra ataques à distância frontais\nou pelo flanco das mãos que o seguram.\n• Esmagadora: As descrições de estrago\ncom a arma são de efeitos contundentes. Algumas virtudes afetam apenas as armas com\nesta Particularidade.",
+    "complicada": false,
+    "defensiva": true,
+    "ruimDeBloqueio": false,
+    "defensivaValor": 1
+  },
+  "_key": "!items!ddiTIgPvCmz8J8mx"
+}

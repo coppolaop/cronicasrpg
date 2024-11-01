@@ -1,10 +1,13 @@
 {
-  "name": "cronicasrpg",
+  "id": "cronicasrpg",
   "title": "Crônicas RPG",
   "description": "The Crônicas RPG system for FoundryVTT!",
-  "version": "1.3.1",
-  "minimumCoreVersion": "0.8.0",
-  "compatibleCoreVersion": "9",
+  "version": "2.0.0",
+  "compatibility": {
+    "minimum": 10,
+    "verified": "12.331",
+    "maximum": 12
+  },
   "templateVersion": 2,
   "author": "Coppolaop",
   "esmodules": [
@@ -19,43 +22,43 @@
       "name": "armaduras",
       "label": "Armaduras",
       "system": "cronicasrpg",
-      "path": "./packs/armaduras.db",
-      "entity": "Item"
+      "path": "packs/armaduras",
+      "type": "Item"
     },
     {
       "name": "armas",
       "label": "Armas",
       "system": "cronicasrpg",
-      "path": "./packs/armas.db",
-      "entity": "Item"
+      "path": "packs/armas",
+      "type": "Item"
     },
     {
       "name": "virtudes",
       "label": "Virtudes",
       "system": "cronicasrpg",
-      "path": "./packs/virtudes.db",
-      "entity": "Item"
+      "path": "packs/virtudes",
+      "type": "Item"
     },
     {
       "name": "virtudes-unicas",
       "label": "Virtudes Únicas",
       "system": "cronicasrpg",
-      "path": "./packs/virtudes-unicas.db",
-      "entity": "Item"
+      "path": "packs/virtudes-unicas",
+      "type": "Item"
     },
     {
       "name": "fraquezas",
       "label": "Fraquezas",
       "system": "cronicasrpg",
-      "path": "./packs/fraquezas.db",
-      "entity": "Item"
+      "path": "packs/fraquezas",
+      "type": "Item"
     },
     {
       "name": "fraquezas-exclusivas",
       "label": "Fraquezas Exclusivas",
       "system": "cronicasrpg",
-      "path": "./packs/fraquezas-exclusivas.db",
-      "entity": "Item"
+      "path": "packs/fraquezas-exclusivas",
+      "type": "Item"
     }
   ],
   "languages": [

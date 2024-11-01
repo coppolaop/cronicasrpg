@@ -1,0 +1,30 @@
+{
+  "_id": "lQRKpfcR9unz5e87",
+  "name": "Futuro Sombrio",
+  "type": "fraqueza",
+  "flags": {},
+  "img": "icons/commodities/bones/skull-white-purple.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "ownership": {
+    "default": 0,
+    "sjRSmZ3ulIOCP3g3": 3
+  },
+  "system": {
+    "descricao": "Seu destino está atrelado a um futuro desastroso ainda desconhecido, que pode ser sentido por outros personagens por meio da virtude Sensitivo ou do poder Premonição, como também acontece com personagens com as fraquezas Maculado e Preso aos Mortos. Esse futuro pode ainda estar longe, mas já é capaz de marcá-lo bastante negativamente.",
+    "especializacao": "",
+    "incremento": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!lQRKpfcR9unz5e87"
+}

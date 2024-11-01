@@ -1,0 +1,40 @@
+{
+  "_id": "FL8qAOxpYYdkS3ss",
+  "name": "Maça",
+  "type": "arma",
+  "flags": {},
+  "img": "icons/weapons/maces/mace-flanged-steel.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "ownership": {
+    "default": 0,
+    "sjRSmZ3ulIOCP3g3": 3
+  },
+  "system": {
+    "descricao": "",
+    "quantidade": 1,
+    "fardo": false,
+    "guardado": false,
+    "valor": 2,
+    "especializacaoAcerto": "manejo.especializacoes.umaMao",
+    "atributoDano": "forca",
+    "dano": 2,
+    "particularidades": "Dinânica e Esmagadora.\n\n• Dinâmica: Pode ser manejada com uma ou\nas duas mãos, no segundo caso valendo-se da\ncaracterística de arma Duas Mãos.\n• Esmagadora: As descrições de estrago\ncom a arma são de efeitos contundentes. Algumas virtudes afetam apenas as armas com\nesta Particularidade.",
+    "complicada": false,
+    "defensiva": false,
+    "ruimDeBloqueio": false,
+    "defensivaValor": 0
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!FL8qAOxpYYdkS3ss"
+}

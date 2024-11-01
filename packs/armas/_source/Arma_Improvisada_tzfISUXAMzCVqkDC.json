@@ -1,0 +1,40 @@
+{
+  "_id": "tzfISUXAMzCVqkDC",
+  "name": "Arma Improvisada",
+  "type": "arma",
+  "flags": {},
+  "img": "icons/tools/hand/shovel-spade-steel-grey.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "ownership": {
+    "default": 0,
+    "sjRSmZ3ulIOCP3g3": 3
+  },
+  "system": {
+    "descricao": "",
+    "quantidade": 1,
+    "fardo": false,
+    "guardado": false,
+    "valor": 0,
+    "especializacaoAcerto": "manejo.especializacoes.briga",
+    "atributoDano": "forca",
+    "dano": -1,
+    "particularidades": "Atributo de acerto: Variável.\nFrágil, Não Letal e Ruim de Bloqueio.\n\n• Frágil: A arma quebra quando houver três ou mais sucessos num ataque bem sucedido, causando 1 ponto adicional de\ndano, mas tornando-a inútil.\n• Não Letal: O Teste de Sobrevivência com esta arma passa a\nser: 1) Mutilado ou 2-6) Desacordado.\n• Ruim de Bloqueio: Testes de Bloqueio são\npenalizados em -1S.",
+    "complicada": false,
+    "defensiva": false,
+    "ruimDeBloqueio": true,
+    "defensivaValor": 0
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!tzfISUXAMzCVqkDC"
+}

@@ -1,0 +1,35 @@
+{
+  "_id": "G58AiGlLw1ZR4nVg",
+  "name": "Peitoral de Metal",
+  "type": "armadura",
+  "flags": {},
+  "img": "icons/equipment/chest/breastplate-collared-steel.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "ownership": {
+    "default": 0,
+    "sjRSmZ3ulIOCP3g3": 3
+  },
+  "system": {
+    "descricao": "Formada apenas pela parte superior da armadura de batalha, sendo um pouco mais flexível que ela completa.",
+    "quantidade": 1,
+    "fardo": true,
+    "guardado": false,
+    "valor": 4,
+    "absorcao": 4,
+    "penalidade": 1,
+    "equipada": false
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!G58AiGlLw1ZR4nVg"
+}

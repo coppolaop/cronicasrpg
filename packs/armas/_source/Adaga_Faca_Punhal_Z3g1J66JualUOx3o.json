@@ -1,0 +1,40 @@
+{
+  "_id": "Z3g1J66JualUOx3o",
+  "name": "Adaga/Faca/Punhal",
+  "type": "arma",
+  "flags": {},
+  "img": "icons/weapons/daggers/dagger-black.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "ownership": {
+    "default": 0,
+    "sjRSmZ3ulIOCP3g3": 3
+  },
+  "system": {
+    "descricao": "",
+    "quantidade": 1,
+    "fardo": false,
+    "guardado": false,
+    "valor": 1,
+    "especializacaoAcerto": "manejo.especializacoes.umaMao",
+    "atributoDano": "forca",
+    "dano": -1,
+    "particularidades": "Atributo: Agilidade ou força\nCortante, Perfuradora, Leve e Ruim de Bloqueio.\n\n• Cortante: As descrições de estrago com a\narma são de efeitos cortantes. Algumas virtudes afetam apenas as armas com esta Particularidade.\n• Perfuradora: As descrições de estrago com a arma são de\nefeitos perfurantes. Certas virtudes afetam apenas as armas\ncom esta Particularidade.\n• Leve: Personagens com a virtude Acuidade podem causar\ndano com Agilidade ao invés de Força.\n• Ruim de Bloqueio: Testes de Bloqueio são\npenalizados em -1S.",
+    "complicada": false,
+    "defensiva": false,
+    "ruimDeBloqueio": true,
+    "defensivaValor": null
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!Z3g1J66JualUOx3o"
+}

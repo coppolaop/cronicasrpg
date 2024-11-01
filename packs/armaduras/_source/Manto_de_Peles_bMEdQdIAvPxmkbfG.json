@@ -1,0 +1,35 @@
+{
+  "_id": "bMEdQdIAvPxmkbfG",
+  "name": "Manto de Peles",
+  "type": "armadura",
+  "flags": {},
+  "img": "icons/equipment/back/cape-layered-simple-brown.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "ownership": {
+    "default": 0,
+    "sjRSmZ3ulIOCP3g3": 3
+  },
+  "system": {
+    "descricao": "Usada principalmente por bárbaros e selvagens, esta armadura é formada por várias camadas de peles e couro de animais.",
+    "quantidade": 1,
+    "fardo": false,
+    "guardado": false,
+    "valor": 3,
+    "absorcao": 2,
+    "penalidade": 1,
+    "equipada": false
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!bMEdQdIAvPxmkbfG"
+}

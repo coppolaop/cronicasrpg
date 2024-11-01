@@ -1,0 +1,40 @@
+{
+  "_id": "rWM39iaP2QSl96LG",
+  "name": "Foice Longa",
+  "type": "arma",
+  "flags": {},
+  "img": "icons/weapons/sickles/scythe-wrapped-yellow.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "ownership": {
+    "default": 0,
+    "sjRSmZ3ulIOCP3g3": 3
+  },
+  "system": {
+    "descricao": "",
+    "quantidade": 1,
+    "fardo": false,
+    "guardado": false,
+    "valor": 2,
+    "especializacaoAcerto": "manejo.especializacoes.umaMao",
+    "atributoDano": "forca",
+    "dano": 2,
+    "particularidades": "Complicada, Cortante, Haste e Ruim de Bloqueio.\n\n• Complicada: -1D nos ataques com essa\narma pela complexidade com que deve ser\nmanuseada.\n• Cortante: As descrições de estrago com a\narma são de efeitos cortantes. Algumas virtudes afetam apenas as armas com esta Particularidade.\nHaste: A ação Derrubar pode ser realizada sem a\npenalidade de -2S, desde que não esteja montado ou num lugar\nmais alto que o alvo.\n• Ruim de Bloqueio: Testes de Bloqueio são\npenalizados em -1S.",
+    "complicada": true,
+    "defensiva": false,
+    "ruimDeBloqueio": true,
+    "defensivaValor": 0
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!rWM39iaP2QSl96LG"
+}

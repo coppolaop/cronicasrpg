@@ -1,0 +1,30 @@
+{
+  "_id": "PaXdCEN1JUNRekWx",
+  "name": "Maculado",
+  "type": "fraqueza",
+  "flags": {},
+  "img": "icons/commodities/bones/skull-white-purple.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "ownership": {
+    "default": 0,
+    "sjRSmZ3ulIOCP3g3": 3
+  },
+  "system": {
+    "descricao": "Por alguma razão talvez até desconhecida pelo seu personagem, sua alma foi tocada por forças inferiores que o perturbam recorrentemente; a cada dia o narrador deve escolher um Delírio que irá afligi-lo. Essa fraqueza pode ser sentida por meio da virtude Sensitivo ou o poder Premonição, como acontece também com as fraquezas Preso aos Mortos e Futuro Sombrio. Demônios e outras criaturas inferiores podem sentir a mácula e o procuram para atormentar ou manipular.",
+    "especializacao": "",
+    "incremento": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!PaXdCEN1JUNRekWx"
+}

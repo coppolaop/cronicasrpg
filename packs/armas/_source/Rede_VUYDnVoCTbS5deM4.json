@@ -1,0 +1,40 @@
+{
+  "_id": "VUYDnVoCTbS5deM4",
+  "name": "Rede",
+  "type": "arma",
+  "flags": {},
+  "img": "icons/tools/fishing/net-tan.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "ownership": {
+    "default": 0,
+    "sjRSmZ3ulIOCP3g3": 3
+  },
+  "system": {
+    "descricao": "",
+    "quantidade": 1,
+    "fardo": false,
+    "guardado": false,
+    "valor": 2,
+    "especializacaoAcerto": "manejo.especializacoes.briga",
+    "atributoDano": "agilidade",
+    "dano": 0,
+    "particularidades": "Sem Dano, Gancho e Não Letal.\n\n• Sem Dano: A arma não possui dano.\n• Gancho: A ação Derrubar pode ser realizada sem a\npenalidade de -2S, desde que não esteja montado ou num lugar\nmais alto que o alvo.\n• Não Letal: O Teste de Sobrevivência com esta arma passa a\nser: 1) Mutilado ou 2-6) Desacordado.",
+    "complicada": false,
+    "defensiva": false,
+    "ruimDeBloqueio": false,
+    "defensivaValor": 0
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!VUYDnVoCTbS5deM4"
+}

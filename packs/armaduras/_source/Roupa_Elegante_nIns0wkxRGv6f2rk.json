@@ -1,0 +1,35 @@
+{
+  "_id": "nIns0wkxRGv6f2rk",
+  "name": "Roupa Elegante",
+  "type": "armadura",
+  "flags": {},
+  "img": "icons/equipment/chest/robe-layered-red.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "ownership": {
+    "default": 0,
+    "sjRSmZ3ulIOCP3g3": 3
+  },
+  "system": {
+    "descricao": "Tipo de vestimenta utilizada por nobres e outras pessoas com melhor condição financeira.",
+    "quantidade": 1,
+    "fardo": false,
+    "guardado": false,
+    "valor": 3,
+    "absorcao": 0,
+    "penalidade": 0,
+    "equipada": false
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!nIns0wkxRGv6f2rk"
+}

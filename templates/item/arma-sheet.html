@@ -16,38 +16,38 @@
     <section class="sheet-body">
         <div class="grid grid-3col">
             <div class="input-sheet">
-                <input type="checkbox" name="data.ruimDeBloqueio" value="{{data.data.ruimDeBloqueio}}" {{#if
-                    data.data.ruimDeBloqueio }}checked{{/if}} data-dtype="Boolean" />
+                <input type="checkbox" name="ruimDeBloqueio" value="{{system.ruimDeBloqueio}}" {{#if
+                    system.ruimDeBloqueio }}checked{{/if}} data-dtype="Boolean" />
                 <label>{{localize 'cronicasrpg.particularidade.ruimDeBloqueio'}}</label>
             </div>
             <div class="input-sheet">
-                <input type="checkbox" name="data.complicada" value="{{data.data.complicada}}" {{#if
-                    data.data.complicada }}checked{{/if}} data-dtype="Boolean" />
+                <input type="checkbox" name="complicada" value="{{system.complicada}}" {{#if
+                    system.complicada }}checked{{/if}} data-dtype="Boolean" />
                 <label>{{localize 'cronicasrpg.particularidade.complicada'}}</label>
             </div>
         </div>
         <div class="grid grid-3col">
             <div class="input-sheet">
-                <input type="checkbox" name="data.fardo" value="{{data.data.fardo}}" {{#if data.data.fardo
+                <input type="checkbox" name="fardo" value="{{system.fardo}}" {{#if system.fardo
                     }}checked{{/if}} data-dtype="Boolean" />
                 <label>{{localize 'cronicasrpg.particularidade.fardo'}}</label>
             </div>
             <div class="input-sheet">
-                <input type="checkbox" name="data.defensiva" value="{{data.data.defensiva}}" {{#if data.data.defensiva
+                <input type="checkbox" name="defensiva" value="{{system.defensiva}}" {{#if system.defensiva
                     }}checked{{/if}} data-dtype="Boolean" />
                 <label>{{localize 'cronicasrpg.particularidade.defensiva'}}</label>
             </div>
-            {{#if data.data.defensiva}}
-            <input name="data.defensivaValor" type="Number" value="{{data.data.defensivaValor}}"
+            {{#if system.defensiva}}
+            <input name="defensivaValor" type="Number" value="{{system.defensivaValor}}"
                 placeholder="{{localize 'cronicasrpg.particularidade.defensiva'}}" />
             {{/if}}
         </div>
         <div class="grid grid-4col">
             <div class="input-sheet">
                 <label>{{localize 'cronicasrpg.atributoAcerto'}}</label>
-                <select class="selectatr" name="data.especializacaoAcerto" value={{data.data.especializacaoAcerto}}
+                <select class="selectatr" name="especializacaoAcerto" value={{system.especializacaoAcerto}}
                     data-dtype="String">
-                    {{#select data.data.especializacaoAcerto}}
+                    {{#select system.especializacaoAcerto}}
                     <option value="manejo.especializacoes.briga">{{localize 'cronicasrpg.briga'}}</option>
                     <option value="manejo.especializacoes.umaMao">{{localize 'cronicasrpg.umaMao'}}</option>
                     <option value="manejo.especializacoes.duasMaos">{{localize 'cronicasrpg.duasMaos'}}</option>
@@ -63,8 +63,8 @@
             </div>
             <div class="input-sheet">
                 <label>{{localize 'cronicasrpg.atributoDano'}}</label>
-                <select class="selectatr" name="data.atributoDano" value={{data.data.atributoDano}} data-dtype="String">
-                    {{#select data.data.atributoDano}}
+                <select class="selectatr" name="atributoDano" value={{system.atributoDano}} data-dtype="String">
+                    {{#select system.atributoDano}}
                     <option value="agilidade">{{localize 'cronicasrpg.agilidade'}}</option>
                     <option value="forca">{{localize 'cronicasrpg.forca'}}</option>
                     {{/select}}
@@ -72,22 +72,22 @@
             </div>
             <div class="input-sheet">
                 <label>{{localize 'cronicasrpg.danoArma'}}</label>
-                <input type="text" name="data.dano" value="{{data.data.dano}}" data-dtype="Number" />
+                <input type="text" name="dano" value="{{system.dano}}" data-dtype="Number" />
             </div>
             <div>
                 <label>{{localize 'cronicasrpg.recursos'}}</label>
-                <input type="text" name="data.valor" value="{{data.data.valor}}" data-dtype="Number" />
+                <input type="text" name="valor" value="{{system.valor}}" data-dtype="Number" />
             </div>
         </div>
         <div class="full border">
             <label>{{localize 'cronicasrpg.particularidades'}}</label>
-            <textarea class="largeTextArea" name="data.particularidades" value="{{data.data.particularidades}}"
-                data-dtype="String">{{#if data.data.particularidades}}{{data.data.particularidades}}{{/if}}</textarea>
+            <textarea class="largeTextArea" name="particularidades" value="{{system.particularidades}}"
+                data-dtype="String">{{#if system.particularidades}}{{system.particularidades}}{{/if}}</textarea>
         </div>
         <div class="full border">
             <label>{{localize 'cronicasrpg.descricao'}}</label>
-            <textarea class="largeTextArea" name="data.descricao"
-                data-dtype="String">{{#if data.data.descricao}}{{data.data.descricao}}{{/if}}</textarea>
+            <textarea class="largeTextArea" name="descricao"
+                data-dtype="String">{{#if system.descricao}}{{system.descricao}}{{/if}}</textarea>
         </div>
     </section>
 </form>

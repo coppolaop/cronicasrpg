@@ -1,0 +1,35 @@
+{
+  "_id": "5vcAvOY0leOjcgMN",
+  "name": "Veste Acolchoada",
+  "type": "armadura",
+  "flags": {},
+  "img": "icons/equipment/chest/breastplate-quilted-brown.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "ownership": {
+    "default": 0,
+    "sjRSmZ3ulIOCP3g3": 3
+  },
+  "system": {
+    "descricao": "Esta armadura é simplesmente uma camada de tecido acolchoado pesado, às vezes usada por ser bastante barata. A veste acolchoada é mais fácil de danificar e destruir do que outros tipos de armadura.",
+    "quantidade": 1,
+    "fardo": false,
+    "guardado": false,
+    "valor": 3,
+    "absorcao": 1,
+    "penalidade": 0,
+    "equipada": false
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!5vcAvOY0leOjcgMN"
+}

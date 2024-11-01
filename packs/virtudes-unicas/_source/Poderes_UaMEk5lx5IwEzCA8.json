@@ -1,0 +1,32 @@
+{
+  "_id": "UaMEk5lx5IwEzCA8",
+  "name": "Poderes",
+  "type": "virtude",
+  "flags": {},
+  "img": "icons/commodities/treasure/medal-ribbon-gold-red.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "ownership": {
+    "default": 0,
+    "sjRSmZ3ulIOCP3g3": 3
+  },
+  "system": {
+    "descricao": "Seu vínculo com uma força sobrenatural lhe confere alguns poderes, inicialmente com nível\nde Potência Incipiente/1. +1 a cada ponto adicional de Elã queimado para isso. O narrador\ndeve escolher uma Compensação (Fraqueza sem restituição em Elã).",
+    "especializacao": "",
+    "incremento": "",
+    "aumentoVigor": "",
+    "aumentoVigorValor": 0
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!UaMEk5lx5IwEzCA8"
+}

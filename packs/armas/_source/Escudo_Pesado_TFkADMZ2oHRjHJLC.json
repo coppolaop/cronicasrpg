@@ -1,0 +1,40 @@
+{
+  "_id": "TFkADMZ2oHRjHJLC",
+  "name": "Escudo Pesado",
+  "type": "arma",
+  "img": "icons/equipment/shield/heater-steel-boss-red.webp",
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "flags": {},
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "ownership": {
+    "default": 0,
+    "sjRSmZ3ulIOCP3g3": 3
+  },
+  "system": {
+    "descricao": "",
+    "quantidade": 1,
+    "fardo": true,
+    "guardado": false,
+    "valor": 3,
+    "especializacaoAcerto": "manejo.especializacoes.escudo",
+    "atributoDano": "forca",
+    "dano": 1,
+    "particularidades": "Complicada, Defensiva +2, Esmagadora e Fardo.\n\n• Complicada: -1D nos ataques com essa\narma pela complexidade com que deve ser\nmanuseada.\n• Defensiva: Soma o bônus na Defesa Física\ncontra ataques corpo a corpo frontais caso\nessa arma não foi utilizada para atacar ainda\nna rodada. Além disso, nos Testes de Bloqueio\narmas defensivas não sofrem a penalidade de\n-2S com a mão inábil. Atenção: bônus defensivos de armas diferentes não são cumulativos.\nEscudos somam o bônus especificado na Defesa Física contra ataques à distância frontais\nou pelo flanco das mãos que o seguram.\n• Esmagadora: As descrições de estrago\ncom a arma são de efeitos contundentes. Algumas virtudes afetam apenas as armas com\nesta Particularidade.\n• Fardo: O peso da arma torna mais lento, reduzindo seu Movimento em -1m/rodada para cada equipamento com esta particularidade.",
+    "complicada": true,
+    "defensiva": true,
+    "ruimDeBloqueio": false,
+    "defensivaValor": 2
+  },
+  "_key": "!items!TFkADMZ2oHRjHJLC"
+}

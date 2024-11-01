@@ -1,0 +1,30 @@
+{
+  "_id": "6B4oZ0ktGyibTGgh",
+  "name": "Sangue de Fada",
+  "type": "fraqueza",
+  "flags": {},
+  "img": "icons/commodities/bones/skull-white-purple.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "ownership": {
+    "default": 0,
+    "sjRSmZ3ulIOCP3g3": 3
+  },
+  "system": {
+    "descricao": "Sua ascendência feérica o torna capaz de enxergar o mundo como apenas as fadas o fazem. Árvores, riachos, gramados e tudo criado pela natureza possuem cores mais fortes e um leve brilho, assim como castelos, vilas, casas e tudo o que foi construído pela humanidade perdem o colorido e lhe parecem opacos; o efeito causa -1S em Atenção (Percepção). Além disso, contatos eventuais com espíritos o fazem parecer que possui a fraqueza Mundo Imaginário, o que eventualmente causa certo estranhamento entre os homens.",
+    "especializacao": "",
+    "incremento": ""
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!6B4oZ0ktGyibTGgh"
+}

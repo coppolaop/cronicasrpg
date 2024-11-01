@@ -1,0 +1,35 @@
+{
+  "_id": "T1zw3xCJuCnNBM1p",
+  "name": "Cota de Malha",
+  "type": "armadura",
+  "flags": {},
+  "img": "icons/equipment/chest/breastplate-scale-grey.webp",
+  "effects": [],
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": null,
+    "systemVersion": null,
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "ownership": {
+    "default": 0,
+    "sjRSmZ3ulIOCP3g3": 3
+  },
+  "system": {
+    "descricao": "Uma cota de malha consiste de várias peças de armadura compostas de pequenos anéis de metal unidos formando uma malha protetora. Tipicamente ela inclui uma camisão de malha, calças, um par de proteção para os braços e uma coifa, coletivamente protegendo a maior parte do corpo.",
+    "quantidade": 1,
+    "fardo": false,
+    "guardado": false,
+    "valor": 3,
+    "absorcao": 3,
+    "penalidade": 1,
+    "equipada": false
+  },
+  "folder": null,
+  "sort": 0,
+  "_key": "!items!T1zw3xCJuCnNBM1p"
+}
