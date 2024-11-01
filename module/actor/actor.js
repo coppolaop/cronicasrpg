@@ -93,6 +93,9 @@ export class CronicasActor extends Actor {
       }
     });
 
+    //Maior atributo para utilização na iniciativa de combate fisico
+    this.system.combate.escolha = this.system.atributos.agilidade.valor > this.system.atributos.inteligencia.valor ? "agilidade": "inteligencia";
+
     //Fisico
     this.system.combate.fisico.iniciativa = this.system.atributos[this.system.combate.escolha].valor - this.system.penalidades.ferimento;
     this.system.combate.fisico.defesa = Math.trunc((this.system.atributos.agilidade.valor + this.system.atributos.manejo.valor) / 3) + defesaArma;

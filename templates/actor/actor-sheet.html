@@ -116,10 +116,7 @@
     <div class="tab combat" data-group="primary" data-tab="combat">
       <div class="grid grid-6col">
         <div class="infos resource">
-          <select class="selectatr" name="system.combate.escolha" value={{data.system.combate.escolha}} data-dtype="String">
-            <option value="agilidade">{{localize 'cronicasrpg.agilidade'}}</option>
-            <option value="inteligencia">{{localize 'cronicasrpg.inteligencia'}}</option>
-          </select>
+          <p style="min-height: 1.6rem;"></p>
           <p>{{localize 'cronicasrpg.fisico'}}</p>
           <p>{{localize 'cronicasrpg.mental'}}</p>
           <p>{{localize 'cronicasrpg.social'}}</p>
@@ -127,7 +124,7 @@
         <div class="infos resource">
           <p>{{localize 'cronicasrpg.iniciativa'}}</p>
           <div class="InputAddOn">
-            <input class="InputAddOn-field" type="text" name=system.combate.fisico.iniciativa"
+            <input class="InputAddOn-field" type="text" name="system.combate.fisico.iniciativa"
               value="{{data.system.combate.fisico.iniciativa}}" data-dtype="String" />
             <button class="btn-addOn rollable iniciativa-rollable"
               data-roll="1d6+{{data.system.combate.fisico.iniciativa}}"
@@ -135,7 +132,7 @@
                 class="fas fa-dice"></i></button>
           </div>
           <div class="InputAddOn">
-            <input type="text" name=system.combate.mental.iniciativa" value="{{data.system.combate.mental.iniciativa}}"
+            <input type="text" name="system.combate.mental.iniciativa" value="{{data.system.combate.mental.iniciativa}}"
               data-dtype="String" />
             <button class="btn-addOn rollable iniciativa-rollable"
               data-roll="1d6+{{data.system.combate.mental.iniciativa}}"
@@ -143,7 +140,7 @@
                 class="fas fa-dice"></i></button>
           </div>
           <div class="InputAddOn">
-            <input type="text" name=system.combate.social.iniciativa value="{{data.system.combate.social.iniciativa}}"
+            <input type="text" name="system.combate.social.iniciativa" value="{{data.system.combate.social.iniciativa}}"
               data-dtype="String" />
             <button class="btn-addOn rollable iniciativa-rollable"
               data-roll="1d6+{{data.system.combate.social.iniciativa}}"
@@ -153,38 +150,38 @@
         </div>
         <div class="infos resource">
           <p>{{localize 'cronicasrpg.defesa'}}</p>
-          <input type="text" name=system.combate.fisico.defesa value="{{data.system.combate.fisico.defesa}}"
+          <input type="text" name="system.combate.fisico.defesa" value="{{data.system.combate.fisico.defesa}}"
             data-dtype="Number" />
-          <input type="text" name=system.combate.mental.defesa value="{{data.system.combate.mental.defesa}}"
+          <input type="text" name="system.combate.mental.defesa" value="{{data.system.combate.mental.defesa}}"
             data-dtype="Number" />
-          <input type="text" name=system.combate.social.defesa value="{{data.system.combate.social.defesa}}"
+          <input type="text" name="system.combate.social.defesa" value="{{data.system.combate.social.defesa}}"
             data-dtype="Number" />
         </div>
         <div class="infos resource">
           <p>{{localize 'cronicasrpg.absorcao'}}</p>
-          <input type="text" name=system.combate.fisico.absorcao value="{{data.system.combate.fisico.absorcao}}"
+          <input type="text" name="system.combate.fisico.absorcao" value="{{data.system.combate.fisico.absorcao}}"
             data-dtype="Number" />
-          <input type="text" name=system.combate.mental.absorcao value="{{data.system.combate.mental.absorcao}}"
+          <input type="text" name="system.combate.mental.absorcao" value="{{data.system.combate.mental.absorcao}}"
             data-dtype="Number" />
-          <input type="text" name=system.combate.social.absorcao value="{{data.system.combate.social.absorcao}}"
+          <input type="text" name="system.combate.social.absorcao" value="{{data.system.combate.social.absorcao}}"
             data-dtype="Number" />
         </div>
         <div class="infos resource">
           <p>{{localize 'cronicasrpg.vigor'}}</p>
-          <input type="text" name=system.combate.fisico.vigor value="{{data.system.combate.fisico.vigor}}"
+          <input type="text" name="system.combate.fisico.vigor" value="{{data.system.combate.fisico.vigor}}"
             data-dtype="Number" />
-          <input type="text" name=system.combate.mental.vigor value="{{data.system.combate.mental.vigor}}"
+          <input type="text" name="system.combate.mental.vigor" value="{{data.system.combate.mental.vigor}}"
             data-dtype="Number" />
-          <input type="text" name=system.combate.social.vigor value="{{data.system.combate.social.vigor}}"
+          <input type="text" name="system.combate.social.vigor" value="{{data.system.combate.social.vigor}}"
             data-dtype="Number" />
         </div>
         <div class="infos resource">
           <p>{{localize 'cronicasrpg.vigorAtual'}}</p>
-          <input type="text" name=system.combate.fisico.vigorAtual value="{{data.system.combate.fisico.vigorAtual}}"
+          <input type="text" name="system.combate.fisico.vigorAtual" value="{{data.system.combate.fisico.vigorAtual}}"
             data-dtype="Number" />
-          <input type="text" name=system.combate.mental.vigorAtual value="{{data.system.combate.mental.vigorAtual}}"
+          <input type="text" name="system.combate.mental.vigorAtual" value="{{data.system.combate.mental.vigorAtual}}"
             data-dtype="Number" />
-          <input type="text" name=system.combate.social.vigorAtual value="{{data.system.combate.social.vigorAtual}}"
+          <input type="text" name="system.combate.social.vigorAtual" value="{{data.system.combate.social.vigorAtual}}"
             data-dtype="Number" />
         </div>
       </div>
