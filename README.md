@@ -11,3 +11,4 @@ Este projeto é o módulo oficial do sistema Crônicas RPG adaptado para o Found
 ## Agradecimentos especiais
 - Pedro Borges, autor do Crônicas RPG, pela criação e suporte ao projeto
 - Equipe responsável pelo Sistema do [Tormenta20](https://gitlab.com/vizael/Tormenta20/) pelo projeto servir de inspiração
+- [Cussa Mitre](https://github.com/Cussa) que tirou minhas dúvidas sobre migração de versão na [comunidade do FoundryVTT Brasil](https://discord.com/invite/XNC86FBnQ2)
