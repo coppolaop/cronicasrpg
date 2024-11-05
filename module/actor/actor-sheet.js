@@ -188,8 +188,7 @@ export class CronicasActorSheet extends ActorSheet {
     const li = $(ev.currentTarget).parents(".item");
     const item = this.actor.items.get(li.data("itemId"));
     if (!item.system.equipada) {
-      item.system.guardado = !item.system.guardado;
-      item.update({ "guardado": item.system.guardado });
+      item.update({ "system.guardado": !item.system.guardado });
     }
   }
 
@@ -199,8 +198,7 @@ export class CronicasActorSheet extends ActorSheet {
     const li = $(ev.currentTarget).parents(".item");
     const item = this.actor.items.get(li.data("itemId"));
     if (!item.system.guardado) {
-      item.system.equipada = !item.system.equipada;
-      item.update({ "equipada": item.system.equipada });
+      item.update({ "system.equipada": !item.system.equipada });
     }
   }
 

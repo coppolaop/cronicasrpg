@@ -34,7 +34,7 @@ export class CronicasActor extends Actor {
 
     this.items.forEach(item => {
       if (item.type == "armadura" && item.system.equipada) {
-        penalidadeArmadura = item.this.system.penalidade;
+        penalidadeArmadura = item.system.penalidade;
       }
     })
 
