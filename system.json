@@ -2,83 +2,121 @@
   "id": "cronicasrpg",
   "title": "Crônicas RPG",
   "description": "The Crônicas RPG system for FoundryVTT!",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "compatibility": {
-    "minimum": 10,
+    "minimum": "10",
     "verified": "12.331",
-    "maximum": 12
+    "maximum": "12"
   },
-  "templateVersion": 2,
-  "author": "Coppolaop",
+  "authors": [
+    {
+      "name": "Coppolaop",
+      "flags": {}
+    }
+  ],
   "esmodules": [
     "module/cronicasrpg.js"
   ],
   "styles": [
     "css/cronicasrpg.css"
   ],
-  "scripts": [],
   "packs": [
     {
       "name": "armaduras",
       "label": "Armaduras",
       "system": "cronicasrpg",
       "path": "packs/armaduras",
-      "type": "Item"
+      "type": "Item",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
     },
     {
       "name": "armas",
       "label": "Armas",
       "system": "cronicasrpg",
       "path": "packs/armas",
-      "type": "Item"
+      "type": "Item",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
     },
     {
       "name": "virtudes",
       "label": "Virtudes",
       "system": "cronicasrpg",
       "path": "packs/virtudes",
-      "type": "Item"
+      "type": "Item",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
     },
     {
       "name": "virtudes-unicas",
       "label": "Virtudes Únicas",
       "system": "cronicasrpg",
       "path": "packs/virtudes-unicas",
-      "type": "Item"
+      "type": "Item",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
     },
     {
       "name": "fraquezas",
       "label": "Fraquezas",
       "system": "cronicasrpg",
       "path": "packs/fraquezas",
-      "type": "Item"
+      "type": "Item",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
     },
     {
       "name": "fraquezas-exclusivas",
       "label": "Fraquezas Exclusivas",
       "system": "cronicasrpg",
       "path": "packs/fraquezas-exclusivas",
-      "type": "Item"
+      "type": "Item",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
     }
   ],
   "languages": [
     {
       "lang": "en",
-      "name": "English ",
-      "path": "lang/en.json"
+      "name": "English",
+      "path": "lang/en.json",
+      "flags": {}
     },
     {
       "lang": "pt-BR",
       "name": "Português Brasileiro",
-      "path": "lang/pt-BR.json"
+      "path": "lang/pt-BR.json",
+      "flags": {}
     }
   ],
-  "gridDistance": 1,
-  "gridUnits": "m",
+  "grid": {
+    "distance": 1,
+    "units": "m",
+    "diagonals": 2
+  },
   "primaryTokenAttribute": "",
   "secondaryTokenAttribute": "",
   "url": "https://github.com/coppolaop/cronicasrpg",
-  "manifest": "https://raw.githubusercontent.com/coppolaop/cronicasrpg/master/system.json",
-  "download": "https://github.com/coppolaop/cronicasrpg/archive/master.zip",
+  "manifest": "https://raw.githubusercontent.com/coppolaop/cronicasrpg/2.0.1/system.json",
+  "download": "https://github.com/coppolaop/cronicasrpg/archive/2.0.1.zip",
   "license": "LICENSE.txt"
 }
