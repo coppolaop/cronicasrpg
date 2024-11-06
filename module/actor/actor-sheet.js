@@ -234,7 +234,7 @@ export class CronicasActorSheet extends ActorSheet {
       rollType = "iniciativa";
     }
 
-    if (itemId && ($(a).hasClass('virtude-rollable') || $(a).hasClass('fraqueza-rollable') || $(a).hasClass('posse-rollable') || $(a).hasClass('acao-rollable'))) {
+    if (itemId && ($(a).hasClass('virtude-rollable') || $(a).hasClass('fraqueza-rollable') || $(a).hasClass('armadura-rollable') || $(a).hasClass('posse-rollable') || $(a).hasClass('acao-rollable'))) {
       item = actor.items.get(itemId);
       item.roll = dataset.roll;
       item.label = dataset.label;

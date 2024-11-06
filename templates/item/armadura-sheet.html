@@ -16,27 +16,27 @@
     <section class="sheet-body">
         <div>
             <label>{{localize 'cronicasrpg.particularidade.fardo'}}</label>
-            <input type="checkbox" name="fardo" value="{{system.fardo}}" {{#if system.fardo }}checked{{/if}}
+            <input type="checkbox" name="system.fardo" value="{{data.system.fardo}}" {{#if data.system.fardo }}checked{{/if}}
                 data-dtype="Boolean" />
         </div>
         <div class="grid grid-3col">
             <div>
                 <label>{{localize 'cronicasrpg.absorcao'}}</label>
-                <input type="text" name="absorcao" value="{{system.absorcao}}" data-dtype="Number" />
+                <input type="text" name="system.absorcao" value="{{data.system.absorcao}}" data-dtype="Number" />
             </div>
             <div>
                 <label>{{localize 'cronicasrpg.penalidade'}}</label>
-                <input type="text" name="penalidade" value="{{system.penalidade}}" data-dtype="Number" />
+                <input type="text" name="system.penalidade" value="{{data.system.penalidade}}" data-dtype="Number" />
             </div>
             <div>
                 <label>{{localize 'cronicasrpg.recursos'}}</label>
-                <input type="text" name="valor" value="{{system.valor}}" data-dtype="Number" />
+                <input type="text" name="system.valor" value="{{data.system.valor}}" data-dtype="Number" />
             </div>
         </div>
         <div class="full border">
             <label>{{localize 'cronicasrpg.descricao'}}</label>
-            <textarea class="largeTextArea" name="descricao"
-                data-dtype="String">{{#if system.descricao}}{{system.descricao}}{{/if}}</textarea>
+            <textarea class="largeTextArea" name="system.descricao"
+                data-dtype="String">{{data.system.descricao}}</textarea>
         </div>
     </section>
 </form>
