@@ -188,8 +188,7 @@ export class CronicasActorSheet extends ActorSheet {
     const li = $(ev.currentTarget).parents(".item");
     const item = this.actor.items.get(li.data("itemId"));
     if (!item.system.equipada) {
-      item.system.guardado = !item.system.guardado;
-      item.update({ "guardado": item.system.guardado });
+      item.update({ "system.guardado": !item.system.guardado });
     }
   }
 
@@ -199,8 +198,7 @@ export class CronicasActorSheet extends ActorSheet {
     const li = $(ev.currentTarget).parents(".item");
     const item = this.actor.items.get(li.data("itemId"));
     if (!item.system.guardado) {
-      item.system.equipada = !item.system.equipada;
-      item.update({ "equipada": item.system.equipada });
+      item.update({ "system.equipada": !item.system.equipada });
     }
   }
 
@@ -236,7 +234,7 @@ export class CronicasActorSheet extends ActorSheet {
       rollType = "iniciativa";
     }
 
-    if (itemId && ($(a).hasClass('virtude-rollable') || $(a).hasClass('fraqueza-rollable') || $(a).hasClass('posse-rollable') || $(a).hasClass('acao-rollable'))) {
+    if (itemId && ($(a).hasClass('virtude-rollable') || $(a).hasClass('fraqueza-rollable') || $(a).hasClass('armadura-rollable') || $(a).hasClass('posse-rollable') || $(a).hasClass('acao-rollable'))) {
       item = actor.items.get(itemId);
       item.roll = dataset.roll;
       item.label = dataset.label;

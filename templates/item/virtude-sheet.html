@@ -15,13 +15,13 @@
     <section class="sheet-body">
         <div class="full border">
             <label>{{localize 'cronicasrpg.descricao'}}</label>
-            <textarea class="largeTextArea" name="descricao"
-                data-dtype="String">{{#if data.system.descricao}}{{data.system.descricao}}{{/if}}</textarea>
+            <textarea class="largeTextArea" name="system.descricao"
+                data-dtype="String">{{data.system.descricao}}</textarea>
         </div>
         <div class="grid grid-2col">
             <div class="input-sheet">
                 <label>{{localize 'cronicasrpg.virtude.vigorincrementado'}}</label>
-                <select class="selectatr" name="aumentoVigor" value={{data.system.aumentoVigor}} data-dtype="String">
+                <select class="selectatr" name="system.aumentoVigor" value={{data.system.aumentoVigor}} data-dtype="String">
                     {{#select data.system.aumentoVigor}}
                     <option value="">{{localize 'cronicasrpg.nenhum'}}</option>
                     <option value="fisico">{{localize 'cronicasrpg.fisico'}}</option>

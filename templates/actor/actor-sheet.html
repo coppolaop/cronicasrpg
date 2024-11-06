@@ -202,33 +202,33 @@
           {{#each actor.armas as |item id|}}
           <li class="item flexrow" data-item-id="{{item._id}}">
             <div class="item-image" style="background-image: url('{{item.img}}')"></div>
-            <span {{#if item.guardado}} class="disabled"
+            <span {{#if item.system.guardado}} class="disabled"
               {{else}}class="rollable acao-rollable ataque-padrao-rollable" {{/if}} data-roll="{{item.acerto}}d6"
               data-label="{{localize 'cronicasrpg.acao.ataque'}} ({{item.name}})">
               <h4 class="item-name">{{item.name}}</h4>
             </span>
             <div class="item-acoes">
-              <a {{#if item.guardado}} class="disabled"
+              <a {{#if item.system.guardado}} class="disabled"
                 {{else}}class="rollable acao-rollable ataque-total-rollable" {{/if}} data-roll="{{item.acerto}}d6+2d6"
                 data-label="{{localize 'cronicasrpg.acao.ataqueTotal'}} ({{item.name}})"
                 title="{{localize 'cronicasrpg.acao.ataqueTotal'}}"><i class="fas fa-crosshairs"></i></a>
-              <a {{#if item.guardado}} class="disabled" {{else}}{{#ifEGreater 2 item.acerto}} class="disabled"
+              <a {{#if item.system.guardado}} class="disabled" {{else}}{{#ifEGreater 2 item.acerto}} class="disabled"
                 {{else}} class="rollable acao-rollable arma-multipla-rollable" {{/ifEGreater}}{{/if}}
                 data-roll="{{item.acerto}}d6"
                 data-label="{{localize 'cronicasrpg.acao.ataqueMultiploSingular'}} ({{item.name}})"
                 title="{{localize 'cronicasrpg.acao.ataqueMultiplo'}}"><i class="fas fa-check-double"></i></a>
-              <a {{#if item.guardado}} class="disabled" {{else}}class="rollable acao-rollable bloqueio-rollable"
+              <a {{#if item.system.guardado}} class="disabled" {{else}}class="rollable acao-rollable bloqueio-rollable"
                 {{/if}} data-roll="{{item.acerto}}d6"
                 data-label="{{localize 'cronicasrpg.acao.bloquear'}} ({{item.name}})"
                 title="{{localize 'cronicasrpg.acao.bloquear'}}"><i class="fas fa-user-shield"></i></a>
-              <a {{#if item.guardado}} class="disabled"
+              <a {{#if item.system.guardado}} class="disabled"
                 {{else}}class="rollable acao-rollable bloqueio-maior-rollable" {{/if}} data-roll="{{item.acerto}}d6+2d6"
                 data-label="{{localize 'cronicasrpg.acao.bloquearMaior'}} ({{item.name}})"
                 title="{{localize 'cronicasrpg.acao.bloquearMaior'}}"><i class="fas fa-ban"></i></a>
             </div>
             <div class="item-controls">
-              <a class="item-control item-toggle toggle-carried{{#if item.guardado}} active{{/if}}"
-                title="{{#if item.guardado}}Recuperar{{else}}Guardar{{/if}}">
+              <a class="item-control item-toggle toggle-carried{{#if item.system.guardado}} active{{/if}}"
+                title="{{#if item.system.guardado}}Recuperar{{else}}Guardar{{/if}}">
                 <i class="fas fa-horse-head"></i>
               </a>
               <a class="item-control item-edit" title="{{localize 'cronicasrpg.botoes.editarArma'}}"><i
@@ -425,12 +425,12 @@
               <h4 class="item-name">{{armadura.name}}</h4>
             </span>
             <div class="item-controls">
-              <a class="item-control item-toggle toggle-carried{{#if armadura.guardado}} active{{/if}}"
-                title="{{#if armadura.guardado}}Recuperar{{else}}Guardar{{/if}}">
+              <a class="item-control item-toggle toggle-carried{{#if armadura.system.guardado}} active{{/if}}"
+                title="{{#if armadura.system.guardado}}Recuperar{{else}}Guardar{{/if}}">
                 <i class="fas fa-horse-head"></i>
               </a>
-              <a class="item-control item-toggle toggle-equipped{{#if armadura.equipada}} active{{/if}}"
-                title="{{#if armadura.equipada}}Desequipar{{else}}Equipar{{/if}}">
+              <a class="item-control item-toggle toggle-equipped{{#if armadura.system.equipada}} active{{/if}}"
+                title="{{#if armadura.system.equipada}}Desequipar{{else}}Equipar{{/if}}">
                 <i class="fas fa-shield-alt"></i>
               </a>
               <a class="item-control item-edit" title="{{localize 'cronicasrpg.botoes.editarArmadura'}}"><i
@@ -460,8 +460,8 @@
               <h4 class="item-name">{{posse.name}}</h4>
             </span>
             <div class="item-controls">
-              <a class="item-control item-toggle toggle-carried{{#if posse.guardado}} active{{/if}}"
-                title="{{#if posse.guardado}}Recuperar{{else}}Guardar{{/if}}">
+              <a class="item-control item-toggle toggle-carried{{#if posse.system.guardado}} active{{/if}}"
+                title="{{#if posse.system.guardado}}Recuperar{{else}}Guardar{{/if}}">
                 <i class="fas fa-horse-head"></i>
               </a>
               <a class="item-control item-edit" title="{{localize 'cronicasrpg.botoes.editarPosse'}}"><i

@@ -100,7 +100,7 @@ Hooks.once("ready", async function () {
 Hooks.on("canvasInit", function () {
   // Extend Diagonal Measurement
   canvas.grid.diagonalRule = game.settings.get("cronicasrpg", "diagonalMovement");
-  SquareGrid.prototype.measureDistances = measureDistances;
+  foundry.grid.SquareGrid.prototype.measureDistances = measureDistances;
 });
 
 /* -------------------------------------------- */
@@ -143,14 +143,6 @@ Hooks.on("renderSidebarTab", async (object, html) => {
     const template = "systems/cronicasrpg/templates/chat/license.html";
     const rendered = await renderTemplate(template);
     gamesystem.find(".system").append(rendered);
-
-    // Site do Crônicas RPG
-    let docs = html.find("button[data-action='docs']");
-    const styling = "border:none;margin-right:2px;vertical-align:middle;margin-bottom:5px";
-    $(`<button data-action="userguide"><i class="fas fa-dice"></i>Site do Crônicas RPG</button>`).insertAfter(docs);
-    html.find('button[data-action="userguide"]').click(ev => {
-      new FrameViewer('https://cronicasrpg.com.br/', { resizable: true }).render(true);
-    });
   }
 })
 
