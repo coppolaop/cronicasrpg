@@ -5,3 +5,9 @@
 # Node Modules
 node_modules/
 npm-debug.log
+
+# Packs
+*.log
+LOG
+LOCK
+LOG.old
