@@ -15,7 +15,7 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "gulp": "^5.0.0",
+    "gulp": "^5.0.1",
     "gulp-autoprefixer": "^9.0.0",
     "gulp-sass": "^6.0.0",
     "gulp-sourcemaps": "^3.0.0"
