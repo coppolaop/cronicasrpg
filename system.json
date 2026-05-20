@@ -2,11 +2,10 @@
   "id": "cronicasrpg",
   "title": "Crônicas RPG",
   "description": "The Crônicas RPG system for FoundryVTT!",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "compatibility": {
     "minimum": "10",
-    "verified": "13.351",
-    "maximum": "13"
+    "verified": "14.361"
   },
   "authors": [
     {
@@ -117,7 +116,7 @@
   "secondaryTokenAttribute": "",
   "background": "systems/cronicasrpg/assets/cronicas.jpg",
   "url": "https://github.com/coppolaop/cronicasrpg",
-  "manifest": "https://raw.githubusercontent.com/coppolaop/cronicasrpg/2.2.0/system.json",
-  "download": "https://github.com/coppolaop/cronicasrpg/archive/2.2.0.zip",
+  "manifest": "https://raw.githubusercontent.com/coppolaop/cronicasrpg/2.3.0/system.json",
+  "download": "https://github.com/coppolaop/cronicasrpg/archive/2.3.0.zip",
   "license": "LICENSE.txt"
 }

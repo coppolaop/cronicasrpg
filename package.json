@@ -1,6 +1,6 @@
 {
   "name": "cronicasrpg",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "description": "CSS compiler for the Crônicas RPG system",
   "scripts": {
     "build": "gulp",
